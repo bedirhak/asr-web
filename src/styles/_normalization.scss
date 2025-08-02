@@ -195,11 +195,11 @@ abbr[title] {
 }
 
 .cg-color-red {
-  color: $main-red !important;
+  color: $main-theme !important;
 }
 
 .cg-bg-red {
-  background-color: $main-red !important;
+  background-color: $main-theme !important;
 }
 
 @media screen and (max-width: 500px) {
@@ -211,19 +211,19 @@ abbr[title] {
 .cg-buttons {
   text-align: center;
   width: 100%;
-  background-color: $main-red;
+  background-color: $main-theme;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 10px auto;
   padding: 0.5rem;
-  border: 1px solid $main-red;
+  border: 1px solid $main-theme;
   transition: all 0.3s ease-in-out;
   border-radius: 0.5rem;
 
   &:hover {
     background-color: white;
-    color: $main-red;
+    color: $main-theme;
   }
 }

@@ -71,7 +71,7 @@
 }
 
 .cg-footer-rights {
-  background-color: $main-red;
+  background-color: $main-theme;
 }
 
 .cg-footer-social {
@@ -84,7 +84,7 @@
 
 .cg-footer-social li a {
   padding: 10px;
-  border: 2px solid $main-red;
+  border: 2px solid $main-theme;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -96,12 +96,12 @@
   transition-duration: 500ms;
 
   svg {
-    color: $main-red;
+    color: $main-theme;
   }
 
   &:hover {
     transform: translateY(-5px);
-    background-color: $main-red;
+    background-color: $main-theme;
 
     svg {
       color: white;
