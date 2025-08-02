@@ -1,11 +1,14 @@
-import HomeSlider from "../../components/Homeslider";
+import React from 'react';
+import Homeslider from '../../components/Homeslider';
+import Aboutus from '../../components/Aboutus';
 
-const page = () => {
-  return (
-    <>
-      <HomeSlider />
-    </>
-  );
+const HomePage: React.FC = () => {
+    return (
+        <div>
+            <Homeslider />
+            <Aboutus />
+        </div>
+    );
 };
 
-export default page;
+export default HomePage;

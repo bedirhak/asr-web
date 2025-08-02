@@ -1,4 +1,4 @@
-import Logo from "../assets/images/asrLogo.png";
+import Logo from "../assets/images/logoWhite.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "./Container";
 import {
@@ -16,111 +16,120 @@ const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <>
-      <footer className="cg-footer">
-        <Container className="d-flex justify-content-between align-items-center">
-          <div className="cg-footer-container ">
-            <div>
-              <img
-                src={Logo}
-                alt="Contra Logo"
-                className="mb-2 cg-footer-image"
-              />
-              <p className="cg-footer-desc">
-                &nbsp;&nbsp;&nbsp;&nbsp;{t('footer-text')}
+    <footer className="modern-footer">
+      <div className="footer-main">
+        <Container className="footer-container">
+          <div className="footer-content">
+            {/* Brand Section */}
+            <div className="footer-brand">
+              <div className="footer-logo">
+                <img src={Logo} alt="Asr Ajans Logo" />
+              </div>
+              <p className="footer-description">
+                {t('footer-text')}
               </p>
+              <div className="footer-social">
+                <a href="#" className="social-link">
+                  <FaInstagram />
+                </a>
+                <a href="#" className="social-link">
+                  <BsTwitterX />
+                </a>
+                <a href="#" className="social-link">
+                  <FaLinkedin />
+                </a>
+              </div>
             </div>
-            <div className="cg-footer-navs">
-              <NavLink to="/home" className="cg-color-red d-block">
-                {t('menu-home')}
-              </NavLink>
-              <NavLink to="/institutional" className="cg-color-red d-block">
-                {t('menu-institutional')}
-              </NavLink>
-              <NavLink to="/capabilities" className="cg-color-red d-block">
-                {t('menu-capabilities')}
-              </NavLink>
-              {/* <NavLink to="/contact" className="cg-color-red d-block">
-                Arge Inovasyon
-              </NavLink> */}
-              <NavLink to="/contact" className="cg-color-red d-block">
-                {t('menu-contact')}
-              </NavLink>
+
+            {/* Quick Links */}
+            <div className="footer-links">
+              <h4 className="footer-title">Hızlı Bağlantılar</h4>
+              <ul className="footer-nav">
+                <li>
+                  <NavLink to="/home" className="footer-link">
+                    {t('menu-home')}
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/about" className="footer-link">
+                    {t('menu-institutional')}
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/capabilities" className="footer-link">
+                    {t('menu-capabilities')}
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/contact" className="footer-link">
+                    {t('menu-contact')}
+                  </NavLink>
+                </li>
+              </ul>
             </div>
-            <div>
-              <div className="cg-footer-contact">
-                <h5 className="cg-color-red">{t('menu-contact')}</h5>
-                <div>
-                  <div>
-                    <p>
-                      <div className="d-flex align-items-center gap-2">
-                        <div>
-                          <FaPhone className="cg-color-red" />
-                        </div>
-                        <span className="cg-color-red">{t('phone')}:</span>
-                      </div>
-                      <a href="tel:+905320540584">+(90) 532 054 05 84</a>
-                    </p>
-                    <p>
-                      <div className="d-flex align-items-center gap-2">
-                        <div>
-                          <FaEnvelope className="cg-color-red" />
-                        </div>
-                        <span className="cg-color-red">{t('email')}:</span>
-                      </div>
-                      <span>executive@contracorporate.com</span>
-                    </p>
-                    <p>
-                      <div className="d-flex align-items-center gap-2 ">
-                        <div className="align-self-start">
-                          <FaAddressBook className="cg-color-red" />
-                        </div>
-                        <span className="cg-color-red align-self-start">
-                          {t('address')}:
-                        </span>
-                      </div>
-                      <span>
-                        Maliköy Başkent OSB mah. 20.Cad. No: 12G
-                        Sincan/Ankara/Türkiye
-                      </span>
-                    </p>
+
+            {/* Services */}
+            <div className="footer-services">
+              <h4 className="footer-title">Hizmetlerimiz</h4>
+              <ul className="footer-nav">
+                <li><a href="#" className="footer-link">Drone Çekimleri</a></li>
+                <li><a href="#" className="footer-link">Tanıtım Filmleri</a></li>
+                <li><a href="#" className="footer-link">Sosyal Medya İçerikleri</a></li>
+                <li><a href="#" className="footer-link">Kurumsal Çekimler</a></li>
+              </ul>
+            </div>
+
+            {/* Contact Info */}
+            <div className="footer-contact">
+              <h4 className="footer-title">{t('menu-contact')}</h4>
+              <div className="contact-info">
+                <div className="contact-item">
+                  <FaPhone className="contact-icon" />
+                  <div className="contact-details">
+                    <span className="contact-label">{t('phone')}</span>
+                    <a href="tel:+905320540584" className="contact-value">
+                      +(90) 532 054 05 84
+                    </a>
                   </div>
-                  <div>
-                    <ul className="cg-footer-social">
-                      <li>
-                        <a>
-                          <FaInstagram />
-                        </a>
-                      </li>
-                      <li>
-                        <a>
-                          <BsTwitterX />
-                        </a>
-                      </li>
-                      <li>
-                        <a>
-                          <FaLinkedin />
-                        </a>
-                      </li>
-                      <li></li>
-                    </ul>
+                </div>
+                <div className="contact-item">
+                  <FaEnvelope className="contact-icon" />
+                  <div className="contact-details">
+                    <span className="contact-label">{t('email')}</span>
+                    <a href="mailto:info@asrajans.com" className="contact-value">
+                      info@asrajans.com
+                    </a>
+                  </div>
+                </div>
+                <div className="contact-item">
+                  <FaAddressBook className="contact-icon" />
+                  <div className="contact-details">
+                    <span className="contact-label">{t('address')}</span>
+                    <span className="contact-value">
+                      Sakarya, Türkiye
+                    </span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </Container>
-      </footer>
-      <div
-        className="cg-footer-rights d-flex justify-content-between text-white p-3"
-        style={{ fontSize: "16px" }}
-      >
-        <div>
-          {t('rights')}
-        </div>
-        <div>© 2024 - Contra Group</div>
       </div>
-    </>
+
+      {/* Footer Bottom */}
+      <div className="footer-bottom">
+        <Container className="footer-container">
+          <div className="footer-bottom-content">
+            <div className="footer-copyright">
+              <span>© 2025 Asr Ajans. Tüm hakları saklıdır.</span>
+            </div>
+            <div className="footer-credits">
+              <span>Profesyonel görsel içerik prodüksiyon ajansı</span>
+            </div>
+          </div>
+        </Container>
+      </div>
+    </footer>
   );
 };
 

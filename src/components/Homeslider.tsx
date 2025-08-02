@@ -5,7 +5,6 @@ import { useTranslation } from "react-i18next";
 
 import slider1 from "../assets/images/homepage/slider1.jpg";
 import slider2 from "../assets/images/homepage/slider2.jpg";
-import slider3 from "../assets/images/homepage/slider3.jpg";
 import slider3Video from "../assets/images/slider3.mp4";
 import droneImage from "../assets/images/homepage/drone.webp";
 
@@ -20,6 +19,13 @@ interface Slide {
 
 const slides: Slide[] = [
   {
+    video: slider3Video,
+    titleKey: "slider.2.title",
+    descriptionKey: "slider.2.description",
+    buttonKey: "slider.2.buttonText",
+    type: 'video',
+  },
+  {
     image: slider1,
     titleKey: "slider.0.title",
     descriptionKey: "slider.0.description",
@@ -32,13 +38,6 @@ const slides: Slide[] = [
     descriptionKey: "slider.1.description",
     buttonKey: "slider.1.buttonText",
     type: 'image',
-  },
-  {
-    video: slider3Video,
-    titleKey: "slider.2.title",
-    descriptionKey: "slider.2.description",
-    buttonKey: "slider.2.buttonText",
-    type: 'video',
   },
 ];
 
@@ -163,8 +162,8 @@ const FullPageHomeSlider: React.FC = () => {
           left: 0,
           width: "100%",
           height: "4px",
-          backgroundColor: "rgba(255, 255, 255, 0.3)",
-          zIndex: 10,
+          backgroundColor: "#000E58",
+          zIndex: 100,
         }}
       >
         <div
@@ -172,7 +171,7 @@ const FullPageHomeSlider: React.FC = () => {
           style={{
             height: "100%",
             width: `${progress}%`,
-            backgroundColor: "#0A145A",
+            backgroundColor: "white",
             transition: "width 0.1s linear",
           }}
         />
@@ -182,6 +181,7 @@ const FullPageHomeSlider: React.FC = () => {
         {slides.map((slide, index) => (
           <div key={index}>
             <div
+              className={slide.type === 'video' ? 'video-slide' : ''}
               style={{
                 height: "100vh",
                 display: "flex",
@@ -239,7 +239,7 @@ const FullPageHomeSlider: React.FC = () => {
                     left: "50%",
                     transform: `translate(-50%, -50%) perspective(1000px) rotateX(${droneTransform.rotateX}deg) rotateY(${droneTransform.rotateY}deg)`,
                     transition: "transform 0.1s ease-out",
-                    zIndex: 0,
+                    zIndex: 5,
                     pointerEvents: "none",
                   }}
                 >
@@ -258,7 +258,15 @@ const FullPageHomeSlider: React.FC = () => {
               )}
 
               {/* Content */}
-              <h1 className="cg-slider-heading" style={{ zIndex: 1, position: "relative" }}>
+              <h1
+                className="cg-slider-heading"
+                style={{
+                  zIndex: 10,
+                  position: "relative",
+                  transform: `perspective(1000px) rotateX(${droneTransform.rotateX * 0.3}deg) rotateY(${droneTransform.rotateY * 0.3}deg)`,
+                  transition: "transform 0.1s ease-out",
+                }}
+              >
                 {displayedTitle}<span className="typewriter-cursor">|</span>
               </h1>
               <p
@@ -267,8 +275,10 @@ const FullPageHomeSlider: React.FC = () => {
                   fontSize: "1.2rem",
                   maxWidth: "800px",
                   margin: "20px 0",
-                  zIndex: 1,
+                  zIndex: 10,
                   position: "relative",
+                  transform: `perspective(1000px) rotateX(${droneTransform.rotateX * 0.2}deg) rotateY(${droneTransform.rotateY * 0.2}deg)`,
+                  transition: "transform 0.1s ease-out",
                 }}
               >
                 {displayedDesc}

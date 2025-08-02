@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { useTranslation } from 'react-i18next';
-import Logo from "../assets/images/asrLogo.png";
+import Logo from "../assets/images/logoWhite.png";
 // import Language from "./Language";
 
 const ContraNavBar = () => {

@@ -4,8 +4,10 @@
 @import "navbar";
 @import "homeslider";
 @import "container";
-@import "footer";
+// @import "footer";
+@import "modernFooter";
 @import "values";
+@import "aboutPage";
 
 // Harici bir URL'den CSS importu için doğrudan kullanılabilir:
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");

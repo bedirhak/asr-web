@@ -1,0 +1,129 @@
+@use "colors" as *;
+
+.about-section {
+    padding: 140px 0;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.about-small-title {
+    font-size: 16px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: $main-theme;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.about-main-title {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: $main-theme;
+    font-weight: 700;
+    line-height: 1.3;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.about-description {
+    font-size: 1.2rem;
+    letter-spacing: 0px;
+    text-transform: none;
+    max-width: 1170px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    color: #333;
+    line-height: 1.6;
+    width: 75%;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.about-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, $main-theme, lighten($main-theme, 10%));
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 8px 30px rgba(0, 14, 88, 0.3);
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.6s ease;
+    }
+
+    &:hover {
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0 15px 40px rgba(0, 14, 88, 0.4);
+
+        &::before {
+            left: 100%;
+        }
+
+        .about-button-icon {
+            transform: translateX(4px);
+
+            svg {
+                animation: arrowBounce 0.6s ease-in-out;
+            }
+        }
+
+        .about-button-text {
+            letter-spacing: 1px;
+        }
+    }
+
+    &:active {
+        transform: translateY(0) scale(0.98);
+    }
+}
+
+.about-button-text {
+    transition: letter-spacing 0.3s ease;
+}
+
+.about-button-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@keyframes arrowBounce {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(8px);
+    }
+}
