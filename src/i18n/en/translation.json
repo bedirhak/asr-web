@@ -1,0 +1,176 @@
+{
+  "hello": "Hello",
+  "welcome": "Welcome to our application!",
+  "menu-home": "Home",
+  "menu-institutional": "Institutional",
+  "menu-capabilities": "Capabilities",
+  "menu-contact": "Contact",
+
+
+  "footer-text": "Our company provides supply solutions in the fields of petroleum, lubricants, and the defense industry, making critical contributions to the energy and defense sectors with its industry expertise. In particular, by collaborating with leading suppliers such as Technol — the first producer of engine and industrial oils in Azerbaijan and the Caucasus region — we offer our customers high-quality and reliable products.",
+   "slider": [
+    {
+      "title": "Contra Corporate Offers Supply Solutions in Petroleum, Industrial Lubricants and Defense Industry",
+      "description": "With the power of its suppliers and the sector, it makes critical contributions to the energy and defense sectors. It offers high-quality and reliable products to its customers with its expertise in the field.",
+      "buttonText": "Discover"
+    },
+    {
+      "title": "Sustainability and Eco-Friendly Products",
+      "description": "Using sustainable and eco-friendly products in its production processes, it offers high-quality and reliable products to its customers.",
+      "buttonText": "Discover"
+    },
+    {
+      "title": "Contra Corporate Works with Technol, the First Engine and Industrial Oil Producer in Azerbaijan and the Caucasus Region",
+      "description": "With a daily capacity of 140 tons and an annual capacity of 50,000 tons, Technol's production facility is equipped with German-made machinery and is fully automated.",
+      "buttonText": "Discover"
+    }
+  ],
+   "banners": [
+    {
+      "title": "Full Synthetic",
+      "description": "Heavy Duty Engine Oil",
+      "buttonText": "Learn More"
+    },
+    {
+      "title": "Grease",
+      "description": "Grease Lubricants",
+      "buttonText": "Learn More"
+    },
+    {
+      "title": "Hybrid",
+      "description": "Technology Hybrid Synthetic Engine Oil",
+      "buttonText": "Learn More"
+    },
+    {
+      "title": "Bronze",
+      "description": "Commercial Vehicle Passenger Oils",
+      "buttonText": "Learn More"
+    },
+    {
+      "title": "Pro",
+      "description": "Heavy Load Automotive Oils",
+      "buttonText": "Learn More"
+    },
+    {
+      "title": "Turbo Diesel",
+      "description": "Turbo Diesel Engine Oil",
+      "buttonText": "Learn More"
+    }
+  ],
+  "about":"About Us",
+  "about1": "About our Company, müşterilerimize kaliteli ve güvenilir yağ çözümleri sunma misyonuyla faaliyet göstermektedir. Bu hedef doğrultusunda, dünya standartlarında üretim yapan Technol gibi alanında öncü şirketlerle iş birliği yapıyoruz. Yıllık 50 bin ton üretim kapasitesine sahip olan Technol, modern tesislerinde yüksek standartlarda üretim gerçekleştirmektedir ve bu iş birliğimiz, müşterilerimize en iyi ürünleri sunmamıza olanak tanımaktadır.",
+
+  "company" : "Contra Corporate",
+  "ihracat": "Export",
+  "product-type" : "Product Type",
+  "yurt-ici-istirak": "Domestic Participation",
+  "yurt-disi-istirak": "Foreign Participation",
+  "workers": "Employees",
+  "ciro": "Turnover",
+  "home-title2": "Countries and Cities We Operate In",
+  "home-title3" : "Fields of Operations",
+   "petrol": "Petroleum",
+  "savunma": "Defense Industry",
+  "industrial-oil": "Industrial Oils",
+   "phone": "Phone",
+  "email": "Email",
+  "address": "Address",
+  "rights": "All Rights Reserved by Contra Group Petroleum Mineral Oil Trade Inc. Corporate Website.",
+   "institutional": {
+    "title": "About Us",
+    "paragraphs": [
+      "Our company operates with the mission of providing our customers with high-quality and reliable oil solutions. In line with this goal, we collaborate with leading companies in the field such as Technol, which produces at world standards. Technol, with an annual production capacity of 50,000 tons, carries out production at high standards in its modern facilities, and this collaboration enables us to offer the best products to our customers.",
+      "Technol is equipped with an internationally accredited laboratory (ISO 17025:2017) featuring the latest technology devices sourced from countries such as the USA, UK, Germany, and Japan, enabling precise analysis of oils across a wide spectrum. Motor and industrial oils are produced using high-quality additives from globally recognized suppliers such as Infineum, Chevron, and Afton, and are tested according to the standards of the American Petroleum Institute (API) and the European Automobile Manufacturers Association (ACEA). ISO 9001:2015 is applied to ensure product quality, ISO 14001:2015 to enhance environmental sensitivity, and ISO 45001:2008 for occupational safety.",
+      "Thanks to our strong cooperation with Technol, we offer our customers a wide product portfolio ranging from passenger car and truck oils to hydraulic system, compressor, and generator oils, and to sectors such as agriculture, defense, maritime, and metallurgy. Our products not only meet the needs of domestic customers but are also preferred in international markets through Technol's exports to approximately 10 countries.",
+      "Our product portfolio includes hundreds of different products ranging from passenger car and truck oils to hydraulic system, compressor, and generator oils, and to sectors such as agriculture, defense, maritime, and metallurgy. Our high-quality products have quickly earned the trust of our customers and are in demand not only in the domestic market but also through exports to around 10 countries internationally.",
+      "With our approach that prioritizes customer satisfaction and sustainable quality, we are proud to bring together the best brands in the industry with our customers. We continue to work with strong partners like Technol and focus on continuous development to offer you the best service."
+    ],
+    "missionTitle": "Our Mission",
+    "missionText": "To be a professional supplier that comprehensively meets the needs for oils, fluids, and technical services used in petroleum, machinery, and equipment, and to provide services in Azerbaijan and developing countries."
+  },
+    "values": {
+    "title": "Our Values",
+    "customer_oriented": {
+      "title": "Customer-Oriented",
+      "description": "In all our operations, meeting the needs of our customers in the best way possible is our priority..."
+    },
+    "professionalism": {
+      "title": "Professionalism",
+      "description": "With our experience in the petroleum and industrial oils sector, we continuously strive to improve our business processes..."
+    },
+    "innovation": {
+      "title": "Innovation",
+      "description": "With an innovative approach in the petroleum and industrial oil sector, we are constantly improving ourselves to provide the most modern and effective solutions..."
+    }
+  },
+  "capabilities": {
+    "endustrial-oils": "Industrial Oils",
+    "petroleum": "Petroleum",
+    "defense-industry": "Defense Industry",
+    "tab1": {
+      "title1": "Technol Industrial Oils",
+      "title2": "Technol Marine D 4010",
+      "title3": "Hydraulic System Oils",
+      "title4": "Technol Tractor Transmission Oil",
+      "title5": "Compressor Oils",
+      "title6": "Gear Oils",
+      "title7": "Heat Transfer Oils",
+      "title8": "Slideway Oils",
+      "title9": "Quality and Reliability",
+      "p1": "Industrial oils are critical for ensuring the efficient and long-lasting operation of machinery and equipment in the industrial sector. These oils reduce friction to prevent wear, distribute heat to support optimal operating temperatures, and provide corrosion protection to extend the lifespan of equipment.",
+      "p2": "Technol offers a wide range of industrial oils to meet the needs of various sectors. The product lineup includes hydraulic system oils, compressor and gear oils, heat transfer oils, and slideway oils. These products are formulated using high-quality base oils and advanced additives, delivering superior performance and reliability.",
+      "p3": "Technol Marine D 4010 is a high-quality motor oil specifically produced for use in the maritime sector. This product is specially developed to provide maximum protection and performance under the harsh operating conditions of marine engines. Technol Marine D 4010 is formulated with high-quality base oils and advanced additives. These features minimize wear and corrosion in marine engines, keep the engine clean, and ensure long-lasting performance. Additionally, it prevents carbon buildup, enhancing engine efficiency and contributing to fuel economy. The product is manufactured in compliance with American Petroleum Institute (API) standards and meets international maritime standards. It offers excellent thermal stability even in challenging marine conditions, preventing engine overheating. Technol Marine D 4010 is designed for use in both commercial vessels and personal watercraft. It is an ideal solution for those seeking reliable and high-performance oil for marine engines.",
+      "p4": "Technol's hydraulic system oils deliver excellent performance in high-pressure systems. These oils have high oxidation resistance, helping to keep the system clean and extending the lifespan of components.",
+      "p5": "Technol Tractor Transmission Oil is a high-performance oil specially designed for heavy-duty agricultural machinery. This product aims to provide maximum efficiency and protection for the engine, transmission, and hydraulic systems of tractors and other agricultural equipment. Formulated with high-quality base oils and advanced additives, this oil extends equipment lifespan while reducing maintenance costs. Technol Tractor Transmission Oil maintains its fluidity at low temperatures, ensuring smooth operation even in cold weather conditions. Its oxidation-resistant structure also preserves oil performance under high temperatures. It minimizes wear and corrosion, ensuring the durability of gears and hydraulic components. This oil meets UTTO (Universal Tractor Transmission Oil) and STOU (Super Tractor Oil Universal) standards, providing a versatile and reliable solution for agricultural equipment. Technol Tractor Transmission Oil is designed to deliver high performance for tractors under demanding agricultural conditions.",
+      "p6": "Technol compressor oils, specially formulated for efficient compressor operation, stand out with low carbon buildup and excellent thermal stability. This enhances energy efficiency and reduces maintenance costs.",
+      "p7": "Technol gear oils, developed for gear systems operating under heavy loads, are resistant to high pressure and provide superior protection against wear and corrosion. This improves equipment performance and minimizes downtime.",
+      "p8": "Technol heat transfer oils, used for effective heat transfer in industrial processes, offer high thermal conductivity and stability, supporting efficient system operation.",
+      "p9": "Technol slideway oils, supporting the precise movements of machine tools, ensure smooth and accurate operations with low friction coefficients and anti-stick properties.",
+      "p10": "Technol industrial oils are manufactured in compliance with international standards and undergo rigorous quality control processes. This ensures reliable and high-performance solutions for industrial businesses.",
+      "p11": "In conclusion, Technol's wide range of industrial oils is designed to meet the specific needs of various sectors. With high-quality products and a customer-focused service approach, Technol is a trusted partner in industrial oils."
+    },
+    "tab2": {
+      "p1": "In the petroleum and industrial lubricants industry, excellence, reliability, and performance are the key deciding factors for product selection. This is where Technol distinguishes itself through its premium quality and innovative solutions. As the leading motor and industrial oil manufacturer in Azerbaijan and the Caucasus region, Technol has reinforced its global reputation by earning the prestigious motor oil certification from the American Petroleum Institute (API).",
+    "p2": "The API certification serves as vital documentation, verifying that motor and industrial oils meet the stringent performance criteria established by U.S. and international vehicle and engine manufacturers. By achieving this certification, Technol demonstrates its adherence to the highest industry benchmarks. API stands as the largest trade association in the oil and gas sector, representing around 650 companies worldwide. Therefore, this certification not only guarantees quality but also signifies global recognition and prestige.",
+    "p3": "Technol's manufacturing operations utilize cutting-edge German-engineered equipment, enabling a production capacity of 140 tons daily and 50,000 tons annually. The entire production line is fully automated, with comprehensive oil analyses conducted in state-of-the-art, ISO 17025:2017 accredited laboratories. These facilities employ advanced instruments sourced from technology leaders like the U.S., UK, Germany, and Japan to rigorously test product quality and durability.",
+    "p4": "Technol's motor and industrial lubricants incorporate premium additives from globally renowned suppliers such as Infineum, Chevron, and Afton. Every product is manufactured in compliance with API and ACEA standards, undergoing rigorous testing per ASTM protocols. Furthermore, the implementation of the ISO 9001:2015 quality management system ensures that all products consistently meet customer expectations and regulatory requirements.",
+    "p5": "Technol's mission is to deliver oils that rival the quality of world-famous petroleum brands while maintaining competitive pricing. The brand has rapidly earned customer trust through its superior products, gaining significant traction not only in domestic markets but also internationally, with exports reaching approximately 10 countries.",
+    "p6": "Collaborating with Technol allows you to integrate quality and reliability into your operations, ensuring your vehicles and machinery benefit from durable, high-performance lubricants. More than just an oil brand, Technol embodies a commitment to innovation and excellence."
+    },
+    "tab3": {
+      "p1": "Guided by our pioneering mission, we implement innovative management approaches in defense industry R&D that can compete with the world's leading companies. Our R&D Management advances decisively toward strategic goals with a structure that meets, develops, and transforms sectoral needs.",
+    "p2": "In developing our defense technologies, we prioritize an approach rooted in innovation and sustainability. By focusing on domestic and national production processes, we differentiate ourselves through advanced engineering solutions and modern manufacturing techniques. Our efforts contribute both to our nation's security and to achieving a competitive position in international markets.",
+    "p3": "Our R&D processes concentrate on delivering innovative solutions for critical domains including high-tech systems, autonomous vehicles, armored platforms, and defense equipment. In our projects, we design flexible and resilient systems capable of addressing not just today's requirements but also future challenges.",
+    "p4": "Our team continuously monitors next-generation manufacturing techniques and global standards to accelerate technological transformation, working with an innovation-driven vision tailored to the defense industry. The primary objective of these projects—which enhance national security—is to leverage local resources effectively to build an independent and robust defense sector.",
+    "p5": "Our bold strides in R&D and defense manufacturing represent more than just success stories—they are strategic initiatives for our country's development."
+    }
+  },
+    "contact": {
+    "title": "Contact Us",
+    "form": {
+      "name": "Name / Surname*",
+      "phone": "Phone*",
+      "company": "Company",
+      "email": "Email address*",
+      "address": "Address",
+      "city": "City*",
+      "post_code": "Postal Code",
+      "country": "Country*",
+      "message": "Message*",
+      "submit": "Send"
+    },
+    "info": {
+      "company_name": "Contra Group Petroleum Lubricants Trading Inc.",
+      "address": "Maliköy Başkent OSB mah. 20.Cad. No: 12G Sincan/Ankara/Turkey",
+      "phone": "+(90) 532 054 05 84",
+      "email": "executive@contracorporate.com"
+    },
+    "toast": {
+      "success": "Your message has been sent"
+    }
+  }
+
+
+
+
+}

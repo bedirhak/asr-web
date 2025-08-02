@@ -1,0 +1,11 @@
+.cg-container {
+  width: 1440px;
+  margin: 0px auto 50px auto;
+}
+
+@media screen and (max-width: 1440px) {
+  .cg-container {
+    width: 100vw;
+    padding: 0 20px;
+  }
+}
