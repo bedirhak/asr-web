@@ -20,6 +20,15 @@ const Aboutus: React.FC = () => {
                 <p className="about-description">
                     {t('about.description')}
                 </p>
+
+                <Link to="/about" className="about-btn-link">
+                    <button className="about-btn">
+                        <span className="about-btn-text">
+                            {t('about.button-text')}
+                        </span>
+                        <div className="about-btn-light"></div>
+                    </button>
+                </Link>
             </div>
         </div>
     );
