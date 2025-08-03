@@ -22,14 +22,35 @@ const importPages = () => {
         if (match) {
             const routePath = match[1].toLowerCase(); // Klasör adını URL olarak kullan
             const Component = (pages[key] as any).default;
-            routes.push({
-                path: routePath === "home" ? "/" : `/${routePath}`,
-                element: (
-                    <Layout>
-                        <Component />
-                    </Layout>
-                ),
-            });
+
+            // Home route'u hem / hem de /home için ekle
+            if (routePath === "home") {
+                routes.push({
+                    path: "/",
+                    element: (
+                        <Layout>
+                            <Component />
+                        </Layout>
+                    ),
+                });
+                routes.push({
+                    path: "/home",
+                    element: (
+                        <Layout>
+                            <Component />
+                        </Layout>
+                    ),
+                });
+            } else {
+                routes.push({
+                    path: `/${routePath}`,
+                    element: (
+                        <Layout>
+                            <Component />
+                        </Layout>
+                    ),
+                });
+            }
         }
     });
 
