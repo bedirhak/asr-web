@@ -238,7 +238,7 @@ const ContactPage: React.FC = () => {
                     </iframe>
                     <button
                         className="asr-directions-btn"
-                        onClick={() => window.open('https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d755.2891192303767!2d30.396158619798364!3d40.780573959691274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e3!4m0!4m5!1s0x14ccb31d30408381%3A0x5c672ffb1ed6c2ee!2zU2FrYXJ5YSBEaXlldGlzeWVuIEF5xZ9lIEfDtm5hbiwgS3VydHVsdcWfLCBBdMSxayBTay4gRHVydXN1IMSwxZ8gTWVya2V6aSBObzo1IERhaXJlOjUsIDU0MTAwIEFkYXBhemFyxLEvU2FrYXJ5YQ!3m2!1d40.7809056!2d30.3967347!5e0!3m2!1str!2str!4v1754247083534!5m2!1str!2str', '_blank')}
+                        onClick={() => window.open('https://maps.google.com/maps/dir//Sakarya+Diyetisyen+Ay%C5%9Fe+G%C3%B6nan+Kurtulu%C5%9F+At%C4%B1k+Sk.+Durusu+%C4%B0%C5%9F+Merkezi+No:5+Daire:5+54100+Adapazar%C4%B1%2FSakarya/@40.7809056,30.3967347,18z/data=!4m5!4m4!1m0!1m2!1m1!1s0x14ccb31d30408381:0x5c672ffb1ed6c2ee', '_blank')}
                     >
                         <i className="fa-solid fa-location-arrow"></i>
                         Yol Tarifi Al
