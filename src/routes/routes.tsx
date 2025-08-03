@@ -2,7 +2,6 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
-import { JSX } from "react";
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
     <>
@@ -14,7 +13,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
 
 const importPages = () => {
     const pages = import.meta.glob("../pages/**/page.tsx", { eager: true });
-    const routes: { path: string; element: JSX.Element }[] = [];
+    const routes: { path: string; element: React.ReactElement }[] = [];
 
     Object.keys(pages).forEach((key) => {
         const match = key.match(/\/pages\/(.*?)\/page\.tsx$/);
@@ -22,35 +21,14 @@ const importPages = () => {
         if (match) {
             const routePath = match[1].toLowerCase(); // Klasör adını URL olarak kullan
             const Component = (pages[key] as any).default;
-
-            // Home route'u hem / hem de /home için ekle
-            if (routePath === "home") {
-                routes.push({
-                    path: "/",
-                    element: (
-                        <Layout>
-                            <Component />
-                        </Layout>
-                    ),
-                });
-                routes.push({
-                    path: "/home",
-                    element: (
-                        <Layout>
-                            <Component />
-                        </Layout>
-                    ),
-                });
-            } else {
-                routes.push({
-                    path: `/${routePath}`,
-                    element: (
-                        <Layout>
-                            <Component />
-                        </Layout>
-                    ),
-                });
-            }
+            routes.push({
+                path: routePath === "home" ? "/" : `/${routePath}`,
+                element: (
+                    <Layout>
+                        <Component />
+                    </Layout>
+                ),
+            });
         }
     });
 
