@@ -106,7 +106,7 @@ const Footer = () => {
                   <div className="contact-details">
                     <span className="contact-label">{t('address')}</span>
                     <span className="contact-value">
-                      Sakarya, Türkiye
+                      Kurtuluş Mahallesi, Atik Sk. No:5 Daire:5, Durusu İş Merkezi 54100 - Adapazarı / Sakarya
                     </span>
                   </div>
                 </div>

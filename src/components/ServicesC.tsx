@@ -11,7 +11,7 @@ const ServicesC: React.FC = () => {
 
     return (
         <Container>
-            <div className="about-services">
+            <div className="about-services text-center">
                 <h2 className="about-services-title">
                     {t('about.page.services-title')}
                 </h2>
@@ -32,7 +32,7 @@ const ServicesC: React.FC = () => {
                 <Link to="/services" className="about-btn-link">
                     <button className="about-btn">
                         <span className="about-btn-text">
-                            {t('services.direct-button')}
+                            {t('servicesPage.direct-button')}
                         </span>
                         <div className="about-btn-light"></div>
                     </button>
