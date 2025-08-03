@@ -156,50 +156,50 @@ const ContactPage: React.FC = () => {
                 </div>
             </Container> */}
 
-            <div className="abc-contact-content">
-                <div className="abc-contact-form">
-                    <h6 className="abc-contact-form-title">İletişim Formu</h6>
-                    <p className="abc-contact-form-desc">Görüşme talebinde bulunmak veya hizmetlerimiz hakkında detaylı bilgi
+            <div className="asr-contact-content">
+                <div className="asr-contact-form">
+                    <h6 className="asr-contact-form-title">İletişim Formu</h6>
+                    <p className="asr-contact-form-desc">Görüşme talebinde bulunmak veya hizmetlerimiz hakkında detaylı bilgi
                         almak için bizimle iletişime
                         geçin.</p>
                     <form>
-                        <div className="abc-form-two">
-                            <div className="abc-input-container">
+                        <div className="asr-form-two">
+                            <div className="asr-input-container">
                                 <label htmlFor="name">Ad Soyad</label>
                                 <input type="text" id="name" name="name" required />
                             </div>
-                            <div className="abc-input-container">
+                            <div className="asr-input-container">
                                 <label htmlFor="mail">E-Posta</label>
                                 <input type="text" id="mail" name="mail" required />
                             </div>
                         </div>
-                        <div className="abc-form-two">
-                            <div className="abc-input-container">
+                        <div className="asr-form-two">
+                            <div className="asr-input-container">
                                 <label htmlFor="phone">Telefon Numarası</label>
                                 <input type="text" id="phone" name="phone" required />
                             </div>
-                            <div className="abc-input-container">
+                            <div className="asr-input-container">
                                 <label htmlFor="subject">Konu</label>
                                 <input type="text" id="subject" name="subject" required />
                             </div>
                         </div>
                         <div>
-                            <div className="abc-input-container">
+                            <div className="asr-input-container">
                                 <label htmlFor="message">Mesaj</label>
                                 <textarea id="message" name="message" className="message" required style={{ resize: 'none' }}></textarea>
                             </div>
                         </div>
-                        <button type="submit" className="abc-submit-button">Gönder</button>
+                        <button type="submit" className="asr-submit-button">Gönder</button>
                     </form>
                 </div>
-                <div className="abc-contact-info">
-                    <h6 className="abc-contact-form-title">İletişim Bilgileri</h6>
-                    <div className="abc-contact-info-card">
+                <div className="asr-contact-info">
+                    <h6 className="asr-contact-form-title">İletişim Bilgileri</h6>
+                    <div className="asr-contact-info-card">
                         <i className="fa-light fa-map-location-dot"></i>
                         <h6>Adres:</h6>
                         <p>Kurtuluş Mahallesi, Atik Sk. No:5 Daire:5, Durusu İş Merkezi - Adapazarı / Sakarya</p>
                     </div>
-                    <div className="abc-contact-info-card">
+                    <div className="asr-contact-info-card">
                         <i className="fa-thin fa-phone-office"></i>
                         <h6>Telefon:</h6>
                         <p>
@@ -208,7 +208,7 @@ const ContactPage: React.FC = () => {
                             </a>
                         </p>
                     </div>
-                    <div className="abc-contact-info-card">
+                    <div className="asr-contact-info-card">
                         <i className="fa-light fa-envelopes"></i>
                         <h6>E-Posta:</h6>
                         <p>
@@ -217,7 +217,7 @@ const ContactPage: React.FC = () => {
                             </a>
                         </p>
                     </div>
-                    <div className="abc-contact-info-card">
+                    <div className="asr-contact-info-card">
                         <i className="fa-light fa-calendar-check"></i>
                         <h6>Çalışma Saatleri:</h6>
                         <p>Pazartesi - Pazar: 09:00 - 20:00</p>
@@ -225,16 +225,25 @@ const ContactPage: React.FC = () => {
                 </div>
             </div>
 
-            <div className="abc-map-container">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d755.2891192303767!2d30.396158619798364!3d40.780573959691274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sKurtulu%C5%9F%20Mahallesi%2C%20Atik%20Sk.%20No%3A5%20Daire%3A5%2C%20Durusu%20%C4%B0%C5%9F%20Merkezi%2054100%20-%20Adapazar%C4%B1%20%2F%20Sakarya!5e0!3m2!1str!2str!4v1754244145809!5m2!1str!2str"
-                    width="600"
-                    height="450"
-                    style={{ border: 0 }}
-                    allowFullScreen={true}
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade">
-                </iframe>
+            <div className="asr-map-container">
+                <div className="asr-map-wrapper">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d755.2891192303767!2d30.396158619798364!3d40.780573959691274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sKurtulu%C5%9F%20Mahallesi%2C%20Atik%20Sk.%20No%3A5%20Daire%3A5%2C%20Durusu%20%C4%B0%C5%9F%20Merkezi%2054100%20-%20Adapazar%C4%B1%20%2F%20Sakarya!5e0!3m2!1str!2str!4v1754244145809!5m2!1str!2str"
+                        width="600"
+                        height="450"
+                        style={{ border: 0 }}
+                        allowFullScreen={true}
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <button
+                        className="asr-directions-btn"
+                        onClick={() => window.open('https://www.google.com/maps/dir//Kurtuluş+Mahallesi,+Atik+Sk.+No:5+Daire:5,+Durusu+İş+Merkezi+54100+Adapazarı/Sakarya/@40.780574,30.396159,17z', '_blank')}
+                    >
+                        <i className="fa-solid fa-location-arrow"></i>
+                        Yol Tarifi Al
+                    </button>
+                </div>
             </div>
         </div>
     );

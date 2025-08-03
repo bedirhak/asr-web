@@ -41,17 +41,17 @@ const ContraNavBar = () => {
                     />
                     <Navbar.Collapse id="basic-navbar-nav" className="cg-navbar-link">
                         <Nav className="me-auto">
-                            <Nav.Link className="cg-nav-link" href="/">
+                            <Nav.Link className="cg-nav-link" href="/asr-web">
                                 {t('menu-home')}
                             </Nav.Link>
-                            <Nav.Link className="cg-nav-link" href="/about">
+                            <Nav.Link className="cg-nav-link" href="/asr-web/about">
                                 {t('menu-about')}
                             </Nav.Link>
-                            <Nav.Link className="cg-nav-link" href="/services">
+                            <Nav.Link className="cg-nav-link" href="/asr-web/services">
                                 {t('menu-services')}
                             </Nav.Link>
 
-                            <Nav.Link className="cg-nav-link" href="contact">
+                            <Nav.Link className="cg-nav-link" href="/asr-web/contact">
                                 {t('menu-contact')}
                             </Nav.Link>
 

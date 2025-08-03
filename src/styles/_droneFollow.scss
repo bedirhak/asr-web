@@ -1,0 +1,129 @@
+.drone-follow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.drone-follow {
+    position: absolute;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
+}
+
+.drone-image {
+    width: 220px;
+    height: auto;
+    animation: droneHover 3s ease-in-out infinite;
+    transform-origin: center;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.drone-shadow {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 20px;
+    background: radial-gradient(ellipse, rgba(0, 0, 0, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: shadowPulse 3s ease-in-out infinite;
+}
+
+/* Drone'un havada durma animasyonu */
+@keyframes droneHover {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotateZ(0deg);
+    }
+
+    25% {
+        transform: translateY(-8px) rotateZ(2deg);
+    }
+
+    50% {
+        transform: translateY(-4px) rotateZ(0deg);
+    }
+
+    75% {
+        transform: translateY(-12px) rotateZ(-2deg);
+    }
+}
+
+/* Gölge animasyonu */
+@keyframes shadowPulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: translateX(-50%) scale(1);
+    }
+
+    25% {
+        opacity: 0.2;
+        transform: translateX(-50%) scale(0.9);
+    }
+
+    50% {
+        opacity: 0.25;
+        transform: translateX(-50%) scale(1.1);
+    }
+
+    75% {
+        opacity: 0.15;
+        transform: translateX(-50%) scale(0.8);
+    }
+}
+
+/* Mobil uyumluluk */
+@media (max-width: 768px) {
+    .drone-image {
+        width: 80px;
+    }
+
+    .drone-shadow {
+        width: 50px;
+        height: 15px;
+        bottom: -30px;
+    }
+}
+
+/* Performans optimizasyonu */
+.drone-follow {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Scroll durduğunda ek titreşim efekti */
+.drone-follow:hover .drone-image {
+    animation: droneHover 2s ease-in-out infinite, droneVibration 0.5s ease-in-out infinite;
+}
+
+@keyframes droneVibration {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(1px);
+    }
+
+    75% {
+        transform: translateX(-1px);
+    }
+}
