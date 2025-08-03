@@ -52,7 +52,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <NavLink to="/about" className="footer-link">
-                    {t('menu-institutional')}
+                    {t('menu-about')}
                   </NavLink>
                 </li>
                 <li>
@@ -88,7 +88,7 @@ const Footer = () => {
                   <div className="contact-details">
                     <span className="contact-label">{t('phone')}</span>
                     <a href="tel:+905320540584" className="contact-value">
-                      +(90) 532 054 05 84
+                      +(90) 537 592 50 55
                     </a>
                   </div>
                 </div>

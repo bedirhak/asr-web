@@ -5,8 +5,10 @@ import { useTranslation } from "react-i18next";
 
 import slider1 from "../assets/images/homepage/slider1.jpg";
 import slider2 from "../assets/images/homepage/slider2.jpg";
-import slider3Video from "../assets/images/slider3.mp4";
 import droneImage from "../assets/images/homepage/drone.webp";
+
+// YouTube video URL - embed format with optimized parameters
+const slider3VideoUrl = "https://www.youtube.com/embed/_emteWELApM?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playlist=_emteWELApM&start=0&enablejsapi=1&origin=" + window.location.origin;
 
 interface Slide {
   image?: string;
@@ -19,7 +21,7 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-    video: slider3Video,
+    video: slider3VideoUrl,
     titleKey: "slider.2.title",
     descriptionKey: "slider.2.description",
     buttonKey: "slider.2.buttonText",
@@ -211,22 +213,27 @@ const FullPageHomeSlider: React.FC = () => {
                   }}
                 />
               ) : (
-                <video
-                  autoPlay
-                  muted
-                  loop
+                <iframe
+                  src={slide.video}
                   style={{
                     position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
+                    top: "50%",
+                    left: "50%",
+                    width: "177.77vh", // 16:9 aspect ratio için minimum width
+                    height: "100vw", // Minimum height
+                    minWidth: "100%",
+                    minHeight: "100%",
+                    transform: "translate(-50%, -50%)",
+                    border: "none",
                     zIndex: -1,
+                    pointerEvents: "none",
+                    objectFit: "cover"
                   }}
-                >
-                  <source src={slide.video} type="video/mp4" />
-                </video>
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  title="Asr Ajans welcome screen"
+                  loading="eager"
+                />
               )}
 
               {/* Drone Image - Only for video slides - Behind text */}

@@ -44,8 +44,8 @@ const ContraNavBar = () => {
                             <Nav.Link className="cg-nav-link" href="/">
                                 {t('menu-home')}
                             </Nav.Link>
-                            <Nav.Link className="cg-nav-link" href="institutional">
-                                {t('menu-institutional')}
+                            <Nav.Link className="cg-nav-link" href="/about">
+                                {t('menu-about')}
                             </Nav.Link>
                             <Nav.Link className="cg-nav-link" href="capabilities">
                                 {t('menu-capabilities')}

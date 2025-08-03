@@ -3,6 +3,20 @@
   height: 100vh; // Full viewport height
   overflow: hidden;
 
+  // YouTube iframe full screen fix
+  iframe {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    width: 177.78vh !important; // 16:9 ratio minimum width
+    height: 100vw !important; // Minimum height for vertical screens
+    min-width: 100% !important;
+    min-height: 100% !important;
+    transform: translate(-50%, -50%) !important;
+    border: none !important;
+    object-fit: cover !important;
+  }
+
   &__slide {
     position: absolute;
     width: 100%;
