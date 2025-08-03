@@ -137,11 +137,15 @@ body {
   color: white;
   font-size: 1rem;
   transition: all 0.3s;
-}
 
-.cg-nav-link:hover {
-  color: white;
-  opacity: 1;
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited {
+    color: white !important;
+    opacity: 1;
+    text-decoration: none;
+  }
 }
 
 .cg-nav-link {
@@ -229,6 +233,13 @@ body {
         &::before {
           width: 100%;
         }
+      }
+
+      &:focus,
+      &:active,
+      &:visited {
+        color: white !important;
+        text-decoration: none;
       }
 
       &::after {

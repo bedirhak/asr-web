@@ -238,7 +238,7 @@ const ContactPage: React.FC = () => {
                     </iframe>
                     <button
                         className="asr-directions-btn"
-                        onClick={() => window.open('https://www.google.com/maps/dir//Kurtuluş+Mahallesi,+Atik+Sk.+No:5+Daire:5,+Durusu+İş+Merkezi+54100+Adapazarı/Sakarya/@40.780574,30.396159,17z', '_blank')}
+                        onClick={() => window.open('https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d755.2891192303767!2d30.396158619798364!3d40.780573959691274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e3!4m0!4m5!1s0x14ccb31d30408381%3A0x5c672ffb1ed6c2ee!2zU2FrYXJ5YSBEaXlldGlzeWVuIEF5xZ9lIEfDtm5hbiwgS3VydHVsdcWfLCBBdMSxayBTay4gRHVydXN1IMSwxZ8gTWVya2V6aSBObzo1IERhaXJlOjUsIDU0MTAwIEFkYXBhemFyxLEvU2FrYXJ5YQ!3m2!1d40.7809056!2d30.3967347!5e0!3m2!1str!2str!4v1754247083534!5m2!1str!2str', '_blank')}
                     >
                         <i className="fa-solid fa-location-arrow"></i>
                         Yol Tarifi Al
