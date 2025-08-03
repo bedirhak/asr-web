@@ -47,18 +47,14 @@ const ContraNavBar = () => {
                             <Nav.Link className="cg-nav-link" href="/about">
                                 {t('menu-about')}
                             </Nav.Link>
-                            <Nav.Link className="cg-nav-link" href="capabilities">
-                                {t('menu-capabilities')}
+                            <Nav.Link className="cg-nav-link" href="/services">
+                                {t('menu-services')}
                             </Nav.Link>
-                            {/* <Nav.Link className="cg-nav-link" href="innovation">
-              Arge İnovasyon
-            </Nav.Link> */}
+
                             <Nav.Link className="cg-nav-link" href="contact">
                                 {t('menu-contact')}
                             </Nav.Link>
-                            {/* <Nav.Link className="cg-nav-link" href="home">
-              Medya
-            </Nav.Link> */}
+
                             {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">

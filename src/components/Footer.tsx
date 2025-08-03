@@ -56,8 +56,8 @@ const Footer = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/capabilities" className="footer-link">
-                    {t('menu-capabilities')}
+                  <NavLink to="/services" className="footer-link">
+                    {t('menu-services')}
                   </NavLink>
                 </li>
                 <li>

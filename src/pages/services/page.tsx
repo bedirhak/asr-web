@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-const AboutPage: React.FC = () => {
+const ServicesPage: React.FC = () => {
     const { t } = useTranslation();
 
     return (
@@ -9,10 +9,10 @@ const AboutPage: React.FC = () => {
             <div className="about-hero">
                 <div className="about-hero-container">
                     <h1 className="about-hero-title">
-                        {t('about.page.hero-title')}
+                        {t('servicesPage.page-title')}
                     </h1>
                     <p className="about-hero-subtitle">
-                        {t('about.page.hero-subtitle')}
+                        {t('servicesPage.subtitle')}
                     </p>
                 </div>
             </div>
@@ -66,4 +66,4 @@ const AboutPage: React.FC = () => {
     );
 };
 
-export default AboutPage;
+export default ServicesPage;
