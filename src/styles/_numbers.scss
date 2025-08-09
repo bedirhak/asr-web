@@ -1,0 +1,382 @@
+// Animated Numbers Section
+.numbers-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
+    position: relative;
+    overflow: hidden;
+
+
+
+    .numbers-container {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .numbers-header {
+        text-align: center;
+        margin-bottom: 80px;
+
+        .numbers-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -15px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100px;
+                height: 4px;
+                background: linear-gradient(135deg, #000E58 0%, #0A145A 100%);
+                border-radius: 2px;
+            }
+        }
+
+        .numbers-subtitle {
+            font-size: 1.2rem;
+            color: #718096;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+    }
+
+    .numbers-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .number-card {
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 25px;
+        padding: 40px 30px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow:
+            0 20px 40px rgba(0, 0, 0, 0.1),
+            0 10px 20px rgba(0, 0, 0, 0.05);
+        transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transform: translateY(50px);
+        opacity: 0;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(135deg, #000E58 0%, #0A145A 100%);
+            border-radius: 25px 25px 0 0;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg,
+                    rgba(0, 14, 88, 0.02) 0%,
+                    transparent 50%,
+                    rgba(0, 14, 88, 0.02) 100%);
+            border-radius: 25px;
+            pointer-events: none;
+        }
+
+        &:hover {
+            transform: translateY(-10px);
+            box-shadow:
+                0 30px 60px rgba(0, 0, 0, 0.15),
+                0 15px 30px rgba(0, 14, 88, 0.1);
+
+            .number-icon {
+                transform: scale(1.1) rotate(5deg);
+
+                .icon-glow {
+                    opacity: 1;
+                    transform: scale(1.5);
+                }
+            }
+
+            .decoration-line {
+                width: 100%;
+            }
+        }
+
+        &.animate {
+            transform: translateY(0);
+            opacity: 1;
+            animation: slideInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+            animation-delay: var(--animation-delay, 0s);
+        }
+    }
+
+    .number-icon {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #000E58 0%, #0A145A 100%);
+        border-radius: 50%;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        box-shadow: 0 15px 30px rgba(0, 14, 88, 0.3);
+
+        svg {
+            font-size: 1.5rem;
+            color: white;
+            z-index: 2;
+            position: relative;
+        }
+
+        // .icon-glow {
+        //     position: absolute;
+        //     top: 50%;
+        //     left: 50%;
+        //     transform: translate(-50%, -50%) scale(1);
+        //     width: 100%;
+        //     height: 100%;
+        //     background: radial-gradient(circle, rgba(0, 14, 88, 0.4) 0%, transparent 70%);
+        //     border-radius: 50%;
+        //     opacity: 0;
+        //     transition: all 0.4s ease;
+        // }
+    }
+
+    .number-content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .number-value {
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        gap: 5px;
+        margin-bottom: 15px;
+
+        .animated-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #000E58;
+            line-height: 1;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .number-suffix {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0A145A;
+            opacity: 0.8;
+        }
+    }
+
+    .number-title {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #2d3748;
+        margin-bottom: 10px;
+        line-height: 1.2;
+    }
+
+    .number-description {
+        font-size: 1rem;
+        color: #718096;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    // Background decoration removed
+}
+
+// Visibility trigger
+.numbers-section.visible {
+    .number-card {
+        animation-play-state: running;
+    }
+}
+
+// Animations
+@keyframes slideInUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+// Responsive Design
+@media (max-width: 1024px) {
+    .numbers-section {
+        padding: 80px 0;
+
+        .numbers-grid {
+            gap: 30px;
+        }
+
+        .number-card {
+            padding: 35px 25px;
+        }
+
+        .numbers-header .numbers-title {
+            font-size: 2.5rem;
+        }
+
+        .number-value .animated-number {
+            font-size: 3rem;
+        }
+
+        .number-value .number-suffix {
+            font-size: 2rem;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .numbers-section {
+        padding: 60px 0;
+
+        .numbers-container {
+            padding: 0 15px;
+        }
+
+        .numbers-header {
+            margin-bottom: 60px;
+
+            .numbers-title {
+                font-size: 2.2rem;
+            }
+
+            .numbers-subtitle {
+                font-size: 1.1rem;
+            }
+        }
+
+        .numbers-grid {
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        .number-card {
+            padding: 30px 20px;
+            margin: 0 10px;
+        }
+
+        .number-icon {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 25px;
+
+            i {
+                font-size: 1.8rem;
+            }
+        }
+
+        .number-value {
+            .animated-number {
+                font-size: 2.5rem;
+            }
+
+            .number-suffix {
+                font-size: 1.8rem;
+            }
+        }
+
+        .number-title {
+            font-size: 1.2rem;
+        }
+
+        .number-description {
+            font-size: 0.9rem;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .numbers-section {
+        padding: 50px 0;
+
+        .numbers-header .numbers-title {
+            font-size: 1.8rem;
+        }
+
+        .number-card {
+            padding: 25px 15px;
+        }
+
+        .number-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 20px;
+
+            i {
+                font-size: 1.5rem;
+            }
+        }
+
+        .number-value {
+            .animated-number {
+                font-size: 2rem;
+            }
+
+            .number-suffix {
+                font-size: 1.5rem;
+            }
+        }
+
+        .number-title {
+            font-size: 1.1rem;
+        }
+    }
+}
+
+// Special effects for larger screens
+@media (min-width: 1200px) {
+    .numbers-section {
+        .numbers-grid {
+            grid-template-columns: repeat(3, 1fr);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .number-card:hover {
+            .number-value .animated-number {
+                animation: pulse 1s ease-in-out infinite;
+            }
+        }
+    }
+}

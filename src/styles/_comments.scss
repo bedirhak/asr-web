@@ -70,6 +70,10 @@
         gap: 20px;
     }
 
+    .slider-controls {
+        display: contents; // Desktop'ta normal layout
+    }
+
     .slider-btn {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         border: none;
@@ -278,7 +282,7 @@
 
         .client-info {
             border-left: none;
-            border-top: 2px solid #e2e8f0;
+            border-top: 0px solid #e2e8f0;
             padding-left: 0;
             padding-top: 30px;
             justify-content: center;
@@ -292,19 +296,25 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 780px) {
     .comments-section {
-        padding: 60px 0;
+        padding: 50px 0;
+
+        .comments-container {
+            padding: 0 15px;
+        }
 
         .comments-header {
-            margin-bottom: 40px;
+            margin-bottom: 35px;
 
             .comments-title {
-                font-size: 2.2rem;
+                font-size: 2rem;
+                margin-bottom: 0.8rem;
             }
 
             .comments-subtitle {
-                font-size: 1.1rem;
+                font-size: 1rem;
+                line-height: 1.5;
             }
         }
     }
@@ -312,78 +322,216 @@
     .testimonials-slider {
         .slider-container {
             flex-direction: column;
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        // Navigation buttons - horizontal layout at bottom
+        .slider-controls {
+            display: flex;
+            justify-content: center;
             gap: 15px;
+            order: 2;
+            margin-top: 10px;
         }
 
         .slider-btn {
-            position: relative;
-            order: 0 !important;
+            width: 45px;
+            height: 45px;
+            font-size: 0.9rem;
+            position: static;
+            order: unset !important;
 
-            &.prev-btn,
-            &.next-btn {
-                order: 0 !important;
+            &:hover {
+                transform: scale(1.1);
             }
         }
 
         .testimonial-wrapper {
-            order: -1;
+            order: 1;
+            margin: 0;
         }
     }
 
     .testimonial-card {
-        padding: 30px 20px;
+        flex-direction: column;
+        padding: 25px 20px;
+        gap: 25px;
+        text-align: center;
+        min-height: auto;
+
+        &::before {
+            height: 3px;
+        }
 
         .testimonial-content {
+            order: 2;
+
+            .quote-icon {
+                top: -15px;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 2.5rem;
+            }
+
             .testimonial-text {
-                font-size: 1.1rem;
+                font-size: 0.95rem;
+                line-height: 1.6;
+                margin-bottom: 1.5rem;
+                padding: 0 10px;
+            }
+
+            .rating {
+                justify-content: center;
+                margin-bottom: 0;
+
+                .fas.fa-star {
+                    font-size: 1rem;
+                }
             }
         }
 
         .client-info {
+            order: 1;
             flex-direction: column;
-            gap: 15px;
+            border-left: none;
+            border-bottom: 2px solid #e2e8f0;
+            padding: 0 0 20px 0;
+            gap: 12px;
+            align-items: center;
 
             .company-logo {
-                width: 60px;
-                height: 60px;
+                width: 90px;
+                height: 90px;
+                margin-bottom: 5px;
+
+                img {
+                    padding: 8px;
+                }
+
+                .fallback-text {
+                    font-size: 1.5rem;
+                }
             }
 
             .client-details {
                 text-align: center;
 
                 .client-name {
-                    font-size: 1.2rem;
+                    font-size: 1.1rem;
+                    margin-bottom: 0.3rem;
+                }
+
+                .client-company {
+                    font-size: 0.9rem;
                 }
             }
         }
     }
 
     .slider-dots {
-        margin-top: 30px;
-        gap: 8px;
+        margin-top: 25px;
+        gap: 10px;
 
         .dot {
-            width: 10px;
-            height: 10px;
+            width: 8px;
+            height: 12px;
+
+            &.active {
+                transform: scale(1.4);
+            }
         }
     }
 }
 
 @media (max-width: 480px) {
     .comments-section {
+        padding: 40px 0;
+
         .comments-container {
-            padding: 0 15px;
+            padding: 0 12px;
+        }
+
+        .comments-header {
+            margin-bottom: 30px;
+
+            .comments-title {
+                font-size: 1.7rem;
+            }
+
+            .comments-subtitle {
+                font-size: 0.9rem;
+            }
         }
     }
 
     .testimonial-card {
-        padding: 25px 15px;
+        padding: 20px 15px;
+        gap: 20px;
 
         .testimonial-content {
-            .testimonial-text {
-                font-size: 1rem;
-                line-height: 1.6;
+            .quote-icon {
+                font-size: 2rem;
+                top: -10px;
             }
+
+            .testimonial-text {
+                font-size: 0.9rem;
+                line-height: 1.5;
+                padding: 0 5px;
+            }
+
+            .rating {
+                .fas.fa-star {
+                    font-size: 0.9rem;
+                }
+            }
+        }
+
+        .client-info {
+            padding-bottom: 15px;
+            gap: 10px;
+
+            .company-logo {
+                width: 50px;
+                height: 50px;
+
+                .fallback-text {
+                    font-size: 1.3rem;
+                }
+            }
+
+            .client-details {
+                .client-name {
+                    font-size: 1rem;
+                }
+
+                .client-company {
+                    font-size: 0.85rem;
+                }
+            }
+        }
+    }
+
+    .testimonials-slider {
+        .slider-btn {
+            width: 40px;
+            height: 40px;
+            font-size: 0.8rem;
+        }
+
+        .slider-controls {
+            gap: 12px;
+        }
+    }
+
+    .slider-dots {
+        margin-top: 20px;
+        gap: 8px;
+
+        .dot {
+            width: 7px;
+            height: 7px;
         }
     }
 }

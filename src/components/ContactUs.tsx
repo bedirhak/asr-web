@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaRocket, FaEnvelopeOpen, FaArrowRight, FaStar } from 'react-icons/fa';
 
 const ContactUs: React.FC = () => {
     const [isClicked, setIsClicked] = useState(false);
@@ -11,9 +12,7 @@ const ContactUs: React.FC = () => {
             setIsClicked(false);
         }, 200);
 
-        // Burada iletişim sayfasına yönlendirme veya modal açma kodu olacak
-        // Örnek: window.location.href = '/contact';
-        console.log('İletişim sayfasına yönlendiriliyor...');
+
     };
 
     return (
@@ -35,8 +34,8 @@ const ContactUs: React.FC = () => {
 
                 <div className="button-content">
                     <div className="icon-container">
-                        <i className="fas fa-rocket rocket-icon"></i>
-                        <i className="fas fa-envelope-open envelope-icon"></i>
+                        <FaRocket className="rocket-icon" />
+                        <FaEnvelopeOpen className="envelope-icon" />
                     </div>
 
                     <div className="text-container">
@@ -45,7 +44,7 @@ const ContactUs: React.FC = () => {
                     </div>
 
                     <div className="arrow-container">
-                        <i className="fas fa-arrow-right arrow-icon"></i>
+                        <FaArrowRight className="arrow-icon" />
                         <div className="arrow-trail"></div>
                     </div>
                 </div>

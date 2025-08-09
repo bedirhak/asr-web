@@ -6,6 +6,7 @@ import ServicesC from '../../components/ServicesC';
 // import DroneFollow from '../../components/DroneFollow';
 import References from '../../components/References';
 import Comments from '../../components/Comments';
+import Numbers from '../../components/Numbers';
 import ContactUs from '../../components/ContactUs';
 
 const HomePage: React.FC = () => {
@@ -14,6 +15,7 @@ const HomePage: React.FC = () => {
             <Homeslider />
             <Aboutus />
             <ServicesC />
+            <Numbers />
             <References />
             <Comments />
             <ContactUs />

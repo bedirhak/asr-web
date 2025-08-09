@@ -90,10 +90,6 @@ const Comments: React.FC = () => {
 
                 <div className="testimonials-slider">
                     <div className="slider-container">
-                        <button className="slider-btn prev-btn" onClick={prevSlide}>
-                            <FaArrowLeft />
-                        </button>
-
                         <div className="testimonial-wrapper">
                             <div
                                 className="testimonials-track"
@@ -145,9 +141,14 @@ const Comments: React.FC = () => {
                             </div>
                         </div>
 
-                        <button className="slider-btn next-btn" onClick={nextSlide}>
-                            <FaArrowRight />
-                        </button>
+                        <div className="slider-controls">
+                            <button className="slider-btn prev-btn" onClick={prevSlide}>
+                                <FaArrowLeft />
+                            </button>
+                            <button className="slider-btn next-btn" onClick={nextSlide}>
+                                <FaArrowRight />
+                            </button>
+                        </div>
                     </div>
 
                     <div className="slider-dots">

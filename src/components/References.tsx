@@ -79,7 +79,7 @@ const References: React.FC = () => {
     }, []);
 
     return (
-        <div className="d-flex flex-column align-items-center mb-5">
+        <div className="d-flex flex-column align-items-center">
             {/* <h2 className="about-services-title mb-0">
                 {t('ref.title')}
             </h2>

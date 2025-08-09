@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
-import { RxCross1 } from "react-icons/rx";
-import { FaInstagram, FaFacebookF, FaTwitter, FaLinkedinIn, FaYoutube, FaWhatsapp } from "react-icons/fa";
+import {
+    FaInstagram,
+    FaFacebookF,
+    FaTwitter,
+    FaLinkedinIn,
+    FaYoutube,
+    FaWhatsapp,
+    FaRegHeart,
+    FaTimes
+} from 'react-icons/fa';
 
 const Social: React.FC = () => {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -55,7 +63,7 @@ const Social: React.FC = () => {
         setIsExpanded(!isExpanded);
     };
 
-    const handleSocialClick = (e: React.MouseEvent, url: string, name: string) => {
+    const handleSocialClick = (e: React.MouseEvent, url: string) => {
         e.stopPropagation();
         // Analytics tracking burada olabilir
         window.open(url, '_blank', 'noopener,noreferrer');
@@ -69,13 +77,12 @@ const Social: React.FC = () => {
                 onClick={handleToggle}
                 aria-label={isExpanded ? 'Sosyal medya linklerini kapat' : 'Sosyal medya linklerini aç'}
             >
-                <i className={`fas ${isExpanded ? 'fa-times' : 'fa-share-alt'}`}></i>
-                {!isExpanded ?
+                {isExpanded ? <FaTimes /> : <FaRegHeart />}
+                {!isExpanded && (
                     <span className="toggle-text">
                         Takip Et
-                    </span> :
-                    <RxCross1 />
-                }
+                    </span>
+                )}
             </button>
 
             {/* Sosyal medya linkleri */}
@@ -84,7 +91,7 @@ const Social: React.FC = () => {
                     <button
                         key={social.name}
                         className="social-link"
-                        onClick={(e) => handleSocialClick(e, social.url, social.name)}
+                        onClick={(e) => handleSocialClick(e, social.url)}
                         style={{
                             '--social-color': social.color,
                             '--social-hover-color': social.hoverColor,
