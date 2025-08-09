@@ -2,12 +2,14 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
+import Social from "../components/Social";
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
     <>
         <Header />
         {children}
         <Footer />
+        <Social />
     </>
 );
 
@@ -45,8 +47,11 @@ const AppRoutes = () => {
                 {routes.map((route, index) => (
                     <Route key={index} path={route.path} element={route.element} />
                 ))}
-                {/* Bilinmeyen rotalar için yönlendirme */}
-                <Route path="*" element={<Navigate to="/" />} />
+                {/* Ana sayfa için ek route (boş path durumu) */}
+                <Route path="/home" element={<Navigate to="/" replace />} />
+
+                {/* Bilinmeyen rotalar için ana sayfaya yönlendirme */}
+                <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
         </>
     );
