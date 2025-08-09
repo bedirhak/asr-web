@@ -15,48 +15,48 @@ import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 const testimonials = [
     {
         id: 1,
-        name: "Ahmet Yılmaz",
-        company: "Tech Solutions",
+        name: "Başak Traktör",
+        company: "Fabrika",
         companyLogo: ref1,
         comment: "ASR Ajans ile çalışmak harika bir deneyimdi. Projemizi zamanında ve beklentilerimizi aşarak teslim ettiler. Profesyonel yaklaşımları ve yaratıcı çözümleri ile işimizi bir üst seviyeye taşıdılar.",
         rating: 5
     },
     {
         id: 2,
-        name: "Zeynep Kaya",
-        company: "Digital Marketing Pro",
+        name: "ERFO",
+        company: "Metal Makina",
         companyLogo: ref2,
         comment: "Dijital pazarlama stratejimizi yeniden düzenlerken ASR Ajans'ın uzmanlığından çok faydalandık. ROI'mız %300 arttı ve marka bilinirliğimiz ciddi şekilde yükseldi.",
         rating: 5
     },
     {
         id: 3,
-        name: "Mehmet Demir",
-        company: "E-Commerce Plus",
+        name: "Platformder",
+        company: "Dernek",
         companyLogo: ref3,
         comment: "Web sitesi tasarımından sosyal medya yönetimine kadar tüm dijital ihtiyaçlarımızı karşıladılar. Satışlarımız %250 arttı ve müşteri memnuniyeti en üst seviyede.",
         rating: 5
     },
     {
         id: 4,
-        name: "Ayşe Özkan",
-        company: "Fashion Forward",
+        name: "Remax",
+        company: "Emlak Ajansı",
         companyLogo: ref4,
         comment: "Moda sektöründeki deneyimleri ve trend takip yetenekleri sayesinde markamızı doğru kitleye ulaştırdılar. Sosyal medya takipçilerimiz 10 kat arttı.",
         rating: 5
     },
     {
         id: 5,
-        name: "Ali Çelik",
-        company: "Restaurant Chain",
+        name: "YAFA İnşaat",
+        company: "Yapı Sektörü",
         companyLogo: ref5,
         comment: "Restoran zinciri olarak dijital dönüşümümüzde ASR Ajans bizim için vazgeçilmez oldu. Online sipariş sistemimiz ve dijital pazarlama stratejilerimiz mükemmel çalışıyor.",
         rating: 5
     },
     {
         id: 6,
-        name: "Fatma Şahin",
-        company: "Health & Wellness",
+        name: "Aktepe Ambalaj",
+        company: "Ambalaj ve Paketleme",
         companyLogo: ref6,
         comment: "Sağlık sektöründeki hassasiyetleri anlayarak etik ve etkili pazarlama stratejileri geliştirdiler. Hasta memnuniyeti ve klinik doluluk oranlarımız ciddi şekilde arttı.",
         rating: 5
