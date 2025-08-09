@@ -3,8 +3,10 @@ import React from 'react';
 import Homeslider from '../../components/Homeslider';
 import Aboutus from '../../components/Aboutus';
 import ServicesC from '../../components/ServicesC';
-import DroneFollow from '../../components/DroneFollow';
+// import DroneFollow from '../../components/DroneFollow';
 import References from '../../components/References';
+import Comments from '../../components/Comments';
+import ContactUs from '../../components/ContactUs';
 
 const HomePage: React.FC = () => {
     return (
@@ -13,7 +15,9 @@ const HomePage: React.FC = () => {
             <Aboutus />
             <ServicesC />
             <References />
-            <DroneFollow />
+            <Comments />
+            <ContactUs />
+            {/* <DroneFollow /> */}
         </div>
     );
 };

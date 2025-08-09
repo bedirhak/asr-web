@@ -7,9 +7,12 @@ const refImages = Object.values(imageContext);
 
 // Şirket isimleri - Dosya adlarını şirket isimlerine çevirme
 const getCompanyName = (imagePath: string, index: number) => {
-    const fileName = imagePath.split('/').pop()?.split('.')[0];
+    // Dosya adını URL'den çek (ör: ref-12-tqqg3udc.png)
+    const fileNameWithExt = imagePath.split('/').pop() || '';
+    // Sadece ref-12 kısmını al
+    const match = fileNameWithExt.match(/^(ref-\d+)/);
+    const fileKey = match ? match[1] : '';
 
-    // Bilinen şirket isimleri (yazabildiğim kadarını ekleyeceğim)
     const companyNames: { [key: string]: string } = {
         'ref-1': 'Başak Traktör',
         'ref-2': 'Erfo',
@@ -39,10 +42,9 @@ const getCompanyName = (imagePath: string, index: number) => {
         'ref-26': 'AkçanSA',
         'ref-27': 'Ersağ',
         'ref-28': 'Türkiye Cumhuriyeti - Çevre, Şehircilik ve İklim Değişikliği Bakanlığı'
-        // Diğer isimleri sen elle ekleyebilirsin
     };
 
-    return companyNames[fileName || ''] || `Şirket ${index + 1}`;
+    return companyNames[fileKey] || `Şirket ${index + 1}`;
 };
 
 const ReferencesPage: React.FC = () => {

@@ -80,9 +80,37 @@ const References: React.FC = () => {
 
     return (
         <div className="d-flex flex-column align-items-center mb-5">
-            <h2 className="about-services-title mb-0">
+            {/* <h2 className="about-services-title mb-0">
                 {t('ref.title')}
             </h2>
+            <div className="references-container" ref={containerRef}>
+
+                <div className="references-track" ref={trackRef}>
+                    {refImages.map((img, index) => (
+                        <div key={`img1-${index}`} className="reference-item">
+                            <img src={img} alt={`Referans ${index + 1}`} />
+                        </div>
+                    ))}
+                    {refImages.map((img, index) => (
+                        <div key={`img2-${index}`} className="reference-item">
+                            <img src={img} alt={`Referans ${index + 1}`} />
+                        </div>
+                    ))}
+                    {refImages.map((img, index) => (
+                        <div key={`img3-${index}`} className="reference-item">
+                            <img src={img} alt={`Referans ${index + 1}`} />
+                        </div>
+                    ))}
+                </div>
+            </div>
+            <Link to="/references" className="about-btn-link">
+                <button className="about-btn">
+                    <span className="about-btn-text">
+                        {t('ref.title')}
+                    </span>
+                    <div className="about-btn-light"></div>
+                </button>
+            </Link> */}
             <div className="references-container" ref={containerRef}>
 
                 <div className="references-track" ref={trackRef}>
@@ -106,14 +134,6 @@ const References: React.FC = () => {
                     ))}
                 </div>
             </div>
-            <Link to="/references" className="about-btn-link">
-                <button className="about-btn">
-                    <span className="about-btn-text">
-                        {t('ref.title')}
-                    </span>
-                    <div className="about-btn-light"></div>
-                </button>
-            </Link>
         </div>
     );
 };
