@@ -2,6 +2,7 @@
   "menu-home": "Ana Sayfa",
   "menu-about": "Hakkımızda",
   "menu-services": "Hizmetlerimiz",
+  "menu-references": "Referanslarımız",
   "menu-contact": "İletişim",
   "footer-text": "Markanızı en etkili şekilde anlatmanın yolu, profesyonel bir tanıtım filminden geçer. Reka Ajans olarak, yaratıcı senaryo kurgusu, yüksek kaliteli çekimler ve etkileyici kurgu teknikleriyle markanızın hikâyesini izleyicilere en güçlü şekilde ulaştırıyoruz.",
   "about": {
@@ -62,5 +63,9 @@
   "contactPage": {
     "title": "İletişim",
     "subtitle": "Projeleriniz için teklif ve detaylı bilgi almak için bizimle iletişime geçin."
+  },
+  "ref": {
+    "title": "Referanslarımız",
+    "subtitle": "Bize güvenen markalar ve iş ortaklarımız"
   }
 }

@@ -1,0 +1,216 @@
+// Referanslar sayfası stilleri
+.references-page {
+    min-height: 100vh;
+    background: #f8f9fa;
+}
+
+// Hero bölümü
+.references-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 120px 0 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .references-hero-container {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .references-hero-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .references-hero-subtitle {
+        font-size: 1.25rem;
+        font-weight: 300;
+        opacity: 0.9;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+// Galeri bölümü
+.references-gallery {
+    padding: 80px 0;
+    background: #fff;
+
+    .references-gallery-container {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .references-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .reference-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: all 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .reference-image-wrapper {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+
+            .reference-image {
+                max-width: 100%;
+                max-height: 100%;
+                width: auto;
+                height: auto;
+                object-fit: contain;
+                transition: all 0.3s ease;
+                z-index: 1;
+            }
+
+            .reference-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                transition: all 0.3s ease;
+                z-index: 2;
+
+                .company-name {
+                    color: white;
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                    text-align: center;
+                    padding: 0 20px;
+                    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                }
+            }
+
+            &:hover {
+                .reference-overlay {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+// Responsive design
+@media (max-width: 1400px) {
+    .references-hero {
+        .references-hero-container {
+            max-width: 1200px;
+        }
+    }
+
+    .references-gallery {
+        .references-gallery-container {
+            max-width: 1200px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .references-hero {
+        padding: 100px 0 60px;
+
+        .references-hero-title {
+            font-size: 2.5rem;
+        }
+
+        .references-hero-subtitle {
+            font-size: 1.1rem;
+        }
+    }
+
+    .references-gallery {
+        padding: 60px 0;
+
+        .references-grid {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .reference-card {
+            .reference-image-wrapper {
+                height: 150px;
+                padding: 15px;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .references-hero {
+        padding: 80px 0 50px;
+
+        .references-hero-container {
+            padding: 0 15px;
+        }
+
+        .references-hero-title {
+            font-size: 2rem;
+        }
+
+        .references-hero-subtitle {
+            font-size: 1rem;
+        }
+    }
+
+    .references-gallery {
+        padding: 50px 0;
+
+        .references-gallery-container {
+            padding: 0 15px;
+        }
+
+        .references-grid {
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .reference-card {
+            .reference-image-wrapper {
+                height: 120px;
+                padding: 10px;
+            }
+        }
+    }
+}

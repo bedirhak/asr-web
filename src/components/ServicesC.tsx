@@ -10,7 +10,7 @@ const ServicesC: React.FC = () => {
 
     return (
         <Container>
-            <div className="about-services text-center">
+            <div className="about-services text-center about-services-container">
                 <h2 className="about-services-title">
                     {t('about.page.services-title')}
                 </h2>

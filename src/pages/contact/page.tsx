@@ -228,7 +228,7 @@ const ContactPage: React.FC = () => {
             <div className="asr-map-container">
                 <div className="asr-map-wrapper">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d755.2891192303767!2d30.396158619798364!3d40.780573959691274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sKurtulu%C5%9F%20Mahallesi%2C%20Atik%20Sk.%20No%3A5%20Daire%3A5%2C%20Durusu%20%C4%B0%C5%9F%20Merkezi%2054100%20-%20Adapazar%C4%B1%20%2F%20Sakarya!5e0!3m2!1str!2str!4v1754244145809!5m2!1str!2str"
+                        src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d1510.5722109809406!2d30.396173!3d40.780839!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDQ2JzUxLjMiTiAzMMKwMjMnNDguMiJF!5e0!3m2!1str!2str!4v1754247518465!5m2!1str!2str"
                         width="600"
                         height="450"
                         style={{ border: 0 }}
@@ -238,7 +238,7 @@ const ContactPage: React.FC = () => {
                     </iframe>
                     <button
                         className="asr-directions-btn"
-                        onClick={() => window.open('https://maps.google.com/maps/dir//Sakarya+Diyetisyen+Ay%C5%9Fe+G%C3%B6nan+Kurtulu%C5%9F+At%C4%B1k+Sk.+Durusu+%C4%B0%C5%9F+Merkezi+No:5+Daire:5+54100+Adapazar%C4%B1%2FSakarya/@40.7809056,30.3967347,18z/data=!4m5!4m4!1m0!1m2!1m1!1s0x14ccb31d30408381:0x5c672ffb1ed6c2ee', '_blank')}
+                        onClick={() => window.open('https://maps.google.com/maps/dir//40.7809167,30.3967222/@40.7809167,30.3967222,17z', '_blank')}
                     >
                         <i className="fa-solid fa-location-arrow"></i>
                         Yol Tarifi Al

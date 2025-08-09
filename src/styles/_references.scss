@@ -1,0 +1,82 @@
+/* Referanslar için CSS animasyon stili */
+.references-container {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    background: #fff;
+    padding: 40px 0;
+    box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.03);
+    position: relative;
+    margin: 20px 0;
+    cursor: grab;
+
+    &:active {
+        cursor: grabbing;
+    }
+
+    /* Scrollbar gizle */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.references-track {
+    display: flex;
+    animation: infiniteSlide 40s linear infinite;
+    width: max-content;
+    align-items: center;
+}
+
+.reference-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 24px;
+    flex-shrink: 0;
+
+    img {
+        height: 60px;
+        width: auto;
+        object-fit: contain;
+        filter: grayscale(100%) opacity(0.7);
+        transition: all 0.3s ease;
+
+        &:hover {
+            filter: grayscale(0%) opacity(1);
+            transform: scale(1.1);
+        }
+    }
+}
+
+@keyframes infiniteSlide {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-100% / 2));
+    }
+}
+
+/* Manuel kontrol için animasyonu durdur */
+.references-container:hover .references-track {
+    animation-play-state: paused;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .references-container {
+        padding: 30px 0;
+    }
+
+    .reference-item {
+        padding: 0 16px;
+
+        img {
+            height: 45px;
+        }
+    }
+}
