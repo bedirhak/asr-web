@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../styles/_comments.scss';
 
 // Şirket logolarını import et
@@ -65,30 +65,78 @@ const testimonials = [
 
 const Comments: React.FC = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
+    const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+    const intervalRef = useRef<number | null>(null);
+
+    // Otomatik slide işlevi
+    useEffect(() => {
+        if (isAutoPlaying) {
+            intervalRef.current = setInterval(() => {
+                setCurrentSlide((prev) => (prev + 1) % testimonials.length);
+            }, 10000); // 10 saniye
+        }
+
+        return () => {
+            if (intervalRef.current) {
+                clearInterval(intervalRef.current);
+            }
+        };
+    }, [isAutoPlaying]);
+
+    // Manuel geçiş yapıldığında otomatik geçişi durdur ve yeniden başlat
+    const resetAutoPlay = () => {
+        if (intervalRef.current) {
+            clearInterval(intervalRef.current);
+        }
+        setIsAutoPlaying(false);
+
+        // 15 saniye sonra otomatik geçişi yeniden başlat
+        setTimeout(() => {
+            setIsAutoPlaying(true);
+        }, 15000);
+    };
 
     const nextSlide = () => {
         setCurrentSlide((prev) => (prev + 1) % testimonials.length);
+        resetAutoPlay();
     };
 
     const prevSlide = () => {
         setCurrentSlide((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+        resetAutoPlay();
     };
 
     const goToSlide = (index: number) => {
         setCurrentSlide(index);
+        resetAutoPlay();
+    };
+
+    // Mouse hover'da otomatik geçişi durdur
+    const handleMouseEnter = () => {
+        setIsAutoPlaying(false);
+        if (intervalRef.current) {
+            clearInterval(intervalRef.current);
+        }
+    };
+
+    // Mouse ayrıldığında otomatik geçişi devam ettir
+    const handleMouseLeave = () => {
+        setIsAutoPlaying(true);
     };
 
     return (
         <div className="comments-section">
             <div className="comments-container">
                 <div className="comments-header">
-                    <h2 className="comments-title">Müşterilerimiz Ne Diyor?</h2>
+                    <h2 className="comments-title">Müşterilerimizin Gözünden ASR Ajans</h2>
                     <p className="comments-subtitle">
                         Başarılı projelerimiz ve memnun müşterilerimizden gelen gerçek yorumlar
                     </p>
                 </div>
 
-                <div className="testimonials-slider">
+                <div className="testimonials-slider"
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}>
                     <div className="slider-container">
                         <div className="testimonial-wrapper">
                             <div

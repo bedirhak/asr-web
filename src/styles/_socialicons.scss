@@ -1,0 +1,78 @@
+// Vertical Social Icons
+.social-icons-vertical {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .social-icon-item {
+        width: 50px;
+        height: 50px;
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: #666;
+        font-size: 20px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        border: 2px solid #f0f0f0;
+
+        &:hover {
+            background: var(--hover-color);
+            color: white;
+            transform: translateX(5px) scale(1.1);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+            border-color: var(--hover-color);
+        }
+
+        &:active {
+            transform: translateX(3px) scale(1.05);
+        }
+
+        svg {
+            transition: all 0.3s ease;
+        }
+
+        &:hover svg {
+            transform: scale(1.1);
+        }
+    }
+}
+
+// Responsive
+@media (max-width: 768px) {
+    .social-icons-vertical {
+        left: 15px;
+        gap: 12px;
+
+        .social-icon-item {
+            width: 45px;
+            height: 45px;
+            font-size: 18px;
+
+            &:hover {
+                transform: translateX(3px) scale(1.05);
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .social-icons-vertical {
+        left: 10px;
+        gap: 10px;
+
+        .social-icon-item {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+        }
+    }
+}

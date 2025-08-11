@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import VerticleText from '../../components/VerticleText';
 
 const ServicesPage: React.FC = () => {
     const { t } = useTranslation();
@@ -16,6 +17,9 @@ const ServicesPage: React.FC = () => {
                     </p>
                 </div>
             </div>
+
+            <VerticleText />
+
 
             <div className="about-content">
                 <div className="about-content-container">

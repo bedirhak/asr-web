@@ -8,6 +8,7 @@ import References from '../../components/References';
 import Comments from '../../components/Comments';
 import Numbers from '../../components/Numbers';
 import ContactUs from '../../components/ContactUs';
+import VerticleText from '../../components/VerticleText';
 
 const HomePage: React.FC = () => {
     return (
@@ -15,6 +16,7 @@ const HomePage: React.FC = () => {
             <Homeslider />
             <Aboutus />
             <ServicesC />
+            <VerticleText />
             <Numbers />
             <References />
             <Comments />

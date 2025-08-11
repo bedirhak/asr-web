@@ -1,0 +1,104 @@
+// VerticleText styles: "Çekimleri" sabit sağda, solda 3 satırlık dikey kayan liste
+.vertical-text-container {
+    // Konum ve hizalama
+    right: 24px;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    z-index: 50;
+    background-color: $main-theme;
+
+    // Görsel stil
+    --item-height: 48px; // bir satır yüksekliği
+    --visible-count: 3; // görünen satır sayısı
+    --step-duration: 0.5s; // kayma süresi
+    --pause-duration: 2.5s; // bekleme süresi (JS interval ile uyumlu ~3s)
+
+    .sliding-text-wrapper {
+        height: calc(var(--item-height) * var(--visible-count));
+        overflow: hidden;
+        /* Mask kaldırıldı - sadece keskin kenar, tek yön slide */
+    }
+
+    .sliding-text-track {
+        display: flex;
+        flex-direction: column;
+        will-change: transform;
+    }
+
+    .text-item {
+        height: var(--item-height);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        white-space: nowrap;
+        color: #fff;
+        font-weight: 700;
+        font-size: 20px;
+    }
+
+    .fixed-text {
+        color: #fff;
+        font-weight: 800;
+        font-size: 22px;
+        letter-spacing: 0.3px;
+    }
+
+    // Hover'da kaydırmayı durdur (JS animasyonunu etkilemez, sadece CSS animasyonları için)
+    &:hover {
+        .sliding-text-track {
+            animation-play-state: paused;
+        }
+    }
+}
+
+// Tema ve responsivite
+@media (max-width: 992px) {
+    .vertical-text-container {
+        right: 16px;
+        --item-height: 42px;
+
+        .text-item {
+            font-size: 18px;
+        }
+
+        .fixed-text {
+            font-size: 20px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .vertical-text-container {
+        top: auto;
+        bottom: 24px;
+        right: 12px;
+        transform: none;
+        --item-height: 36px;
+
+        .text-item {
+            font-size: 16px;
+        }
+
+        .fixed-text {
+            font-size: 18px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .vertical-text-container {
+        --item-height: 32px;
+        gap: 10px;
+
+        .text-item {
+            font-size: 15px;
+        }
+
+        .fixed-text {
+            font-size: 17px;
+        }
+    }
+}

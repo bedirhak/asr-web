@@ -20,25 +20,25 @@ const Numbers: React.FC = () => {
             id: 1,
             value: 50,
             suffix: '+',
-            title: 'Proje',
+            title: 'Tamamlanan Projeler',
             icon: <FaFolder />,
-            description: 'Tamamlanan Başarılı Projeler'
+            description: '50+ marka için projeyi başarıyla tamamladık'
         },
         {
             id: 2,
             value: 10,
             suffix: '',
-            title: 'Yıllık Tecrübe',
+            title: 'Sektördeki Tecrübemiz',
             icon: <FaCalendarAlt />,
-            description: 'Sektördeki Uzmanlık Süremiz'
+            description: 'Yüzlerce çekim, binlerce saatlik üretim.'
         },
         {
             id: 3,
-            value: 100,
+            value: 97,
             suffix: '%',
             title: 'Müşteri Memnuniyeti',
             icon: <FaHeart />,
-            description: 'Memnun Müşteri Oranımız'
+            description: '%97 müşteri memnuniyeti.'
         }
     ];
 
@@ -70,7 +70,7 @@ const Numbers: React.FC = () => {
 
     // Animasyon fonksiyonu
     const startAnimation = () => {
-        const duration = 4000; // 4 saniye
+        const duration = 2500; // 4 saniye
         const steps = 60; // 60 FPS
         const interval = duration / steps;
 

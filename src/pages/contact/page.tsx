@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { FaLocationArrow } from 'react-icons/fa';
 import Container from '../../components/Container';
 
 const ContactPage: React.FC = () => {
@@ -228,7 +229,7 @@ const ContactPage: React.FC = () => {
             <div className="asr-map-container">
                 <div className="asr-map-wrapper">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d1510.5722109809406!2d30.396173!3d40.780839!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDQ2JzUxLjMiTiAzMMKwMjMnNDguMiJF!5e0!3m2!1str!2str!4v1754247518465!5m2!1str!2str"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3021.145991146127!2d30.3966736!3d40.7808045!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ccb3817a245e35%3A0x8f6b8125aea4e77a!2sASR%20Ajans!5e0!3m2!1str!2str!4v1754899502827!5m2!1str!2str"
                         width="600"
                         height="450"
                         style={{ border: 0 }}
@@ -240,7 +241,7 @@ const ContactPage: React.FC = () => {
                         className="asr-directions-btn"
                         onClick={() => window.open('https://maps.google.com/maps/dir//40.7809167,30.3967222/@40.7809167,30.3967222,17z', '_blank')}
                     >
-                        <i className="fa-solid fa-location-arrow"></i>
+                        <FaLocationArrow />
                         Yol Tarifi Al
                     </button>
                 </div>
