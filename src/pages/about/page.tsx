@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import './about.scss';
+import { FaLightbulb, FaHandshake, FaRocket, FaUsers, FaUser } from 'react-icons/fa';
 
 const AboutPage: React.FC = () => {
     const { t } = useTranslation();
@@ -71,7 +71,7 @@ const AboutPage: React.FC = () => {
                     <div className="values-grid">
                         <div className="value-card">
                             <div className="value-icon">
-                                <i className="fas fa-lightbulb"></i>
+                                <FaLightbulb />
                             </div>
                             <h3 className="value-title">İnovasyon</h3>
                             <p className="value-description">
@@ -80,7 +80,7 @@ const AboutPage: React.FC = () => {
                         </div>
                         <div className="value-card">
                             <div className="value-icon">
-                                <i className="fas fa-handshake"></i>
+                                <FaHandshake />
                             </div>
                             <h3 className="value-title">Güvenilirlik</h3>
                             <p className="value-description">
@@ -89,7 +89,7 @@ const AboutPage: React.FC = () => {
                         </div>
                         <div className="value-card">
                             <div className="value-icon">
-                                <i className="fas fa-rocket"></i>
+                                <FaRocket />
                             </div>
                             <h3 className="value-title">Kalite</h3>
                             <p className="value-description">
@@ -98,7 +98,7 @@ const AboutPage: React.FC = () => {
                         </div>
                         <div className="value-card">
                             <div className="value-icon">
-                                <i className="fas fa-users"></i>
+                                <FaUsers />
                             </div>
                             <h3 className="value-title">Ekip Çalışması</h3>
                             <p className="value-description">
@@ -110,7 +110,7 @@ const AboutPage: React.FC = () => {
             </div>
 
             {/* Timeline Section */}
-            <div className="about-timeline">
+            {/* <div className="about-timeline">
                 <div className="about-timeline-container">
                     <h2 className="section-title">Yolculuğumuz</h2>
                     <div className="timeline">
@@ -144,7 +144,7 @@ const AboutPage: React.FC = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             {/* Team Section */}
             <div className="about-team">
@@ -157,7 +157,7 @@ const AboutPage: React.FC = () => {
                         <div className="team-member">
                             <div className="member-avatar">
                                 <div className="avatar-placeholder">
-                                    <i className="fas fa-user"></i>
+                                    <FaUser />
                                 </div>
                             </div>
                             <h3 className="member-name">Ahmet Yılmaz</h3>
@@ -169,7 +169,7 @@ const AboutPage: React.FC = () => {
                         <div className="team-member">
                             <div className="member-avatar">
                                 <div className="avatar-placeholder">
-                                    <i className="fas fa-user"></i>
+                                    <FaUser />
                                 </div>
                             </div>
                             <h3 className="member-name">Zeynep Kaya</h3>
@@ -181,7 +181,7 @@ const AboutPage: React.FC = () => {
                         <div className="team-member">
                             <div className="member-avatar">
                                 <div className="avatar-placeholder">
-                                    <i className="fas fa-user"></i>
+                                    <FaUser />
                                 </div>
                             </div>
                             <h3 className="member-name">Mehmet Demir</h3>

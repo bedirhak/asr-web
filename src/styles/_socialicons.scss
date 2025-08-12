@@ -1,7 +1,7 @@
 // Vertical Social Icons
 .social-icons-vertical {
     position: fixed;
-    left: 20px;
+    right: 20px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 1000;
@@ -27,9 +27,9 @@
         &:hover {
             background: var(--hover-color);
             color: white;
-            transform: translateX(5px) scale(1.1);
-            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
             border-color: var(--hover-color);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+            transform: translateX(5px) scale(1.1);
         }
 
         &:active {
@@ -49,7 +49,7 @@
 // Responsive
 @media (max-width: 768px) {
     .social-icons-vertical {
-        left: 15px;
+        right: 15px;
         gap: 12px;
 
         .social-icon-item {
@@ -66,7 +66,7 @@
 
 @media (max-width: 480px) {
     .social-icons-vertical {
-        left: 10px;
+        right: 10px;
         gap: 10px;
 
         .social-icon-item {
