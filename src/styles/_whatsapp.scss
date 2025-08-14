@@ -1,0 +1,120 @@
+// WhatsApp floating button styles
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s ease;
+
+    svg {
+        font-size: 2.2rem;
+        color: white;
+        transition: transform 0.3s ease;
+    }
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+
+        svg {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-tooltip {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-10px);
+        }
+    }
+
+    &:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 8px rgba(37, 211, 102, 0.4);
+    }
+}
+
+.whatsapp-tooltip {
+    position: absolute;
+    left: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    font-weight: 500;
+
+    &::before {
+        content: '';
+        position: absolute;
+        right: 100%;
+        top: 50%;
+        border: 6px solid transparent;
+        border-right-color: rgba(0, 0, 0, 0.8);
+        transform: translateY(-50%);
+    }
+}
+
+// Responsive ayarları
+@media (max-width: 768px) {
+    .whatsapp-button {
+        bottom: 80px; // Mobilde sosyal iconlarla çakışmasın
+        left: 15px;
+        width: 55px;
+        height: 55px;
+
+        svg {
+            font-size: 2rem;
+        }
+    }
+
+    .whatsapp-tooltip {
+        display: none; // Mobilde tooltip gizle
+    }
+}
+
+@media (max-width: 480px) {
+    .whatsapp-button {
+        bottom: 70px;
+        left: 10px;
+        width: 50px;
+        height: 50px;
+
+        svg {
+            font-size: 1.8rem;
+        }
+    }
+}
+
+// Pulse animasyonu (dikkat çekici)
+@keyframes whatsapp-pulse {
+    0% {
+        box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 4px 16px rgba(37, 211, 102, 0.7), 0 0 0 10px rgba(37, 211, 102, 0.1);
+    }
+
+    100% {
+        box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+    }
+}
+
+.whatsapp-button {
+    animation: whatsapp-pulse 2s infinite;
+}

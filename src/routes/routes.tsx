@@ -4,6 +4,8 @@ import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
 // import Social from "../components/Social";
 import SocialIcons from "../components/SocialIcons";
+import WhatsAppButton from "../components/WhatsAppButton";
+import ServiceDetailPage from "../pages/service-detail/page";
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
     <>
@@ -12,6 +14,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
         <Footer />
         {/* <Social /> */}
         <SocialIcons />
+        <WhatsAppButton />
     </>
 );
 
@@ -49,6 +52,14 @@ const AppRoutes = () => {
                 {routes.map((route, index) => (
                     <Route key={index} path={route.path} element={route.element} />
                 ))}
+
+                {/* Service detail route */}
+                <Route path="/service-detail/:slug" element={
+                    <Layout>
+                        <ServiceDetailPage />
+                    </Layout>
+                } />
+
                 {/* Ana sayfa için ek route (boş path durumu) */}
                 <Route path="/home" element={<Navigate to="/" replace />} />
 
