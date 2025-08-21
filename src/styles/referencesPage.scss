@@ -1,3 +1,5 @@
+@use "colors" as *;
+
 // Referanslar sayfası stilleri
 .references-page {
     min-height: 100vh;
@@ -6,7 +8,7 @@
 
 // Hero bölümü
 .references-hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, $main-theme 0%, darken($main-theme, 10%) 100%);
     color: white;
     padding: 120px 0 80px;
     text-align: center;
@@ -105,8 +107,9 @@
                 left: 0;
                 right: 0;
                 bottom: 0;
-                background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+                background: linear-gradient(135deg, $main-theme 0%, lighten($main-theme, 15%) 100%);
                 display: flex;
+                flex-direction: column;
                 align-items: center;
                 justify-content: center;
                 opacity: 0;
@@ -120,6 +123,24 @@
                     text-align: center;
                     padding: 0 20px;
                     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                    margin-bottom: 10px;
+                }
+
+                .view-details {
+                    color: white;
+                    font-size: 1rem;
+                    font-weight: 500;
+                    text-align: center;
+                    padding: 8px 16px;
+                    border: 2px solid rgba(255, 255, 255, 0.8);
+                    border-radius: 25px;
+                    background: rgba(255, 255, 255, 0.1);
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        background: rgba(255, 255, 255, 0.2);
+                        border-color: white;
+                    }
                 }
             }
 

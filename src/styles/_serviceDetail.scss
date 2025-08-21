@@ -129,7 +129,7 @@
 
 // Watch button hover effects
 .watch-btn {
-    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+    background: linear-gradient(135deg, #750404 0%, #350402 100%);
     border: none;
     color: white;
     padding: 10px 20px;
@@ -142,7 +142,7 @@
     gap: 8px;
 
     &:hover {
-        background: linear-gradient(135deg, #ff5252 0%, #e53e3e 100%);
+        background: linear-gradient(135deg, #750404 0%, #350402 100%);
         transform: translateY(-2px);
         box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
     }

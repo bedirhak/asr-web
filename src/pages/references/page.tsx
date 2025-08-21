@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 // Tüm referans resimlerini otomatik olarak içe aktar
 const imageContext = import.meta.glob("../../assets/images/asr-refs/*.{png,jpg,jpeg,webp}", { eager: true, as: "url" }) as Record<string, string>;
 const refImages = Object.values(imageContext);
@@ -46,17 +47,63 @@ const getCompanyName = (imagePath: string, index: number) => {
     return companyNames[fileKey] || `Şirket ${index + 1}`;
 };
 
+// Şirket URL slug'ı oluştur
+const getCompanySlug = (imagePath: string) => {
+    const fileNameWithExt = imagePath.split('/').pop() || '';
+    const match = fileNameWithExt.match(/^(ref-\d+)/);
+    const fileKey = match ? match[1] : '';
+
+    const slugMapping: { [key: string]: string } = {
+        'ref-1': 'basak-traktor',
+        'ref-2': 'erfo',
+        'ref-3': 'platformder',
+        'ref-4': 'remax',
+        'ref-5': 'yafa-insaat',
+        'ref-6': 'aktepe-ambalaj',
+        'ref-7': 'dore-mimi-anaokulu',
+        'ref-8': 'birlik-akademi',
+        'ref-9': 'birlik-vakfi',
+        'ref-10': 'heya-akademi',
+        'ref-11': 'vitra',
+        'ref-12': 'ser-anaokulu',
+        'ref-13': 'has-otomotiv',
+        'ref-14': 'altinisik-muzik',
+        'ref-15': 'toki',
+        'ref-16': 'eze-insaat',
+        'ref-17': 'aksiyon-event',
+        'ref-18': 'keyes-engineering',
+        'ref-19': 'sardis',
+        'ref-20': 'sakarya-genclik-merkezi',
+        'ref-21': 'starkgen',
+        'ref-22': 'usul-okullari',
+        'ref-23': 'itina-egitim-kurumlari',
+        'ref-24': 'birey-okullari',
+        'ref-25': 'asko-holding',
+        'ref-26': 'akcansa',
+        'ref-27': 'ersag',
+        'ref-28': 'cevre-bakanliği'
+    };
+
+    return slugMapping[fileKey] || 'genel-referans';
+};
+
 const ReferencesPage: React.FC = () => {
     const { t } = useTranslation();
+    const navigate = useNavigate();
+
+    const handleReferenceClick = (imagePath: string) => {
+        const slug = getCompanySlug(imagePath);
+        navigate(`/reference-detail/${slug}`);
+    };
 
     return (
         <div className="references-page">
-            <div className="about-hero">
-                <div className="about-hero-container">
-                    <h1 className="about-hero-title">
+            <div className="references-hero">
+                <div className="references-hero-container">
+                    <h1 className="references-hero-title">
                         {t('ref.title')}
                     </h1>
-                    <p className="about-hero-subtitle">
+                    <p className="references-hero-subtitle">
                         {t('ref.subtitle')}
                     </p>
                 </div>
@@ -66,7 +113,12 @@ const ReferencesPage: React.FC = () => {
                 <div className="references-gallery-container">
                     <div className="references-grid">
                         {refImages.map((img, index) => (
-                            <div key={index} className="reference-card">
+                            <div
+                                key={index}
+                                className="reference-card"
+                                onClick={() => handleReferenceClick(img)}
+                                style={{ cursor: 'pointer' }}
+                            >
                                 <div className="reference-image-wrapper">
                                     <img
                                         src={img}
@@ -76,6 +128,9 @@ const ReferencesPage: React.FC = () => {
                                     <div className="reference-overlay">
                                         <div className="company-name">
                                             {getCompanyName(img, index)}
+                                        </div>
+                                        <div className="view-details">
+                                            Detayları Gör
                                         </div>
                                     </div>
                                 </div>

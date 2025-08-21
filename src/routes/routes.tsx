@@ -6,6 +6,7 @@ import ScrollToTop from "../components/ScrollToTop";
 import SocialIcons from "../components/SocialIcons";
 import WhatsAppButton from "../components/WhatsAppButton";
 import ServiceDetailPage from "../pages/service-detail/page";
+import ReferenceDetailPage from "../pages/reference-detail/page";
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
     <>
@@ -57,6 +58,13 @@ const AppRoutes = () => {
                 <Route path="/service-detail/:slug" element={
                     <Layout>
                         <ServiceDetailPage />
+                    </Layout>
+                } />
+
+                {/* Reference detail route */}
+                <Route path="/reference-detail/:slug" element={
+                    <Layout>
+                        <ReferenceDetailPage />
                     </Layout>
                 } />
 
