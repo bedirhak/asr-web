@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import slider1 from "../assets/images/homepage/slider1.jpg";
 import slider2 from "../assets/images/homepage/slider2.jpg";
 import droneImage from "../assets/images/homepage/drone.webp";
+import VerticleText from '../components/VerticleText';
 
 // YouTube video URL - embed format with optimized parameters
 const slider3VideoUrl = "https://www.youtube.com/embed/_emteWELApM?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playlist=_emteWELApM&start=0&enablejsapi=1&origin=" + window.location.origin;
@@ -290,6 +291,7 @@ const FullPageHomeSlider: React.FC = () => {
               >
                 {displayedDesc}
               </p>
+              {/* <VerticleText /> */}
               {/* <button
                 style={{
                   background: "#0056b3",

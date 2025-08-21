@@ -28,7 +28,7 @@ const Numbers: React.FC = () => {
             id: 2,
             value: 10,
             suffix: '',
-            title: 'Sektördeki Tecrübemiz',
+            title: 'Yıllık Tecrübemiz',
             icon: <FaCalendarAlt />,
             description: 'Yüzlerce çekim, binlerce saatlik üretim.'
         },

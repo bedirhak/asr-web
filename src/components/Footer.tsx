@@ -7,7 +7,10 @@ import {
   FaAddressBook,
   FaInstagram,
   FaLinkedin,
+  FaFacebook,
+  FaYoutube
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { BsTwitterX } from "react-icons/bs";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
@@ -33,10 +36,16 @@ const Footer = () => {
                   <FaInstagram />
                 </a>
                 <a href="#" className="social-link">
-                  <BsTwitterX />
+                  <FaYoutube />
                 </a>
                 <a href="#" className="social-link">
                   <FaLinkedin />
+                </a>
+                <a href="#" className="social-link">
+                  <BsTwitterX />
+                </a>
+                <a href="#" className="social-link">
+                  <FaFacebook />
                 </a>
               </div>
             </div>
@@ -91,16 +100,16 @@ const Footer = () => {
                 <div className="contact-item">
                   <FaPhone className="contact-icon" />
                   <div className="contact-details">
-                    <span className="contact-label">{t('phone')}</span>
-                    <a href="tel:+905320540584" className="contact-value">
-                      +(90) 537 592 50 55
+                    <span className="contact-label">Telefon</span>
+                    <a href="tel:+905076071454" className="contact-value">
+                      +(90) 507 607 1454
                     </a>
                   </div>
                 </div>
                 <div className="contact-item">
                   <FaEnvelope className="contact-icon" />
                   <div className="contact-details">
-                    <span className="contact-label">{t('email')}</span>
+                    <span className="contact-label">E-Mail</span>
                     <a href="mailto:info@asrajans.com" className="contact-value">
                       info@asrajans.com
                     </a>
@@ -109,7 +118,7 @@ const Footer = () => {
                 <div className="contact-item">
                   <FaAddressBook className="contact-icon" />
                   <div className="contact-details">
-                    <span className="contact-label">{t('address')}</span>
+                    <span className="contact-label">Adres</span>
                     <span className="contact-value">
                       Kurtuluş Mahallesi, Atik Sk. No:5 Daire:5, Durusu İş Merkezi 54100 - Adapazarı / Sakarya
                     </span>
@@ -126,7 +135,7 @@ const Footer = () => {
         <Container className="footer-container">
           <div className="footer-bottom-content">
             <div className="footer-copyright">
-              <span>© 2025 Asr Ajans. Tüm hakları saklıdır.</span>
+              <span>© 2025 ASR Ajans. Tüm hakları saklıdır.</span>
             </div>
             <div className="footer-credits">
               <span>Profesyonel görsel içerik prodüksiyon ajansı</span>

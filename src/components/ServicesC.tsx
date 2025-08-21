@@ -4,9 +4,17 @@ import { useTranslation } from "react-i18next";
 import Container from "./Container";
 import { Link } from 'react-router-dom';
 
+import { useInView } from './useInView';
+
 
 const ServicesC: React.FC = () => {
     const { t } = useTranslation();
+
+    // Her kart için ayrı ref ve inView
+    // threshold'u yükselterek kartların ekranın ortasına daha çok yaklaştığında görünmesini sağla
+    const [ref1, inView1] = useInView<HTMLDivElement>({ threshold: 0.7 });
+    const [ref2, inView2] = useInView<HTMLDivElement>({ threshold: 0.7 });
+    const [ref3, inView3] = useInView<HTMLDivElement>({ threshold: 0.7 });
 
     return (
         <Container>
@@ -15,15 +23,24 @@ const ServicesC: React.FC = () => {
                     {t('about.page.services-title')}
                 </h2>
                 <div className="about-services-grid mb-5">
-                    <div className="about-service-card">
+                    <div
+                        ref={ref1}
+                        className={`about-service-card slide-in-left${inView1 ? ' in-view' : ''}`}
+                    >
                         <h3>{t('about.page.service1.title')}</h3>
                         <p>{t('about.page.service1.description')}</p>
                     </div>
-                    <div className="about-service-card">
+                    <div
+                        ref={ref2}
+                        className={`about-service-card slide-in${inView2 ? ' in-view' : ''}`}
+                    >
                         <h3>{t('about.page.service2.title')}</h3>
                         <p>{t('about.page.service2.description')}</p>
                     </div>
-                    <div className="about-service-card">
+                    <div
+                        ref={ref3}
+                        className={`about-service-card slide-in-right${inView3 ? ' in-view' : ''}`}
+                    >
                         <h3>{t('about.page.service3.title')}</h3>
                         <p>{t('about.page.service3.description')}</p>
                     </div>

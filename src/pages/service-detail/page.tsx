@@ -1,6 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { FaArrowLeft, FaPhone, FaWhatsapp, FaPlay, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaArrowLeft, FaPhone, FaWhatsapp, FaPlay, FaExternalLinkAlt, FaTimes } from 'react-icons/fa';
+
+// YouTube thumbnail generator function
+const getYouTubeThumbnail = (url: string): string => {
+    const videoId = url.includes('watch?v=')
+        ? url.split('watch?v=')[1]?.split('&')[0]
+        : url.split('/').pop();
+
+    if (videoId) {
+        // YouTube'dan high quality thumbnail al
+        return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+    }
+
+    // Fallback thumbnail
+    return "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400&h=300&fit=crop";
+};
 
 interface WorkExample {
     id: number;
@@ -46,10 +61,10 @@ const serviceDetails: { [key: string]: ServiceDetail } = {
         workExamples: [
             {
                 id: 1,
-                title: "Şehir Tanıtım Videosu",
+                title: "Drone Gemi Çekimi",
                 description: "İstanbul'un havadan çekilen tanıtım videosu",
                 type: "video",
-                url: "",
+                url: "https://www.youtube.com/watch?v=RTqWGifZPSc",
                 thumbnail: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400"
             },
             {
@@ -57,7 +72,7 @@ const serviceDetails: { [key: string]: ServiceDetail } = {
                 title: "Otel Tanıtımı",
                 description: "5 yıldızlı otel kompleksi havadan çekimi",
                 type: "video",
-                url: "",
+                url: "https://www.youtube.com/watch?v=Oft3zL17aHQ",
                 thumbnail: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400"
             },
             {
@@ -65,8 +80,8 @@ const serviceDetails: { [key: string]: ServiceDetail } = {
                 title: "Gayrimenkul Çekimi",
                 description: "Villa projesi havadan görünüm",
                 type: "video",
-                url: "",
-                thumbnail: "https://images.unsplash.com/photo-1542737112-ad91fbe1bce7?w=400"
+                url: "https://www.youtube.com/watch?v=KC6Bx-JFlSw",
+                thumbnail: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400"
             }
         ]
     },
@@ -279,6 +294,7 @@ const serviceDetails: { [key: string]: ServiceDetail } = {
 const ServiceDetailPage: React.FC = () => {
     const { slug } = useParams<{ slug: string }>();
     const navigate = useNavigate();
+    const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
     const service = slug ? serviceDetails[slug] : null;
 
@@ -295,9 +311,37 @@ const ServiceDetailPage: React.FC = () => {
 
     const handleWhatsAppClick = () => {
         const message = `Merhaba! ${service.title} hizmetiniz hakkında bilgi almak istiyorum.`;
-        const url = `https://wa.me/905305494246?text=${encodeURIComponent(message)}`;
+        const url = `https://wa.me/905076071454?text=${encodeURIComponent(message)}`;
         window.open(url, '_blank');
     };
+
+    const openVideoModal = (videoUrl: string) => {
+        // YouTube URL'ini embed formatına çevir
+        const videoId = videoUrl.includes('watch?v=')
+            ? videoUrl.split('watch?v=')[1]?.split('&')[0]
+            : videoUrl.split('/').pop();
+
+        if (videoId) {
+            const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&controls=1&rel=0`;
+            setSelectedVideo(embedUrl);
+        }
+    };
+
+    const closeVideoModal = () => {
+        setSelectedVideo(null);
+    };
+
+    // ESC tuşu ile modal kapatma
+    useEffect(() => {
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key === 'Escape' && selectedVideo) {
+                closeVideoModal();
+            }
+        };
+
+        document.addEventListener('keydown', handleKeyDown);
+        return () => document.removeEventListener('keydown', handleKeyDown);
+    }, [selectedVideo]);
 
     return (
         <div className="service-detail-page">
@@ -381,8 +425,22 @@ const ServiceDetailPage: React.FC = () => {
                             <div className="examples-grid">
                                 {service.workExamples.map((example) => (
                                     <div key={example.id} className="example-card">
-                                        <div className="example-thumbnail">
-                                            <img src={example.thumbnail} alt={example.title} />
+                                        <div
+                                            className="example-thumbnail"
+                                            onClick={() => example.url && openVideoModal(example.url)}
+                                            style={{ cursor: example.url ? 'pointer' : 'default' }}
+                                        >
+                                            <img
+                                                src={example.type === 'video' && example.url
+                                                    ? getYouTubeThumbnail(example.url)
+                                                    : example.thumbnail
+                                                }
+                                                alt={example.title}
+                                                onError={(e) => {
+                                                    // Eğer YouTube thumbnail yüklenemezse fallback kullan
+                                                    e.currentTarget.src = example.thumbnail || "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400&h=300&fit=crop";
+                                                }}
+                                            />
                                             <div className="play-overlay">
                                                 <FaPlay />
                                                 <span>Video İzle</span>
@@ -394,7 +452,7 @@ const ServiceDetailPage: React.FC = () => {
                                             <div className="example-actions">
                                                 <button
                                                     className="watch-btn"
-                                                    onClick={() => example.url && window.open(example.url, '_blank')}
+                                                    onClick={() => example.url && openVideoModal(example.url)}
                                                     disabled={!example.url}
                                                 >
                                                     <FaPlay /> İzle
@@ -409,10 +467,10 @@ const ServiceDetailPage: React.FC = () => {
                             </div>
 
                             {/* YouTube Video Ekleme Formu - Geliştirme aşamasında */}
-                            <div className="add-video-placeholder">
+                            {/* <div className="add-video-placeholder">
                                 <p>💡 YouTube videoları yakında burada görüntülenecek</p>
                                 <small>Video URL'lerini admin panelinden ekleyebileceksiniz</small>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
 
@@ -438,6 +496,26 @@ const ServiceDetailPage: React.FC = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Video Modal */}
+            {selectedVideo && (
+                <div className="video-modal-overlay" onClick={closeVideoModal}>
+                    <div className="video-modal-container" onClick={(e) => e.stopPropagation()}>
+                        <button className="video-modal-close" onClick={closeVideoModal}>
+                            <FaTimes />
+                        </button>
+                        <div className="video-iframe-wrapper">
+                            <iframe
+                                src={selectedVideo}
+                                title="Video Player"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            />
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

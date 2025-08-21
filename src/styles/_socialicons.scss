@@ -21,7 +21,7 @@
         color: #666;
         font-size: 20px;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         border: 2px solid #f0f0f0;
 
         &:hover {
@@ -38,10 +38,12 @@
 
         svg {
             transition: all 0.3s ease;
+            fill: $main-theme;
         }
 
         &:hover svg {
             transform: scale(1.1);
+            fill: white !important;
         }
     }
 }

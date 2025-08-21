@@ -1,19 +1,22 @@
 import React from 'react';
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter, FaWhatsapp } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
+import { FaXTwitter } from "react-icons/fa6";
+
 
 const SocialIcons: React.FC = () => {
     const socialLinks = [
-        {
-            name: 'Facebook',
-            icon: <FaFacebookF />,
-            url: 'https://facebook.com/asrajans',
-            color: '#1877F2'
-        },
+
         {
             name: 'Instagram',
             icon: <FaInstagram />,
-            url: 'https://instagram.com/asrajans',
+            url: 'https://instagram.com/asrajanscom',
             color: '#E4405F'
+        },
+        {
+            name: 'YouTube',
+            icon: <FaYoutube />,
+            url: 'https://www.youtube.com/@ASRAjansMedya',
+            color: '#FF0000'
         },
         {
             name: 'LinkedIn',
@@ -23,16 +26,16 @@ const SocialIcons: React.FC = () => {
         },
         {
             name: 'Twitter',
-            icon: <FaTwitter />,
+            icon: <FaXTwitter />,
             url: 'https://twitter.com/asrajans',
             color: '#1DA1F2'
         },
         {
-            name: 'WhatsApp',
-            icon: <FaWhatsapp />,
-            url: 'https://wa.me/905375925055',
-            color: '#25D366'
-        }
+            name: 'Facebook',
+            icon: <FaFacebookF />,
+            url: 'https://facebook.com/asrajans',
+            color: '#1877F2'
+        },
     ];
 
     return (

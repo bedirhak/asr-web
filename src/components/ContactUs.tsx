@@ -7,12 +7,13 @@ const ContactUs: React.FC = () => {
     const handleClick = () => {
         setIsClicked(true);
 
+        // Telefon uygulamasına yönlendir
+        window.location.href = "tel:+905076071454";
+
         // Click animasyonunu kısa süre sonra sıfırla
         setTimeout(() => {
             setIsClicked(false);
         }, 200);
-
-
     };
 
     return (

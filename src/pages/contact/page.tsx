@@ -204,8 +204,8 @@ const ContactPage: React.FC = () => {
                         <i className="fa-thin fa-phone-office"></i>
                         <h6>Telefon:</h6>
                         <p>
-                            <a href="tel:+905375925055" style={{ textDecoration: 'none' }}>
-                                +(90) 537 592 50 55
+                            <a href="tel:+905076071454" style={{ textDecoration: 'none' }}>
+                                +(90) 507 607 1454
                             </a>
                         </p>
                     </div>
@@ -221,7 +221,11 @@ const ContactPage: React.FC = () => {
                     <div className="asr-contact-info-card">
                         <i className="fa-light fa-calendar-check"></i>
                         <h6>Çalışma Saatleri:</h6>
-                        <p>Pazartesi - Pazar: 09:00 - 20:00</p>
+                        <div className='d-flex flex-column'>
+
+                            <p><b>Pazartesi - Cumartesi:</b> 09:00 - 19:00</p>
+                            <p><b>Pazar:</b> Kapalı</p>
+                        </div>
                     </div>
                 </div>
             </div>

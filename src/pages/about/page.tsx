@@ -1,6 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaLightbulb, FaHandshake, FaRocket, FaUsers, FaUser } from 'react-icons/fa';
+import ContactUs from '../../components/ContactUs';
+
 
 const AboutPage: React.FC = () => {
     const { t } = useTranslation();
@@ -52,11 +54,11 @@ const AboutPage: React.FC = () => {
                                 <div className="about-stat-label">{t('about.page.projects')}</div>
                             </div>
                             <div className="about-stat">
-                                <div className="about-stat-number">5+</div>
+                                <div className="about-stat-number">10+</div>
                                 <div className="about-stat-label">{t('about.page.years')}</div>
                             </div>
                             <div className="about-stat">
-                                <div className="about-stat-number">100%</div>
+                                <div className="about-stat-number">97%</div>
                                 <div className="about-stat-label">{t('about.page.satisfaction')}</div>
                             </div>
                         </div>
@@ -160,7 +162,7 @@ const AboutPage: React.FC = () => {
                                     <FaUser />
                                 </div>
                             </div>
-                            <h3 className="member-name">Ahmet Yılmaz</h3>
+                            <h3 className="member-name">Bilal Gökçe</h3>
                             <p className="member-role">Kurucu & CEO</p>
                             <p className="member-description">
                                 10+ yıllık deneyimle dijital pazarlama ve strateji alanında uzman.
@@ -172,8 +174,8 @@ const AboutPage: React.FC = () => {
                                     <FaUser />
                                 </div>
                             </div>
-                            <h3 className="member-name">Zeynep Kaya</h3>
-                            <p className="member-role">Kreatif Direktör</p>
+                            <h3 className="member-name">Bedirhan Kara</h3>
+                            <p className="member-role">Web Developer</p>
                             <p className="member-description">
                                 Yaratıcı tasarım ve marka kimliği konularında 8 yıllık tecrübe.
                             </p>
@@ -184,7 +186,7 @@ const AboutPage: React.FC = () => {
                                     <FaUser />
                                 </div>
                             </div>
-                            <h3 className="member-name">Mehmet Demir</h3>
+                            <h3 className="member-name">Yusuf Gökçe</h3>
                             <p className="member-role">Teknik Direktör</p>
                             <p className="member-description">
                                 Web geliştirme ve teknik çözümler konusunda 12 yıllık deneyim.
@@ -195,7 +197,7 @@ const AboutPage: React.FC = () => {
             </div>
 
             {/* CTA Section */}
-            <div className="about-cta">
+            {/* <div className="about-cta">
                 <div className="about-cta-container">
                     <h2 className="cta-title">Birlikte Çalışmaya Hazır mısınız?</h2>
                     <p className="cta-subtitle">
@@ -206,7 +208,8 @@ const AboutPage: React.FC = () => {
                         <button className="btn-secondary">Portfolyomuzu İnceleyin</button>
                     </div>
                 </div>
-            </div>
+            </div> */}
+            <ContactUs />
         </div>
     );
 };

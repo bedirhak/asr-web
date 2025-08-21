@@ -1,4 +1,5 @@
 import React from 'react';
+import { useInView } from './useInView';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import '../styles/_aboutS.scss';
@@ -6,8 +7,12 @@ import '../styles/_aboutS.scss';
 const Aboutus: React.FC = () => {
     const { t } = useTranslation();
 
+    const [ref, inView] = useInView<HTMLDivElement>({ threshold: 1 });
     return (
-        <div className="about-section">
+        <div
+            ref={ref}
+            className={`about-section slide-in${inView ? ' in-view' : ''}`}
+        >
             <div className="about-container">
                 <div className="about-small-title">
                     {t('about.small-title')}

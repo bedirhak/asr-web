@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { FaVideo, FaCamera, FaHome, FaCode, FaPalette, FaTv, FaBox, FaCalendarAlt, FaPlane, FaEdit, FaBuilding, FaStreetView } from 'react-icons/fa';
 import { MdFlightTakeoff } from 'react-icons/md';
-import VerticleText from '../../components/VerticleText';
+// import VerticleText from '../../components/VerticleText';
 
 interface Service {
     id: number;
@@ -159,7 +159,7 @@ const ServicesPage: React.FC = () => {
                                 className="service-card"
                                 onClick={() => handleServiceClick(service.slug)}
                             >
-                                <div className="service-image">
+                                <div className="service-image" >
                                     <img src={service.image} alt={service.title} />
                                     <div className="service-overlay">
                                         <div className="service-icon">
