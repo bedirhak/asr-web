@@ -582,6 +582,23 @@
                 color: white;
                 font-size: 3rem;
             }
+
+            .avatar-image {
+                width: 120px;
+                height: 120px;
+                margin: 0 auto;
+                border-radius: 50%;
+                object-fit: cover;
+                object-position: center top;
+                border: 3px solid #fff;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+                transition: all 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.05);
+                    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+                }
+            }
         }
 
         .member-name {
@@ -731,4 +748,17 @@
             max-width: 300px;
         }
     }
+}
+
+.reference-hero-image {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.reference-detail-page-image .reference-main-image {
+    box-shadow: none !important;
+    border-radius: 0 !important;
 }

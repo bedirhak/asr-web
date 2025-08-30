@@ -31,20 +31,22 @@ const Footer = () => {
               <p className="footer-description">
                 {t('footer-text')}
               </p>
+
+
               <div className="footer-social">
-                <a href="#" className="social-link">
+                <a href="https://instagram.com/asrajanscom" target="_blank" className="social-link">
                   <FaInstagram />
                 </a>
-                <a href="#" className="social-link">
+                <a href="https://www.youtube.com/@ASRAjansMedya" target="_blank" className="social-link">
                   <FaYoutube />
                 </a>
-                <a href="#" className="social-link">
+                <a href="https://www.linkedin.com/company/asrajans/" target="_blank" className="social-link">
                   <FaLinkedin />
                 </a>
-                <a href="#" className="social-link">
+                <a href="https://x.com/asrajans" target="_blank" className="social-link">
                   <BsTwitterX />
                 </a>
-                <a href="#" className="social-link">
+                <a href="https://www.facebook.com/people/ASR-Ajans/61579743703731/" target="_blank" className="social-link">
                   <FaFacebook />
                 </a>
               </div>

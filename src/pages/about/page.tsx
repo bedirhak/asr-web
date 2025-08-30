@@ -1,7 +1,12 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { FaLightbulb, FaHandshake, FaRocket, FaUsers, FaUser } from 'react-icons/fa';
+import { FaLightbulb, FaHandshake, FaRocket, FaUsers } from 'react-icons/fa';
 import ContactUs from '../../components/ContactUs';
+
+// Team photos
+import bilalBeyPhoto from '../../assets/images/team/bilalBey.png';
+import mustafaBeyPhoto from '../../assets/images/team/mustafaBey.png';
+import yusufBeyPhoto from '../../assets/images/team/yusufBey.png';
 
 
 const AboutPage: React.FC = () => {
@@ -158,38 +163,32 @@ const AboutPage: React.FC = () => {
                     <div className="team-grid">
                         <div className="team-member">
                             <div className="member-avatar">
-                                <div className="avatar-placeholder">
-                                    <FaUser />
-                                </div>
+                                <img src={bilalBeyPhoto} alt="Bilal Gökçe" className="avatar-image" />
                             </div>
                             <h3 className="member-name">Bilal Gökçe</h3>
                             <p className="member-role">Kurucu & CEO</p>
                             <p className="member-description">
-                                10+ yıllık deneyimle dijital pazarlama ve strateji alanında uzman.
+                                10+ yıllık deneyimiyle grafik tasarım, fotoğraf, video prodüksiyon ve drone çekimlerinde uzman; yönetici vizyonuyla markalara güçlü görsel hikâyeler kazandırıyor.
                             </p>
                         </div>
                         <div className="team-member">
                             <div className="member-avatar">
-                                <div className="avatar-placeholder">
-                                    <FaUser />
-                                </div>
+                                <img src={mustafaBeyPhoto} alt="Mustafa Gökçe" className="avatar-image" />
                             </div>
-                            <h3 className="member-name">Bedirhan Kara</h3>
-                            <p className="member-role">Web Developer</p>
+                            <h3 className="member-name">Mustafa Gökçe</h3>
+                            <p className="member-role">Finans Müdürü</p>
                             <p className="member-description">
-                                Yaratıcı tasarım ve marka kimliği konularında 8 yıllık tecrübe.
+                                30+ yıllık profesyonel deneyimiyle finans ve muhasebe alanında, analitik düşünce yapısı ve mükemmeliyetçi yaklaşımıyla öne çıkan bir yönetici.
                             </p>
                         </div>
                         <div className="team-member">
                             <div className="member-avatar">
-                                <div className="avatar-placeholder">
-                                    <FaUser />
-                                </div>
+                                <img src={yusufBeyPhoto} alt="Yusuf Gökçe" className="avatar-image" />
                             </div>
                             <h3 className="member-name">Yusuf Gökçe</h3>
-                            <p className="member-role">Teknik Direktör</p>
+                            <p className="member-role">İçerik Üreticisi</p>
                             <p className="member-description">
-                                Web geliştirme ve teknik çözümler konusunda 12 yıllık deneyim.
+                                Güçlü çizim yeteneğini videografi ve fotoğrafçılıkla birleştirerek projelere fark yaratan, ilham verici içerikler üretiyor.
                             </p>
                         </div>
                     </div>

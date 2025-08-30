@@ -3,7 +3,22 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 // Tüm referans resimlerini otomatik olarak içe aktar
 const imageContext = import.meta.glob("../../assets/images/asr-refs/*.{png,jpg,jpeg,webp}", { eager: true, as: "url" }) as Record<string, string>;
-const refImages = Object.values(imageContext);
+
+// Resimleri ref numarasına göre sırala
+const sortImagesByRefNumber = () => {
+    const images = Object.values(imageContext);
+    return images.sort((a, b) => {
+        const getRefNumber = (imagePath: string) => {
+            const fileNameWithExt = imagePath.split('/').pop() || '';
+            const match = fileNameWithExt.match(/^ref-(\d+)/);
+            return match ? parseInt(match[1]) : 999;
+        };
+
+        return getRefNumber(a) - getRefNumber(b);
+    });
+};
+
+const refImages = sortImagesByRefNumber();
 
 // Şirket isimleri - Dosya adlarını şirket isimlerine çevirme
 const getCompanyName = (imagePath: string, index: number) => {
@@ -14,34 +29,40 @@ const getCompanyName = (imagePath: string, index: number) => {
     const fileKey = match ? match[1] : '';
 
     const companyNames: { [key: string]: string } = {
-        'ref-1': 'BAŞAK TRAKTÖR',
-        'ref-2': 'ERFO',
-        'ref-3': 'PLATFORMDER',
-        'ref-4': 'REMAX',
-        'ref-5': 'YAFA İNŞAAT',
-        'ref-6': 'AKTEPE AMBALAJ',
-        'ref-7': 'DORE MİMİ ANAOKULU',
-        'ref-8': 'BİRLİK AKADEMİ',
-        'ref-9': 'BİRLİK VAKFI',
-        'ref-10': 'HEYA AKADEMİ',
-        'ref-11': 'VİTRA',
-        'ref-12': 'SER ANAOKULU',
-        'ref-13': 'HAS OTOMOTİV',
-        'ref-14': 'ALTINIŞIK MÜZİK',
-        'ref-15': 'TOKİ',
-        'ref-16': 'EZE İNŞAAT A.Ş.',
-        'ref-17': 'AKSİYON EVENT',
-        'ref-18': 'KEYES ENGINEERING',
-        'ref-19': 'SARDİS',
-        'ref-20': 'SAKARYA GENÇLİK MERKEZİ',
-        'ref-21': 'STARKGEN',
-        'ref-22': 'USUL OKULLARI',
-        'ref-23': 'İTİNA EĞİTİM KURUMLARI',
-        'ref-24': 'BİREY OKULLARI',
-        'ref-25': 'ASKO HOLDİNG',
-        'ref-26': 'AKÇANSA',
-        'ref-27': 'ERSAĞ',
-        'ref-28': 'TÜRKİYE CUMHURİYETİ ÇEVRE, ŞEHİRCİLİK VE İKLİM DEĞİŞİKLİĞİ BAKANLIĞI'
+        'ref-1': 'HAS OTOMOTİV - MERCEDES',
+        'ref-2': 'BAŞAK TRAKTÖR',
+        'ref-3': 'TOKİ - TOPLU KONUT İDARESİ BAŞKANLIĞI',
+        'ref-4': 'ASKO HOLDİNG',
+        'ref-5': 'OVEMMAK',
+        'ref-6': 'YUTEK GEMİ İNŞA',
+        'ref-7': 'ERFO',
+        'ref-8': 'TELAS LASTİK',
+        'ref-9': 'STARKGEN',
+        'ref-10': 'KEYES MÜHENDİSLİK',
+        'ref-11': 'PLATFORMDER',
+        'ref-12': 'ERSAĞ',
+        'ref-13': 'ASLAN KIRDAR SPOR ORGANİZASYONU A.Ş.',
+        'ref-14': 'AKSİYON EVENT',
+        'ref-15': 'SAKARYA GENÇLİK MERKEZİ',
+        'ref-16': 'BİRLİK AKADEMİ',
+        'ref-17': 'HEYA AKADEMİ',
+        'ref-18': 'USUL OKULLARI',
+        'ref-19': 'İTİNA EĞİTİM KURUMLARI',
+        'ref-20': 'BİREY OKULLARI',
+        'ref-21': 'SER ANAOKULU',
+        'ref-22': 'DORE MİMİ ANAOKULU',
+        'ref-23': 'VİTRA',
+        'ref-24': 'AKTEPE AMBALAJ',
+        'ref-25': 'EZE İNŞAAT A.Ş.',
+        'ref-26': 'REMAX İKON',
+        'ref-27': 'ALTINIŞIK MÜZİK',
+        'ref-28': 'ÇEVRE VE ŞEHİRCİLİK BAKANLIĞI',
+        'ref-29': 'AKÇANSA',
+        'ref-30': 'LA VIVELLA BEAUTY',
+        'ref-31': 'SARDİS',
+        'ref-32': 'BİRLİK VAKFI',
+        'ref-33': 'YAFA İNŞAAT',
+
     };
 
     return companyNames[fileKey] || `Şirket ${index + 1}`;
@@ -54,34 +75,40 @@ const getCompanySlug = (imagePath: string) => {
     const fileKey = match ? match[1] : '';
 
     const slugMapping: { [key: string]: string } = {
-        'ref-1': 'basak-traktor',
-        'ref-2': 'erfo',
-        'ref-3': 'platformder',
-        'ref-4': 'remax',
-        'ref-5': 'yafa-insaat',
-        'ref-6': 'aktepe-ambalaj',
-        'ref-7': 'dore-mimi-anaokulu',
-        'ref-8': 'birlik-akademi',
-        'ref-9': 'birlik-vakfi',
-        'ref-10': 'heya-akademi',
-        'ref-11': 'vitra',
-        'ref-12': 'ser-anaokulu',
-        'ref-13': 'has-otomotiv',
-        'ref-14': 'altinisik-muzik',
-        'ref-15': 'toki',
-        'ref-16': 'eze-insaat',
-        'ref-17': 'aksiyon-event',
-        'ref-18': 'keyes-engineering',
-        'ref-19': 'sardis',
-        'ref-20': 'sakarya-genclik-merkezi',
-        'ref-21': 'starkgen',
-        'ref-22': 'usul-okullari',
-        'ref-23': 'itina-egitim-kurumlari',
-        'ref-24': 'birey-okullari',
-        'ref-25': 'asko-holding',
-        'ref-26': 'akcansa',
-        'ref-27': 'ersag',
-        'ref-28': 'cevre-bakanliği'
+        'ref-1': 'has-otomotiv',
+        'ref-2': 'basak-traktor',
+        'ref-3': 'toki',
+        'ref-4': 'asko-holding',
+        'ref-5': 'ovemmak',
+        'ref-6': 'yutek-gemi-insa',
+        'ref-7': 'erfo',
+        'ref-8': 'telas',
+        'ref-9': 'starkgen',
+        'ref-10': 'keyes-muhendislik',
+        'ref-11': 'platformder',
+        'ref-12': 'ersag',
+        'ref-13': 'aslan-kirdar-spor',
+        'ref-14': 'aksiyon-event',
+        'ref-15': 'sakarya-genclik-merkezi',
+        'ref-16': 'birlik-akademi',
+        'ref-17': 'heya-akademi',
+        'ref-18': 'usul-okullari',
+        'ref-19': 'itina-egitim-kurumlari',
+        'ref-20': 'birey-okullari',
+        'ref-21': 'ser-anaokulu',
+        'ref-22': 'dore-mimi-anaokulu',
+        'ref-23': 'vitra',
+        'ref-24': 'aktepe-ambalaj',
+        'ref-25': 'eze-insaat',
+        'ref-26': 'remax',
+        'ref-27': 'altinisik-muzik',
+        'ref-28': 'cevre-bakanliği',
+        'ref-29': 'akcansa',
+        'ref-30': 'la-vivella',
+        'ref-31': 'sardis',
+        'ref-32': 'birlik-vakfi',
+        'ref-33': 'yafa',
+
     };
 
     return slugMapping[fileKey] || 'genel-referans';

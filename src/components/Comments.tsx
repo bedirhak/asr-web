@@ -2,12 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import '../styles/_comments.scss';
 
 // Şirket logolarını import et
-import ref1 from '../assets/images/asr-refs/ref-1.png';
-import ref2 from '../assets/images/asr-refs/ref-2.png';
-import ref3 from '../assets/images/asr-refs/ref-3.png';
-import ref4 from '../assets/images/asr-refs/ref-4.png';
-import ref5 from '../assets/images/asr-refs/ref-5.png';
-import ref6 from '../assets/images/asr-refs/ref-6.png';
+import ref1 from '../assets/images/asr-refs/ref-2.png';
+import ref2 from '../assets/images/asr-refs/ref-7.png';
+import ref3 from '../assets/images/asr-refs/ref-11.png';
+import ref4 from '../assets/images/asr-refs/ref-26.png';
+import ref5 from '../assets/images/asr-refs/ref-33.png';
+import ref6 from '../assets/images/asr-refs/ref-24.png';
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
 

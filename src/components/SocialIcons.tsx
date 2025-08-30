@@ -21,19 +21,19 @@ const SocialIcons: React.FC = () => {
         {
             name: 'LinkedIn',
             icon: <FaLinkedinIn />,
-            url: 'https://linkedin.com/company/asrajans',
+            url: 'https://www.linkedin.com/company/asrajans/',
             color: '#0A66C2'
         },
         {
             name: 'Twitter',
             icon: <FaXTwitter />,
-            url: 'https://twitter.com/asrajans',
+            url: 'https://x.com/asrajans',
             color: '#1DA1F2'
         },
         {
             name: 'Facebook',
             icon: <FaFacebookF />,
-            url: 'https://facebook.com/asrajans',
+            url: 'https://www.facebook.com/people/ASR-Ajans/61579743703731/',
             color: '#1877F2'
         },
     ];
