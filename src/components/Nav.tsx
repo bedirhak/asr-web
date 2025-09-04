@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -49,6 +49,9 @@ const ContraNavBar = () => {
                             </Nav.Link>
                             <Nav.Link className="cg-nav-link" href="/asr-web/services">
                                 {t('menu-services')}
+                            </Nav.Link>
+                            <Nav.Link className="cg-nav-link" href="/asr-web/projects">
+                                {t('menu-projects')}
                             </Nav.Link>
                             <Nav.Link className="cg-nav-link" href="/asr-web/references">
                                 {t('menu-references')}
