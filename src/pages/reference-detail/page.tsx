@@ -22,6 +22,7 @@ interface ReferenceProject {
     location: string;
     catalogUrl?: string; // E-katalog URL'si için opsiyonel alan
     youtubeUrl?: string; // YouTube video URL'si için opsiyonel alan
+    relatedToProject?: number; // Bağlı olduğu proje ID'si (video için)
 }
 
 interface ReferenceDetail {
@@ -1377,6 +1378,49 @@ const referenceDetails: { [key: string]: ReferenceDetail } = {
             }
         ],
         image: "ref-34"
+    },
+    "semizoglu-traktor": {
+        id: 35,
+        companyName: "SEMİZOĞLU TRAKTÖR BAYİSİ",
+        companyLogo: "ref-35",
+        companyDescription: "Tarım makineleri ve traktör satışında uzmanlaşmış Semizoğlu Traktör Bayisi, kaliteli hizmet anlayışı ve geniş ürün yelpazesi ile çiftçilerin güvenilir çözüm ortağıdır.",
+        summary: "Semizoğlu Traktör Bayisi ile kapsamlı kurumsal tanıtım projesi gerçekleştirdik. Bayinin kurumsal yapısını ve sergilenen ürünleri 4K çözünürlükte hazırlanan profesyonel tanıtım filmiyle öne çıkardık. Drone çekimleri ile konumu ve genel alan düzenini, kamera çekimleri ile satış alanı ve ürün detaylarını etkileyici şekilde belgeledik.",
+        sector: "Tarım Makineleri",
+        collaboration: "2025",
+        projects: [
+            {
+                id: 1,
+                title: "Tanıtım Filmi Çekimleri",
+                description: "Bayinin kurumsal yapısı ve sergilenen ürünler 4K çözünürlükte hazırlanan profesyonel tanıtım filmiyle izleyicilere sunuldu. Modern kurgu ve etkileyici görsellerle markanın prestiji öne çıkarıldı. Video ayrıca drone çekimleri ve kamera çekimlerini de içermektedir.",
+                category: "Video Prodüksiyon",
+                completionDate: "Eylül 2025",
+                location: "Ankara",
+                youtubeUrl: "https://www.youtube.com/watch?v=yuJlm9rvLpE" // Ana video linki buraya gelecek
+            },
+            {
+                id: 2,
+                title: "Drone Çekimleri",
+                description: "Bayinin bulunduğu konum, genel alan düzeni ve dış mekân atmosferi geniş açılı drone çekimleriyle etkileyici bir şekilde görüntülendi. Bu çekimler ana tanıtım filminde yer almaktadır.",
+                category: "Drone Çekimi",
+                completionDate: "Eylül 2025",
+                location: "Ankara",
+                // relatedToProject: 1 // 1. projeye bağlı
+                youtubeUrl: "https://www.youtube.com/watch?v=yuJlm9rvLpE" // Ana video linki buraya gelecek
+
+            },
+            {
+                id: 3,
+                title: "Kamera Çekimleri",
+                description: "Satış alanı, ürün detayları ve bayideki genel atmosfer profesyonel kamera çekimleriyle kayıt altına alındı. Bu çekimler ana tanıtım filminde yer almaktadır.",
+                category: "Video Prodüksiyon",
+                completionDate: "Eylül 2025",
+                location: "Ankara",
+                relatedToProject: 1 // 1. projeye bağlı
+                // youtubeUrl: "https://www.youtube.com/watch?v=yuJlm9rvLpE" // Ana video linki buraya gelecek
+
+            }
+        ],
+        image: "ref-35"
     }
 };
 
@@ -1551,6 +1595,22 @@ const ReferenceDetailPage: React.FC = () => {
                                             />
 
                                         </div>
+                                    </div>
+                                )}
+
+                                {project.relatedToProject && (
+                                    <div className="project-related-video">
+                                        <button
+                                            className="related-video-button"
+                                            onClick={() => {
+                                                const mainProject = reference.projects.find(p => p.id === project.relatedToProject);
+                                                if (mainProject && mainProject.youtubeUrl) {
+                                                    openVideoModal(mainProject.youtubeUrl, mainProject.title);
+                                                }
+                                            }}
+                                        >
+                                            🎬 Ana Videoda Göster
+                                        </button>
                                     </div>
                                 )}
 

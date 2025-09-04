@@ -205,12 +205,20 @@
     }
 
     .project-card {
+        display: flex;
+        flex-direction: column;
         background: white;
         padding: 30px;
         border-radius: 15px;
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         transition: all 0.3s ease;
         border: 1px solid #f0f0f0;
+
+
+        .project-youtube,
+        .project-related-video {
+            margin-top: auto;
+        }
 
         &:hover {
             transform: translateY(-5px);
@@ -386,6 +394,39 @@
         &:hover {
             background: darken($main-theme, 10%);
             box-shadow: 0 8px 20px rgba($main-theme, 0.4);
+        }
+    }
+}
+
+// Related video button styles
+.project-related-video {
+    margin-top: 15px;
+
+    .related-video-button {
+        background: linear-gradient(135deg, $main-theme 0%, darken($main-theme, 10%) 100%);
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba($main-theme, 0.2);
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba($main-theme, 0.3);
+            background: linear-gradient(135deg, lighten($main-theme, 5%) 0%, $main-theme 100%);
+        }
+
+        &:active {
+            transform: translateY(0);
         }
     }
 }
