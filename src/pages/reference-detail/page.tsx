@@ -1340,6 +1340,43 @@ const referenceDetails: { [key: string]: ReferenceDetail } = {
             }
         ],
         image: "ref-33"
+    },
+    "mkc": {
+        id: 34,
+        companyName: "MKC GROUP",
+        companyLogo: "ref-34",
+        companyDescription: "İnşaat ve emlak sektöründe faaliyet gösteren MKC Group, kaliteli konut projeleri ve güçlü altyapı çalışmaları ile sektörde öncü konumda yer almaktadır.",
+        summary: "MKC GROUP ile emlak projesi inşaat sürecinin kapsamlı görsel belgeleme çalışması gerçekleştirdik. İnşaatın temeli atılırken, beton döküm aşamaları ve özel kazı makinelerinin çalışmalarını profesyonel drone ile 4K kalitede kayda aldık. Sosyal medya platformlarına özel dikey formatlar ve tanıtım videoları ile projenin ilerleyişini etkileyici açılarla belgeledik.",
+        sector: "İnşaat & Emlak",
+        collaboration: "2025",
+        projects: [
+            {
+                id: 1,
+                title: "Emlak Projesi Drone Çekimleri",
+                description: "İnşaatın temeli atılırken, beton döküm aşamaları ve özel kazı makinelerinin çalışmaları profesyonel drone ile 4K kalitede kayda alındı. Projenin ilerleyişi havadan etkileyici açı ve planlarla belgelenerek öne çıkarıldı.",
+                category: "Drone Çekimi",
+                completionDate: "Eylül 2025",
+                location: "İstanbul",
+                youtubeUrl: "https://www.youtube.com/watch?v=1wusDoN2s_w"
+            },
+            {
+                id: 2,
+                title: "Sosyal Medya Dikey Videoları",
+                description: "Sosyal medya platformlarına özel olarak dikey formatta videolar hazırlandı. İnşaat sürecinin en dikkat çekici anları kısa ve dinamik içeriklere dönüştürüldü.",
+                category: "Video Prodüksiyon",
+                completionDate: "Eylül 2025",
+                location: "İstanbul"
+            },
+            {
+                id: 3,
+                title: "Yatay Tanıtım Videoları",
+                description: "Projenin genel ilerleyişini ve inşaat alanındaki önemli aşamaları kapsayan yatay formatta tanıtım videoları üretildi. Böylece hem arşiv hem de kurumsal sunumlar için güçlü bir içerik sağlandı.",
+                category: "Video Prodüksiyon",
+                completionDate: "Eylül 2025",
+                location: "İstanbul"
+            }
+        ],
+        image: "ref-34"
     }
 };
 

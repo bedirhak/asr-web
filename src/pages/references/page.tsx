@@ -62,6 +62,7 @@ const getCompanyName = (imagePath: string, index: number) => {
         'ref-31': 'SARDİS',
         'ref-32': 'BİRLİK VAKFI',
         'ref-33': 'YAFA İNŞAAT',
+        'ref-34': 'MKC GROUP',
 
     };
 
@@ -108,6 +109,7 @@ const getCompanySlug = (imagePath: string) => {
         'ref-31': 'sardis',
         'ref-32': 'birlik-vakfi',
         'ref-33': 'yafa',
+        'ref-34': 'mkc',
 
     };
 

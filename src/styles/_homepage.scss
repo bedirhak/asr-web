@@ -1,0 +1,39 @@
+.references-container {
+    position: relative;
+}
+
+.references-blur-left,
+.references-blur-right {
+    position: absolute;
+    top: 0;
+    width: 500px;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.references-blur-left {
+    left: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.9) 20%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0.2) 80%, rgba(255, 255, 255, 0) 100%);
+}
+
+.references-blur-right {
+    right: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.9) 20%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0.2) 80%, rgba(255, 255, 255, 0) 100%);
+}
+
+@media (max-width: 768px) {
+
+    .references-blur-left,
+    .references-blur-right {
+        width: 150px;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .references-blur-left,
+    .references-blur-right {
+        width: 50px;
+    }
+}

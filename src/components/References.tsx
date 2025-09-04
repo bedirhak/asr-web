@@ -112,7 +112,8 @@ const References: React.FC = () => {
                 </button>
             </Link> */}
             <div className="references-container" ref={containerRef}>
-
+                <div className="references-blur-left"></div>
+                <div className="references-blur-right"></div>
                 <div className="references-track" ref={trackRef}>
                     {/* İlk set */}
                     {refImages.map((img, index) => (
