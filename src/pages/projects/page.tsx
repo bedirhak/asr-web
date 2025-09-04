@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaFilter, FaPlay, FaTimes, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaFilter, FaPlay, FaTimes, FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 // Project interfaces
 interface Project {
@@ -96,6 +96,7 @@ const ProjectsPage: React.FC = () => {
     const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
     const [currentVideoUrl, setCurrentVideoUrl] = useState('');
     const [currentVideoTitle, setCurrentVideoTitle] = useState('');
+    const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
 
     // Filtrelenmiş projeler (sadece YouTube videosu olanlar gösterilir)
     const filteredProjects = useMemo(() => {
@@ -124,6 +125,8 @@ const ProjectsPage: React.FC = () => {
 
     // Video popup
     const openVideoModal = (url: string, title: string) => {
+        const videoIndex = filteredProjects.findIndex(project => project.youtubeUrl === url);
+        setCurrentVideoIndex(videoIndex >= 0 ? videoIndex : 0);
         setCurrentVideoUrl(url);
         setCurrentVideoTitle(title);
         setIsVideoModalOpen(true);
@@ -137,21 +140,52 @@ const ProjectsPage: React.FC = () => {
         document.body.style.overflow = 'unset';
     };
 
-    // ESC tuşu ile popup'ı kapatma
+    const navigateVideo = (direction: 'prev' | 'next') => {
+        let newIndex = currentVideoIndex;
+        if (direction === 'prev') {
+            newIndex = currentVideoIndex > 0 ? currentVideoIndex - 1 : filteredProjects.length - 1;
+        } else {
+            newIndex = currentVideoIndex < filteredProjects.length - 1 ? currentVideoIndex + 1 : 0;
+        }
+
+        const newProject = filteredProjects[newIndex];
+        if (newProject && newProject.youtubeUrl) {
+            setCurrentVideoIndex(newIndex);
+            setCurrentVideoUrl(newProject.youtubeUrl);
+            setCurrentVideoTitle(newProject.title);
+        }
+    };
+
+    // ESC tuşu ile popup'ı kapatma ve ok tuşları ile navigasyon
     React.useEffect(() => {
-        const handleEsc = (event: KeyboardEvent) => {
-            if (event.key === 'Escape') {
-                closeVideoModal();
+        const handleKeyPress = (event: KeyboardEvent) => {
+            if (!isVideoModalOpen) return;
+
+            switch (event.key) {
+                case 'Escape':
+                    closeVideoModal();
+                    break;
+                case 'ArrowLeft':
+                    if (filteredProjects.length > 1) {
+                        navigateVideo('prev');
+                    }
+                    break;
+                case 'ArrowRight':
+                    if (filteredProjects.length > 1) {
+                        navigateVideo('next');
+                    }
+                    break;
             }
         };
+
         if (isVideoModalOpen) {
-            document.addEventListener('keydown', handleEsc);
+            document.addEventListener('keydown', handleKeyPress);
         }
         return () => {
-            document.removeEventListener('keydown', handleEsc);
+            document.removeEventListener('keydown', handleKeyPress);
             document.body.style.overflow = 'unset';
         };
-    }, [isVideoModalOpen]);
+    }, [isVideoModalOpen, filteredProjects.length, currentVideoIndex]);
 
     return (
         <div className="projects-page">
@@ -298,8 +332,103 @@ const ProjectsPage: React.FC = () => {
                             <FaTimes />
                         </button>
 
+                        {/* Video Navigation Arrows */}
+                        {filteredProjects.length > 1 && (
+                            <>
+                                <button
+                                    className="video-nav-arrow video-nav-prev"
+                                    onClick={() => navigateVideo('prev')}
+                                    aria-label="Önceki Video"
+                                    style={{
+                                        position: 'absolute',
+                                        left: '15px',
+                                        top: '50%',
+                                        transform: 'translateY(-50%)',
+                                        width: '50px',
+                                        height: '50px',
+                                        backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                                        border: 'none',
+                                        borderRadius: '50%',
+                                        color: 'white',
+                                        cursor: 'pointer',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        zIndex: 10001,
+                                        transition: 'all 0.3s ease',
+                                        fontSize: '24px'
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+                                        e.currentTarget.style.transform = 'translateY(-50%) scale(1.1)';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+                                        e.currentTarget.style.transform = 'translateY(-50%) scale(1)';
+                                    }}
+                                >
+                                    <FaChevronLeft />
+                                </button>
+
+                                <button
+                                    className="video-nav-arrow video-nav-next"
+                                    onClick={() => navigateVideo('next')}
+                                    aria-label="Sonraki Video"
+                                    style={{
+                                        position: 'absolute',
+                                        right: '15px',
+                                        top: '50%',
+                                        transform: 'translateY(-50%)',
+                                        width: '50px',
+                                        height: '50px',
+                                        backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                                        border: 'none',
+                                        borderRadius: '50%',
+                                        color: 'white',
+                                        cursor: 'pointer',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        zIndex: 10001,
+                                        transition: 'all 0.3s ease',
+                                        fontSize: '24px'
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+                                        e.currentTarget.style.transform = 'translateY(-50%) scale(1.1)';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+                                        e.currentTarget.style.transform = 'translateY(-50%) scale(1)';
+                                    }}
+                                >
+                                    <FaChevronRight />
+                                </button>
+                            </>
+                        )}
+
                         <div className="video-modal-header">
                             <h3>{currentVideoTitle}</h3>
+                            {filteredProjects[currentVideoIndex] && (
+                                <p style={{
+                                    color: '#ccc',
+                                    margin: '8px 0 0 0',
+                                    fontSize: '1rem',
+                                    fontWeight: '400'
+                                }}>
+                                    {filteredProjects[currentVideoIndex].referenceCompany}
+                                </p>
+                            )}
+                            {filteredProjects.length > 1 && (
+                                <p style={{
+                                    color: '#999',
+                                    margin: '8px 0 0 0',
+                                    fontSize: '0.9rem',
+                                    fontWeight: '400'
+                                }}>
+                                    {currentVideoIndex + 1} / {filteredProjects.length}
+                                </p>
+                            )}
                         </div>
 
                         <div className="video-iframe-wrapper">
