@@ -111,31 +111,45 @@ const References: React.FC = () => {
                     <div className="about-btn-light"></div>
                 </button>
             </Link> */}
-            <div className="references-container" ref={containerRef}>
-                <div className="references-blur-left"></div>
-                <div className="references-blur-right"></div>
-                <div className="references-track" ref={trackRef}>
-                    {/* İlk set */}
-                    {refImages.map((img, index) => (
-                        <div key={`img1-${index}`} className="reference-item">
-                            <img src={img} alt={`Referans ${index + 1}`} />
-                        </div>
-                    ))}
-                    {/* İkinci set (sonsuz kayma etkisi için) */}
-                    {refImages.map((img, index) => (
-                        <div key={`img2-${index}`} className="reference-item">
-                            <img src={img} alt={`Referans ${index + 1}`} />
-                        </div>
-                    ))}
-                    {/* Üçüncü set (daha düzgün sonsuz efekt için) */}
-                    {refImages.map((img, index) => (
-                        <div key={`img3-${index}`} className="reference-item">
-                            <img src={img} alt={`Referans ${index + 1}`} />
-                        </div>
-                    ))}
+            <div className="references-slide-container">
+                <h2 className="about-services-title">
+                    Referanslarımız
+                </h2>
+                <div className="references-container" ref={containerRef}>
+                    <div className="references-blur-left"></div>
+                    <div className="references-blur-right"></div>
+                    <div className="references-track" ref={trackRef}>
+                        {/* İlk set */}
+                        {refImages.map((img, index) => (
+                            <div key={`img1-${index}`} className="reference-item">
+                                <img src={img} alt={`Referans ${index + 1}`} />
+                            </div>
+                        ))}
+                        {/* İkinci set (sonsuz kayma etkisi için) */}
+                        {refImages.map((img, index) => (
+                            <div key={`img2-${index}`} className="reference-item">
+                                <img src={img} alt={`Referans ${index + 1}`} />
+                            </div>
+                        ))}
+                        {/* Üçüncü set (daha düzgün sonsuz efekt için) */}
+                        {refImages.map((img, index) => (
+                            <div key={`img3-${index}`} className="reference-item">
+                                <img src={img} alt={`Referans ${index + 1}`} />
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
+            <Link to="/references" className="about-btn-link mb-3">
+                <button className="about-btn">
+                    <span className="about-btn-text">
+                        Referanslarımız
+                    </span>
+                    <div className="about-btn-light"></div>
+                </button>
+            </Link>
         </div>
+
     );
 };
 

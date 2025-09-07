@@ -8,7 +8,7 @@ interface Project {
     title: string;
     description: string;
     categories: string[];
-    referenceCompany: string;
+    referenceCompany?: string;
     referenceSlug: string;
     completionDate: string;
     location: string;
@@ -55,6 +55,43 @@ const allProjects: Project[] = [
         completionDate: "Eylül 2025",
         location: "Ankara",
         youtubeUrl: "https://www.youtube.com/watch?v=yuJlm9rvLpE"
+    },
+
+    // DORA MİNİ
+    {
+        id: "dora-mini-1",
+        title: "Dora Mini'nin Etkinlik Çekimleri",
+        description: "Çocukların sevimli karakteri Dora Mini ile yapılan eğlenceli etkinlik anlarının profesyonel video çekimleri",
+        categories: ["Etkinlik Çekimleri", "Sosyal Medya Çekimleri"],
+        referenceCompany: "DORA MİNİ",
+        referenceSlug: "dora-mini",
+        completionDate: "Ekim 2025",
+        location: "İstanbul",
+        youtubeUrl: "https://www.youtube.com/watch?v=oNGO_QoxtPM"
+    },
+    {
+        id: "dora-mini-2",
+        title: "Dora Mini Etkinlik Çekimleri - 2",
+        description: "Dora Mini karakteri ile düzenlenen özel etkinliklerin dinamik ve renkli video çekimleri",
+        categories: ["Etkinlik Çekimleri", "Sosyal Medya Çekimleri"],
+        referenceCompany: "DORA MİNİ",
+        referenceSlug: "dora-mini",
+        completionDate: "Ekim 2025",
+        location: "İstanbul",
+        youtubeUrl: "https://www.youtube.com/watch?v=9T04ghayaSU"
+    },
+
+    // EMLAK DRONE ÇEKİMİ
+    {
+        id: "emlak-drone-1",
+        title: "Emlak Projesi Drone Çekimleri",
+        description: "Modern emlak projesinin havadan çekilen profesyonel drone görüntüleri ve detaylı alan taraması",
+        categories: ["Drone Çekimleri", "Emlak Çekimleri"],
+        // referenceCompany: "Gizli Proje",
+        referenceSlug: "emlak-drone",
+        completionDate: "Ekim 2025",
+        location: "İstanbul",
+        youtubeUrl: "https://www.youtube.com/watch?v=aeDtZsLW8LA"
     }
 ];
 
@@ -291,16 +328,18 @@ const ProjectsPage: React.FC = () => {
                                         <p className="project-description">{project.description}</p>
 
                                         {/* Referans Şirketi */}
-                                        <div className="project-reference">
-                                            <span className="reference-label">Referans:</span>
-                                            <button
-                                                className="reference-link"
-                                                onClick={() => navigate(`/reference-detail/${project.referenceSlug}`)}
-                                            >
-                                                {project.referenceCompany}
-                                                <FaExternalLinkAlt />
-                                            </button>
-                                        </div>
+                                        {project.referenceCompany &&
+                                            <div className="project-reference">
+                                                <span className="reference-label">Referans:</span>
+                                                <button
+                                                    className="reference-link"
+                                                    onClick={() => navigate(`/reference-detail/${project.referenceSlug}`)}
+                                                >
+                                                    {project.referenceCompany}
+                                                    <FaExternalLinkAlt />
+                                                </button>
+                                            </div>
+                                        }
 
                                         {/* Proje Meta */}
                                         {/* <div className="project-meta">

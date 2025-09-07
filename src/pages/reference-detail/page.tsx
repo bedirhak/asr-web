@@ -313,11 +313,13 @@ const referenceDetails: { [key: string]: ReferenceDetail } = {
                 description: "Çocukların 23 Nisan etkinliğinde çiftler halinde sergilediği dansları müzik eşliğinde hazırlanan özel video",
                 category: "Video Prodüksiyon",
                 completionDate: "Nisan 2022",
+                youtubeUrl: "https://www.youtube.com/watch?v=9T04ghayaSU",
                 location: "İstanbul"
             },
             {
                 id: 2,
                 title: "Konser Tarzı Dans Videosu",
+                youtubeUrl: "https://www.youtube.com/watch?v=oNGO_QoxtPM",
                 description: "Çocukların 23 Nisan etkinliğinde hızlı ritimli müzik eşliğinde enerjik performanslarını yansıtan konser atmosferinde çekilen video",
                 category: "Video Prodüksiyon",
                 completionDate: "Nisan 2022",

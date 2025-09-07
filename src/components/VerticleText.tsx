@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { Link } from 'react-router-dom';
 
 const items = [
     "Tanıtım Filmi",
@@ -34,6 +35,7 @@ export default function VerticleText() {
     }, []);
 
     return (
+
         <div className="vertical-text-container">
             <div className="sliding-text-wrapper">
                 <div
@@ -54,5 +56,6 @@ export default function VerticleText() {
             </div>
             <div className="fixed-text">Çekimleri</div>
         </div>
+
     );
 }
