@@ -1,3 +1,8 @@
+.home-page-container {
+    overflow: hidden;
+}
+
+
 .references-container {
     position: relative;
 }
@@ -26,11 +31,19 @@
 
     .references-blur-left,
     .references-blur-right {
-        width: 150px;
+        width: 120px;
     }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 480px) {
+
+    .references-blur-left,
+    .references-blur-right {
+        width: 80px;
+    }
+}
+
+@media (max-width: 360px) {
 
     .references-blur-left,
     .references-blur-right {

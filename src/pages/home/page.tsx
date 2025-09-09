@@ -12,7 +12,7 @@ import VerticleText from '../../components/VerticleText';
 
 const HomePage: React.FC = () => {
     return (
-        <div>
+        <div className='home-page-container'>
             <Homeslider />
             <Aboutus />
             <ServicesC />

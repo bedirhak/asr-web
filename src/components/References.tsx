@@ -56,119 +56,53 @@ const References: React.FC = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const container = containerRef.current;
-        if (!container) return;
+        const track = trackRef.current;
+        if (!track) return;
 
-        let isDown = false;
-        let startX: number;
-        let scrollLeft: number;
+        // Animasyonu başlat
+        track.style.animationPlayState = 'running';
 
-        const handleMouseDown = (e: MouseEvent) => {
-            isDown = true;
-            container.style.cursor = 'grabbing';
-            startX = e.pageX - container.offsetLeft;
-            scrollLeft = container.scrollLeft;
-            // Animasyonu durdur
-            if (trackRef.current) {
-                trackRef.current.style.animationPlayState = 'paused';
+        // Mouse hover'da animasyonu durdur, mouse leave'de başlat
+        const handleMouseEnter = () => {
+            if (track) {
+                track.style.animationPlayState = 'paused';
             }
         };
 
         const handleMouseLeave = () => {
-            isDown = false;
-            container.style.cursor = 'grab';
-            // Animasyonu tekrar başlat
-            if (trackRef.current) {
-                trackRef.current.style.animationPlayState = 'running';
+            if (track) {
+                track.style.animationPlayState = 'running';
             }
         };
 
-        const handleMouseEnter = () => {
-            // Mouse üzerine geldiğinde animasyonu durdur
-            if (trackRef.current) {
-                trackRef.current.style.animationPlayState = 'paused';
-            }
-        };
+        const container = containerRef.current;
+        if (container) {
+            container.addEventListener('mouseenter', handleMouseEnter);
+            container.addEventListener('mouseleave', handleMouseLeave);
 
-        const handleMouseUp = () => {
-            isDown = false;
-            container.style.cursor = 'grab';
-            // Animasyonu tekrar başlat
-            if (trackRef.current) {
-                trackRef.current.style.animationPlayState = 'running';
-            }
-        };
-
-        const handleMouseMove = (e: MouseEvent) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - container.offsetLeft;
-            const walk = (x - startX) * 2;
-            container.scrollLeft = scrollLeft - walk;
-        };
-
-        container.addEventListener('mousedown', handleMouseDown);
-        container.addEventListener('mouseenter', handleMouseEnter);
-        container.addEventListener('mouseleave', handleMouseLeave);
-        container.addEventListener('mouseup', handleMouseUp);
-        container.addEventListener('mousemove', handleMouseMove);
-
-        return () => {
-            container.removeEventListener('mousedown', handleMouseDown);
-            container.removeEventListener('mouseenter', handleMouseEnter);
-            container.removeEventListener('mouseleave', handleMouseLeave);
-            container.removeEventListener('mouseup', handleMouseUp);
-            container.removeEventListener('mousemove', handleMouseMove);
-        };
+            return () => {
+                container.removeEventListener('mouseenter', handleMouseEnter);
+                container.removeEventListener('mouseleave', handleMouseLeave);
+            };
+        }
     }, []);
 
     return (
-        <div className="d-flex flex-column align-items-center">
-            {/* <h2 className="about-services-title mb-0">
-                {t('ref.title')}
-            </h2>
-            <div className="references-container" ref={containerRef}>
-
-                <div className="references-track" ref={trackRef}>
-                    {refImages.map((img, index) => (
-                        <div key={`img1-${index}`} className="reference-item">
-                            <img src={img} alt={`Referans ${index + 1}`} />
-                        </div>
-                    ))}
-                    {refImages.map((img, index) => (
-                        <div key={`img2-${index}`} className="reference-item">
-                            <img src={img} alt={`Referans ${index + 1}`} />
-                        </div>
-                    ))}
-                    {refImages.map((img, index) => (
-                        <div key={`img3-${index}`} className="reference-item">
-                            <img src={img} alt={`Referans ${index + 1}`} />
-                        </div>
-                    ))}
-                </div>
-            </div>
-            <Link to="/references" className="about-btn-link">
-                <button className="about-btn">
-                    <span className="about-btn-text">
-                        {t('ref.title')}
-                    </span>
-                    <div className="about-btn-light"></div>
-                </button>
-            </Link> */}
+        <div className="d-flex flex-column align-items-center position-relative">
+            <div className="references-blur-left"></div>
+            <div className="references-blur-right"></div>
             <div className="references-slide-container">
                 {/* <h2 className="about-services-title">
                     Referanslarımız
                 </h2> */}
                 <div className="references-container" ref={containerRef}>
-                    <div className="references-blur-left"></div>
-                    <div className="references-blur-right"></div>
                     <div className="references-track" ref={trackRef}>
                         {/* İlk set */}
                         {refImages.map((img, index) => {
                             const slug = getSlugFromImagePath(img);
                             return (
                                 <div
-                                    key={`img1-${index}`}
+                                    key={`set1-${index}`}
                                     className="reference-item"
                                     onClick={() => navigate(`/reference-detail/${slug}`)}
                                     style={{ cursor: 'pointer' }}
@@ -182,7 +116,7 @@ const References: React.FC = () => {
                             const slug = getSlugFromImagePath(img);
                             return (
                                 <div
-                                    key={`img2-${index}`}
+                                    key={`set2-${index}`}
                                     className="reference-item"
                                     onClick={() => navigate(`/reference-detail/${slug}`)}
                                     style={{ cursor: 'pointer' }}
@@ -196,7 +130,7 @@ const References: React.FC = () => {
                             const slug = getSlugFromImagePath(img);
                             return (
                                 <div
-                                    key={`img3-${index}`}
+                                    key={`set3-${index}`}
                                     className="reference-item"
                                     onClick={() => navigate(`/reference-detail/${slug}`)}
                                     style={{ cursor: 'pointer' }}
