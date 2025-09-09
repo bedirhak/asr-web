@@ -1,9 +1,51 @@
 import React, { useRef, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 
-// Tüm referans resimlerini otomatik olarak içe aktar
-const imageContext = import.meta.glob("../assets/images/asr-refs/*.{png,jpg,jpeg,webp}", { eager: true, as: "url" }) as Record<string, string>;
-const refImages = Object.values(imageContext);
+// Manuel import yöntemi - daha güvenilir
+import ref1 from '../assets/images/asr-refs/ref-1.png';
+import ref2 from '../assets/images/asr-refs/ref-2.png';
+import ref3 from '../assets/images/asr-refs/ref-3.png';
+import ref4 from '../assets/images/asr-refs/ref-4.png';
+import ref5 from '../assets/images/asr-refs/ref-5.png';
+import ref6 from '../assets/images/asr-refs/ref-6.png';
+import ref7 from '../assets/images/asr-refs/ref-7.png';
+import ref8 from '../assets/images/asr-refs/ref-8.png';
+import ref9 from '../assets/images/asr-refs/ref-9.png';
+import ref10 from '../assets/images/asr-refs/ref-10.png';
+import ref11 from '../assets/images/asr-refs/ref-11.png';
+import ref12 from '../assets/images/asr-refs/ref-12.png';
+import ref13 from '../assets/images/asr-refs/ref-13.png';
+import ref14 from '../assets/images/asr-refs/ref-14.png';
+import ref15 from '../assets/images/asr-refs/ref-15.png';
+import ref16 from '../assets/images/asr-refs/ref-16.png';
+import ref17 from '../assets/images/asr-refs/ref-17.png';
+import ref18 from '../assets/images/asr-refs/ref-18.png';
+import ref19 from '../assets/images/asr-refs/ref-19.png';
+import ref20 from '../assets/images/asr-refs/ref-20.png';
+import ref21 from '../assets/images/asr-refs/ref-21.png';
+import ref22 from '../assets/images/asr-refs/ref-22.png';
+import ref23 from '../assets/images/asr-refs/ref-23.png';
+import ref24 from '../assets/images/asr-refs/ref-24.png';
+import ref25 from '../assets/images/asr-refs/ref-25.png';
+import ref26 from '../assets/images/asr-refs/ref-26.png';
+import ref27 from '../assets/images/asr-refs/ref-27.png';
+import ref28 from '../assets/images/asr-refs/ref-28.png';
+import ref29 from '../assets/images/asr-refs/ref-29.png';
+import ref30 from '../assets/images/asr-refs/ref-30.png';
+import ref31 from '../assets/images/asr-refs/ref-31.png';
+import ref32 from '../assets/images/asr-refs/ref-32.png';
+import ref33 from '../assets/images/asr-refs/ref-33.png';
+import ref34 from '../assets/images/asr-refs/ref-34.png';
+import ref35 from '../assets/images/asr-refs/ref-35.png';
+
+// Referans resimlerini sıralı array olarak tanımla
+const refImages = [
+    ref1, ref2, ref3, ref4, ref5, ref6, ref7, ref8, ref9, ref10,
+    ref11, ref12, ref13, ref14, ref15, ref16, ref17, ref18, ref19, ref20,
+    ref21, ref22, ref23, ref24, ref25, ref26, ref27, ref28, ref29, ref30,
+    ref31, ref32, ref33, ref34, ref35
+];
+
 
 // Referans resimleri ile slug'ları eşleştirmek için mapping
 const getSlugFromImagePath = (imagePath: string): string => {
