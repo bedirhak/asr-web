@@ -115,7 +115,6 @@ const References: React.FC = () => {
                         {refImages.map((img: any, index) => {
                             let imgs = img.split("/").pop().split("-");
                             const slug = getSlugFromImagePath(`${imgs[0]}-${imgs[1]}.png`);
-                            console.log("Slug:", `${imgs[0]}-${imgs[1]}.png`);
 
                             return (
                                 <div
