@@ -114,6 +114,8 @@ const References: React.FC = () => {
                         {/* İlk set */}
                         {refImages.map((img: any, index) => {
                             const slug = getSlugFromImagePath(img.split("/").pop());
+                            console.log("Slug", slug);
+                            console.log("Pop", img.split("/").pop());
 
 
                             return (
