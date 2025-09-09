@@ -113,10 +113,8 @@ const References: React.FC = () => {
                     <div className="references-track" ref={trackRef}>
                         {/* İlk set */}
                         {refImages.map((img: any, index) => {
-                            const slug = getSlugFromImagePath(img.split("/").pop());
-                            console.log("Slug", slug);
-                            console.log("Pop", img.split("/").pop());
-
+                            let imgs = img.split("/").pop().split("-");
+                            const slug = getSlugFromImagePath(`${imgs[0]}-${imgs[1]}`);
 
                             return (
                                 <div
@@ -131,7 +129,8 @@ const References: React.FC = () => {
                         })}
                         {/* İkinci set (sonsuz kayma etkisi için) */}
                         {refImages.map((img: any, index) => {
-                            const slug = getSlugFromImagePath(img.split("/").pop());
+                            let imgs = img.split("/").pop().split("-");
+                            const slug = getSlugFromImagePath(`${imgs[0]}-${imgs[1]}`);
 
                             return (
                                 <div
@@ -146,7 +145,8 @@ const References: React.FC = () => {
                         })}
                         {/* Üçüncü set (daha düzgün sonsuz efekt için) */}
                         {refImages.map((img: any, index) => {
-                            const slug = getSlugFromImagePath(img.split("/").pop());
+                            let imgs = img.split("/").pop().split("-");
+                            const slug = getSlugFromImagePath(`${imgs[0]}-${imgs[1]}`);
 
                             return (
                                 <div
