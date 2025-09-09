@@ -114,7 +114,7 @@ const References: React.FC = () => {
                         {/* İlk set */}
                         {refImages.map((img: any, index) => {
                             let imgs = img.split("/").pop().split("-");
-                            const slug = getSlugFromImagePath(`${imgs[0]}-${imgs[1]}`);
+                            const slug = getSlugFromImagePath(`${imgs[0]}-${imgs[1]}.png`);
 
                             return (
                                 <div
@@ -130,7 +130,7 @@ const References: React.FC = () => {
                         {/* İkinci set (sonsuz kayma etkisi için) */}
                         {refImages.map((img: any, index) => {
                             let imgs = img.split("/").pop().split("-");
-                            const slug = getSlugFromImagePath(`${imgs[0]}-${imgs[1]}`);
+                            const slug = getSlugFromImagePath(`${imgs[0]}-${imgs[1]}.png`);
 
                             return (
                                 <div
@@ -146,7 +146,7 @@ const References: React.FC = () => {
                         {/* Üçüncü set (daha düzgün sonsuz efekt için) */}
                         {refImages.map((img: any, index) => {
                             let imgs = img.split("/").pop().split("-");
-                            const slug = getSlugFromImagePath(`${imgs[0]}-${imgs[1]}`);
+                            const slug = getSlugFromImagePath(`${imgs[0]}-${imgs[1]}.png`);
 
                             return (
                                 <div
