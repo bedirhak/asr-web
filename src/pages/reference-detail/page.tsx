@@ -557,7 +557,8 @@ const referenceDetails: { [key: string]: ReferenceDetail } = {
                 description: "Lüks araçların sergilendiği özel test sürüşü gününü profesyonel kurgu ile hazırlanan etkinlik videosuna dönüştürdük",
                 category: "Video Prodüksiyon",
                 completionDate: "Ağustos 2025",
-                location: "İstanbul"
+                location: "İstanbul",
+                youtubeUrl: "https://www.youtube.com/watch?v=ilX0ZybG8Hc"
             },
             {
                 id: 2,
@@ -565,7 +566,9 @@ const referenceDetails: { [key: string]: ReferenceDetail } = {
                 description: "Etkinlikteki araç deneyimlerini ve katılımcıların özel anlarını profesyonel kamera ile detaylı şekilde kayda aldık",
                 category: "Fotoğraf & Video",
                 completionDate: "Ağustos 2025",
-                location: "İstanbul"
+                location: "İstanbul",
+                youtubeUrl: "https://www.youtube.com/watch?v=ilX0ZybG8Hc"
+
             },
             {
                 id: 3,
@@ -573,7 +576,9 @@ const referenceDetails: { [key: string]: ReferenceDetail } = {
                 description: "Test sürüşü alanının büyüklüğünü ve etkinliğin enerjisini sinematik drone görüntüleriyle yansıttık",
                 category: "Drone Çekimi",
                 completionDate: "Ağustos 2025",
-                location: "İstanbul"
+                location: "İstanbul",
+                youtubeUrl: "https://www.youtube.com/watch?v=ilX0ZybG8Hc"
+
             },
             {
                 id: 4,
@@ -1202,18 +1207,46 @@ const referenceDetails: { [key: string]: ReferenceDetail } = {
     },
     "yutek-gemi-insa": {
         id: 30,
-        companyName: "YUTEK GEMİ İNŞA",
+        companyName: "YUTEK GEMİ İNŞA. SAN. LTD. ŞTİ.",
         companyLogo: "ref-6",
         companyDescription: "Denizcilik sektöründe faaliyet gösteren Yutek Gemi İnşa, kaliteli gemi yapım ve onarım hizmetleriyle sektörde güvenilir bir konumda yer almaktadır.",
-        summary: "Yutek Gemi İnşa ile denizcilik sektörüne özel görsel içerikler ürettik. Tersane çalışmaları ve gemi inşa süreçlerini profesyonel çekimlerle belgeledik.",
+        summary: "Yutek Gemi İnşa ile GORDON ANIM arama kurtarma gemisi için kapsamlı görsel içerik üretimi gerçekleştirdik. Geminin seyir halindeyken havadan çekilen etkileyici drone görüntüleri, geminin her noktasını detaylandıran profesyonel kamera çekimleri ve uluslararası standartlarda tanıtım filmi hazırladık. Mühendis eşliğinde geminin tüm bölümlerinin kurumsal arşiv ve hatıra için detaylı fotoğraflanması işlemlerini gerçekleştirdik.",
         sector: "Denizcilik & İnşaat",
         collaboration: "2025",
         projects: [
             {
                 id: 1,
-                title: "Tersane Çekimleri",
-                description: "Gemi inşa süreçlerini ve tersane çalışmalarını profesyonel kamera ile kayda aldık",
+                title: "Drone Fotoğraf & Video Çekimleri",
+                description: "Geminin seyir halindeyken havadan çekilen etkileyici fotoğraf ve videolarla dinamik bir görsel arşiv oluşturduk.",
+                category: "Drone Çekimi",
+                completionDate: "Ağustos 2025",
+                location: "İstanbul",
+                youtubeUrl: "https://www.youtube.com/watch?v=RTqWGifZPSc"
+
+            },
+            {
+                id: 2,
+                title: "Profesyonel Kamera Çekimleri",
+                description: "Geminin her noktasını detaylı şekilde belgeleyen yüksek kaliteli kamera çekimleri gerçekleştirdik.",
                 category: "Video Prodüksiyon",
+                completionDate: "Ağustos 2025",
+                location: "İstanbul"
+            },
+            {
+                id: 3,
+                title: "Gemi Tanıtım Filmi",
+                description: "\"GORDON ANIM\" arama kurtarma gemisinin uluslararası standartlarda tanıtımını yapan profesyonel video hazırladık.",
+                category: "Video Prodüksiyon",
+                completionDate: "Ağustos 2025",
+                location: "İstanbul",
+                youtubeUrl: "https://www.youtube.com/watch?v=RTqWGifZPSc"
+
+            },
+            {
+                id: 4,
+                title: "Arşiv & Hatıra Fotoğrafları",
+                description: "Mühendis eşliğinde geminin tüm bölümlerinin hatıra ve kurumsal arşiv için tek tek fotoğraflanması.",
+                category: "Fotoğraf",
                 completionDate: "Ağustos 2025",
                 location: "İstanbul"
             }

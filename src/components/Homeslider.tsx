@@ -184,7 +184,7 @@ const FullPageHomeSlider: React.FC = () => {
         {slides.map((slide, index) => (
           <div key={index}>
             <div
-              className={slide.type === 'video' ? 'video-slide' : ''}
+              className={slide.type === 'video' ? 'video-slide asr-slider-container' : 'asr-slider-container'}
               style={{
                 height: "100vh",
                 display: "flex",
@@ -198,6 +198,7 @@ const FullPageHomeSlider: React.FC = () => {
               }}
               onMouseMove={handleMouseMove}
             >
+              <div className="video-overlay"></div>
               {/* Background - Image or Video */}
               {slide.type === 'image' ? (
                 <div

@@ -12,9 +12,9 @@ const ServicesC: React.FC = () => {
 
     // Her kart için ayrı ref ve inView
     // threshold'u yükselterek kartların ekranın ortasına daha çok yaklaştığında görünmesini sağla
-    const [ref1, inView1] = useInView<HTMLDivElement>({ threshold: 0.7 });
-    const [ref2, inView2] = useInView<HTMLDivElement>({ threshold: 0.7 });
-    const [ref3, inView3] = useInView<HTMLDivElement>({ threshold: 0.7 });
+    const [ref1, inView1] = useInView<HTMLDivElement>({ threshold: 0.4 });
+    const [ref2, inView2] = useInView<HTMLDivElement>({ threshold: 0.4 });
+    const [ref3, inView3] = useInView<HTMLDivElement>({ threshold: 0.4 });
 
     return (
         <Container>

@@ -7,7 +7,7 @@ import '../styles/_aboutS.scss';
 const Aboutus: React.FC = () => {
     const { t } = useTranslation();
 
-    const [ref, inView] = useInView<HTMLDivElement>({ threshold: 1 });
+    const [ref, inView] = useInView<HTMLDivElement>({ threshold: 0.4 });
     return (
         <div
             ref={ref}
