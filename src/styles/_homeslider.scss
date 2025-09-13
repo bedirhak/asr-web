@@ -86,7 +86,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 75%;
+      height: 100%;
       background: linear-gradient(to bottom, #000834, transparent);
       z-index: 1;
       pointer-events: none;
@@ -96,6 +96,8 @@
   // Drone'un gradient ve yazılar arasında kalması için
   .drone-container {
     z-index: 2 !important;
+    filter: blur(2px);
+    opacity: 0.35;
   }
 }
 
