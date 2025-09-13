@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
@@ -70,37 +70,78 @@ const References: React.FC = () => {
     const trackRef = useRef<HTMLDivElement>(null);
     const navigate = useNavigate();
 
+    // Drag state'leri
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+
     useEffect(() => {
         const track = trackRef.current;
-        if (!track) return;
+        const container = containerRef.current;
+        if (!track || !container) return;
 
         // Animasyonu başlat
         track.style.animationPlayState = 'running';
 
+        // Mouse drag handlers
+        const handleMouseDown = (e: MouseEvent) => {
+            setIsDragging(true);
+            setStartX(e.pageX - container.offsetLeft);
+            setScrollLeft(container.scrollLeft);
+            track.style.animationPlayState = 'paused';
+            container.style.cursor = 'grabbing';
+        };
+
+        const handleMouseMove = (e: MouseEvent) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.pageX - container.offsetLeft;
+            const walk = (x - startX) * 2; // Scroll-fast
+            container.scrollLeft = scrollLeft - walk;
+        };
+
+        const handleMouseUpOrLeave = () => {
+            setIsDragging(false);
+            container.style.cursor = 'grab';
+            track.style.animationPlayState = 'running';
+        };
+
         // Mouse hover'da animasyonu durdur, mouse leave'de başlat
         const handleMouseEnter = () => {
-            if (track) {
+            if (track && !isDragging) {
                 track.style.animationPlayState = 'paused';
             }
         };
 
         const handleMouseLeave = () => {
-            if (track) {
+            if (track && !isDragging) {
                 track.style.animationPlayState = 'running';
             }
+            handleMouseUpOrLeave();
         };
 
-        const container = containerRef.current;
-        if (container) {
-            container.addEventListener('mouseenter', handleMouseEnter);
-            container.addEventListener('mouseleave', handleMouseLeave);
+        // Event listeners
+        container.addEventListener('mousedown', handleMouseDown);
+        container.addEventListener('mousemove', handleMouseMove);
+        container.addEventListener('mouseup', handleMouseUpOrLeave);
+        container.addEventListener('mouseleave', handleMouseLeave);
+        container.addEventListener('mouseenter', handleMouseEnter);
 
-            return () => {
-                container.removeEventListener('mouseenter', handleMouseEnter);
-                container.removeEventListener('mouseleave', handleMouseLeave);
-            };
+        return () => {
+            container.removeEventListener('mousedown', handleMouseDown);
+            container.removeEventListener('mousemove', handleMouseMove);
+            container.removeEventListener('mouseup', handleMouseUpOrLeave);
+            container.removeEventListener('mouseleave', handleMouseLeave);
+            container.removeEventListener('mouseenter', handleMouseEnter);
+        };
+    }, [isDragging, startX, scrollLeft]);
+
+    // Click handler - sadece drag işlemi olmadığında çalışır
+    const handleItemClick = (slug: string) => {
+        if (!isDragging) {
+            navigate(`/reference-detail/${slug}`);
         }
-    }, []);
+    };
 
     return (
         <div className="d-flex flex-column align-items-center position-relative home-ref-comp">
@@ -121,7 +162,7 @@ const References: React.FC = () => {
                                 <div
                                     key={`set1-${index}`}
                                     className="reference-item"
-                                    onClick={() => navigate(`/reference-detail/${slug}`)}
+                                    onClick={() => handleItemClick(slug)}
                                     style={{ cursor: 'pointer' }}
                                 >
                                     <img src={img} alt={`Referans ${index + 1}`} />
@@ -137,7 +178,7 @@ const References: React.FC = () => {
                                 <div
                                     key={`set2-${index}`}
                                     className="reference-item"
-                                    onClick={() => navigate(`/reference-detail/${slug}`)}
+                                    onClick={() => handleItemClick(slug)}
                                     style={{ cursor: 'pointer' }}
                                 >
                                     <img src={img} alt={`Referans ${index + 1}`} />
@@ -166,7 +207,7 @@ const References: React.FC = () => {
             <Link to="/references" className="about-btn-link mt-4">
                 <button className="about-btn">
                     <span className="about-btn-text">
-                        Referanslarımız
+                        Tüm Referanslarımız
                     </span>
                     <div className="about-btn-light"></div>
                 </button>

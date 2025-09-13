@@ -3,6 +3,8 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import Container from "./Container";
 import { Link } from 'react-router-dom';
+import { FaVideo, FaCamera } from 'react-icons/fa';
+import { MdFlightTakeoff } from 'react-icons/md';
 
 import { useInView } from './useInView';
 
@@ -27,6 +29,9 @@ const ServicesC: React.FC = () => {
                         ref={ref1}
                         className={`about-service-card slide-in-left${inView1 ? ' in-view' : ''}`}
                     >
+                        <div className="service-icon">
+                            <FaVideo />
+                        </div>
                         <h3>{t('about.page.service1.title')}</h3>
                         <p>{t('about.page.service1.description')}</p>
                     </div>
@@ -34,6 +39,9 @@ const ServicesC: React.FC = () => {
                         ref={ref2}
                         className={`about-service-card slide-in${inView2 ? ' in-view' : ''}`}
                     >
+                        <div className="service-icon">
+                            <FaCamera />
+                        </div>
                         <h3>{t('about.page.service2.title')}</h3>
                         <p>{t('about.page.service2.description')}</p>
                     </div>
@@ -41,6 +49,9 @@ const ServicesC: React.FC = () => {
                         ref={ref3}
                         className={`about-service-card slide-in-right${inView3 ? ' in-view' : ''}`}
                     >
+                        <div className="service-icon">
+                            <MdFlightTakeoff />
+                        </div>
                         <h3>{t('about.page.service3.title')}</h3>
                         <p>{t('about.page.service3.description')}</p>
                     </div>
