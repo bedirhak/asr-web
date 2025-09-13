@@ -107,9 +107,9 @@ const References: React.FC = () => {
             <div className="references-blur-left"></div>
             <div className="references-blur-right"></div>
             <div className="references-slide-container">
-                <h2 className="about-services-title m-0">
+                {/* <h2 className="about-services-title m-0">
                     Referanslarımız
-                </h2>
+                </h2> */}
                 <div className="references-container" ref={containerRef}>
                     <div className="references-track" ref={trackRef}>
                         {/* İlk set */}
@@ -163,7 +163,7 @@ const References: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <Link to="/references" className="about-btn-link">
+            <Link to="/references" className="about-btn-link mt-4">
                 <button className="about-btn">
                     <span className="about-btn-text">
                         Referanslarımız
