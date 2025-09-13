@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 // Tüm referans resimlerini otomatik olarak içe aktar
 const imageContext = import.meta.glob("../assets/images/asr-refs/*.{png,jpg,jpeg,webp}", { eager: true, as: "url" }) as Record<string, string>;
@@ -102,13 +103,13 @@ const References: React.FC = () => {
     }, []);
 
     return (
-        <div className="d-flex flex-column align-items-center position-relative">
+        <div className="d-flex flex-column align-items-center position-relative home-ref-comp">
             <div className="references-blur-left"></div>
             <div className="references-blur-right"></div>
             <div className="references-slide-container">
-                {/* <h2 className="about-services-title">
+                <h2 className="about-services-title m-0">
                     Referanslarımız
-                </h2> */}
+                </h2>
                 <div className="references-container" ref={containerRef}>
                     <div className="references-track" ref={trackRef}>
                         {/* İlk set */}
@@ -162,14 +163,14 @@ const References: React.FC = () => {
                     </div>
                 </div>
             </div>
-            {/* <Link to="/references" className="about-btn-link mb-3">
+            <Link to="/references" className="about-btn-link">
                 <button className="about-btn">
                     <span className="about-btn-text">
                         Referanslarımız
                     </span>
                     <div className="about-btn-light"></div>
                 </button>
-            </Link> */}
+            </Link>
         </div>
 
     );
