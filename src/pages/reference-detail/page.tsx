@@ -567,8 +567,6 @@ const referenceDetails: { [key: string]: ReferenceDetail } = {
                 category: "Fotoğraf & Video",
                 completionDate: "Ağustos 2025",
                 location: "İstanbul",
-                youtubeUrl: "https://www.youtube.com/watch?v=ilX0ZybG8Hc"
-
             },
             {
                 id: 3,
@@ -577,7 +575,6 @@ const referenceDetails: { [key: string]: ReferenceDetail } = {
                 category: "Drone Çekimi",
                 completionDate: "Ağustos 2025",
                 location: "İstanbul",
-                youtubeUrl: "https://www.youtube.com/watch?v=ilX0ZybG8Hc"
 
             },
             {
@@ -1106,7 +1103,7 @@ const referenceDetails: { [key: string]: ReferenceDetail } = {
         companyName: "ERSAĞ",
         companyLogo: "ref-12",
         companyDescription: "Sağlık ve beslenme alanında faaliyet gösteren Ersağ, büyük organizasyonlar ve liderlik seminerleri ile sektörde öncü konumunu sürdürmektedir.",
-        summary: "Ersağ ile kapsamlı etkinlik belgeleme ve dijital pazarlama projesi gerçekleştirdik. 5.000 kişilik büyük organizasyonların görsel belgelenmesinden Instagram hesap yönetimine, logo tasarımından belgesel çekimine kadar geniş kapsamlı hizmetler sunduk.",
+        summary: "Ersağ ile kapsamlı etkinlik belgeleme ve dijital pazarlama projesi gerçekleştirdik. 5.000 kişilik büyük organizasyonların görsel belgelenmesinden Instagram hesap yönetimine, logo tasarımından belgesel çekimine kadar geniş kapsamlı hizmetler sunduk. Ayrıca Fatma Demet Sönmez Usta için profesyonel kariyer tanıtım filmi prodüksiyonu gerçekleştirdik.",
         sector: "Sağlık & Beslenme",
         collaboration: "2025",
         projects: [
@@ -1149,6 +1146,15 @@ const referenceDetails: { [key: string]: ReferenceDetail } = {
                 category: "Belgesel Prodüksiyon",
                 completionDate: "Ağustos 2025",
                 location: "İstanbul"
+            },
+            {
+                id: 6,
+                title: "Fatma Demet Sönmez Usta Tanıtım Filmi",
+                description: "Fatma Demet Sönmez Usta'nın kariyer basamaklarını, uzmanlık alanlarını ve danışanlarına sunduğu hizmetleri anlatan tanıtım filmi. Drone çekimleri ile geniş kadrajlar, profesyonel sinema kameraları ile detaylar ve modern kurgu teknikleriyle sinematik bir prodüksiyon hazırlandı.",
+                category: "Tanıtım Filmi",
+                completionDate: "2024",
+                location: "İstanbul",
+                youtubeUrl: "https://www.youtube.com/watch?v=-67GffsQRcI"
             }
         ],
         image: "ref-12"
@@ -1456,18 +1462,119 @@ const referenceDetails: { [key: string]: ReferenceDetail } = {
             }
         ],
         image: "ref-35"
+    },
+    "tozlu": {
+        id: 39,
+        companyName: "TOZLU VAKFI - ADAPAZARI",
+        companyLogo: "ref-39",
+        companyDescription: "Sakarya Adapazarı'nda bulunan Tozlu Camii, bölgenin önemli kültürel ve dini yapılarından biridir. Mimari güzelliği ve tarihsel değeri ile dikkat çeken bir camiidir.",
+        summary: "Tozlu Camii için hazırlanan tanıtım filmi projesi kapsamında, caminin dış mimarisi, kubbeleri ve çevresini drone çekimleriyle etkileyici açılardan sunduk. İç mekân detayları, minareler ve avlu gibi mimari ve atmosferik öğeleri kamera & gimbal çekimleriyle yüksek kalitede aktardık. Profesyonel ekipmanlar, hassas kadrajlar ve akıcı hareketli sahneler kullanarak, kurgu aşamasında uygun müzik seçimi, sahne geçişleri ve renk düzenlemeleri ile filmi zenginleştirdik. Video, kültürel/turistik tanıtım formatına uygun şekilde hazırlanıp teslim edildi.",
+        sector: "Kültürel & Dini Yapılar",
+        collaboration: "2024",
+        projects: [
+            {
+                id: 1,
+                title: "Tozlu Camii Tanıtım Filmi",
+                description: "Sakarya Adapazarı'ndaki Tozlu Camii için hazırlanan tanıtım filmi, drone, kamera ve gimbal kullanılarak profesyonel prodüksiyon teknikleriyle kayıt altına alındı. Caminin mimari güzelliği, tarihsel ve kültürel değeri, izleyiciye güven veren görsellerle ön plana çıkarıldı.",
+                category: "Tanıtım Filmi",
+                completionDate: "2024",
+                location: "Sakarya / Adapazarı",
+                youtubeUrl: "https://www.youtube.com/watch?v=4D4RkVE24s8"
+
+            },
+            {
+                id: 2,
+                title: "Drone Çekimleri",
+                description: "Caminin dış mimarisi, kubbeleri ve çevresi etkileyici açılardan drone çekimleriyle sunuldu. Havadan yapılan çekimler ile caminin konumu ve çevresel güzelliği ortaya konuldu.",
+                category: "Drone Çekimi",
+                completionDate: "2024",
+                location: "Sakarya / Adapazarı",
+                youtubeUrl: "https://www.youtube.com/watch?v=4D4RkVE24s8"
+            },
+            {
+                id: 3,
+                title: "Kamera & Gimbal Çekimleri",
+                description: "İç mekân detayları, minareler, avlu gibi mimari ve atmosferik öğeler kamera & gimbal çekimleriyle yüksek kalitede aktarıldı. Profesyonel ekipmanlar ve hassas kadrajlar kullanıldı.",
+                category: "Video Prodüksiyon",
+                completionDate: "2024",
+                location: "Sakarya / Adapazarı"
+            },
+            {
+                id: 4,
+                title: "Kurgu & Montaj",
+                description: "Kurgu aşamasında uygun müzik seçildi, sahne geçişleriyle görsel ritim sağlandı, renk düzenlemeleri ve hafif efektlerle film zenginleştirildi. Kültürel/turistik tanıtım formatına uygun hazırlandı.",
+                category: "Post-Prodüksiyon",
+                completionDate: "2024",
+                location: "Sakarya / Adapazarı"
+            }
+        ],
+        image: "ref-39"
+    },
+    "ilim-yayma": {
+        id: 40,
+        companyName: "İLİM YAYMA CEMİYETİ",
+        companyLogo: "ref-38",
+        companyDescription: "Eğitim ve sosyal projeler alanında faaliyet gösteren İlim Yayma Cemiyeti, gençlerin ve çocukların gelişimi için değerli programlar düzenlemektedir.",
+        summary: "İlim Yayma Cemiyeti ile 'Sen Değersin Yaz Okulu' tanıtım filmi projesi gerçekleştirdik. Green screen stüdyo çekimleriyle hazırlanan bu video, farklı sahneler ve dinamik görsel efektlerle desteklendi. 4K çözünürlükte kurgulanan film, yaz okulunun motivasyon dolu atmosferini modern ve etkileyici bir şekilde izleyicilere aktarıyor.",
+        sector: "Eğitim & Sosyal Projeler",
+        collaboration: "2024",
+        projects: [
+            {
+                id: 1,
+                title: "Sen Değersin Yaz Okulu Tanıtım Filmi",
+                description: "İlim Yayma Cemiyeti tarafından düzenlenen 'Sen Değersin Yaz Okulu' için hazırlanan tanıtım filmi. Öğrenciler için eğitici ve eğlenceli programa ilişkin etkinlikler, sosyal faaliyetler ve öğrenme ortamı tanıtıldı.",
+                category: "Tanıtım Filmi",
+                completionDate: "2024",
+                location: "İstanbul",
+                youtubeUrl: "https://www.youtube.com/shorts/YlUSIvxmVgI"
+            },
+            {
+                id: 2,
+                title: "Green Screen Stüdyo Çekimleri",
+                description: "Yeşil perde stüdyo çekimleriyle farklı sahneler ve dinamik görsel efektler oluşturuldu. Profesyonel stüdyo ekipmanları kullanılarak yüksek kaliteli görüntüler elde edildi.",
+                category: "Stüdyo Prodüksiyon",
+                completionDate: "2024",
+                location: "İstanbul",
+                youtubeUrl: "https://www.youtube.com/shorts/nveLM0HgETM"
+            },
+            {
+                id: 3,
+                title: "4K Kurgu & Montaj",
+                description: "4K çözünürlükte kurgulanan film, modern anlatım teknikleri ve etkileyici görsel efektlerle zenginleştirildi. Yaz okulunun motivasyon dolu atmosferi izleyicilere aktarıldı.",
+                category: "Post-Prodüksiyon",
+                completionDate: "2024",
+                location: "İstanbul"
+            },
+            {
+                id: 4,
+                title: "Görsel Efekt & Tasarım",
+                description: "Dinamik görsel efektler ve modern tasarım öğeleriyle videonun etkisi artırıldı. Green screen teknolojisi kullanılarak yaratıcı sahneler oluşturuldu.",
+                category: "Görsel Efekt",
+                completionDate: "2024",
+                location: "İstanbul"
+            }
+        ],
+        image: "ref-38"
     }
 };
 
 // YouTube URL'sini embed URL'sine çevir
 const getYouTubeEmbedUrl = (url: string): string => {
-    const videoId = url.split('watch?v=')[1]?.split('&')[0];
+    const videoId = getYouTubeVideoId(url);
     return videoId ? `https://www.youtube.com/embed/${videoId}` : '';
 };
 
 // YouTube video ID'sini al
 const getYouTubeVideoId = (url: string): string => {
-    return url.split('watch?v=')[1]?.split('&')[0] || '';
+    // Normal YouTube video URL'si
+    if (url.includes('watch?v=')) {
+        return url.split('watch?v=')[1]?.split('&')[0] || '';
+    }
+    // YouTube Shorts URL'si
+    else if (url.includes('/shorts/')) {
+        return url.split('/shorts/')[1]?.split('?')[0] || '';
+    }
+    return '';
 };
 
 // YouTube thumbnail URL'sini al
@@ -1489,40 +1596,87 @@ const ReferenceDetailPage: React.FC = () => {
     const [isVideoModalOpen, setIsVideoModalOpen] = React.useState(false);
     const [currentVideoUrl, setCurrentVideoUrl] = React.useState('');
     const [currentVideoTitle, setCurrentVideoTitle] = React.useState('');
+    const [currentVideoIndex, setCurrentVideoIndex] = React.useState(0);
 
     const refKey = slug ? getRefKey(slug) : '';
     const reference = referenceDetails[refKey];
 
+    // Referansın video listesini al
+    const getVideoProjects = () => {
+        if (!reference) return [];
+        return reference.projects.filter(project => project.youtubeUrl);
+    };
+
     // Video popup fonksiyonları
     const openVideoModal = (url: string, title: string) => {
+        const videoProjects = getVideoProjects();
+        const videoIndex = videoProjects.findIndex(project => project.youtubeUrl === url);
+
         setCurrentVideoUrl(url);
         setCurrentVideoTitle(title);
+        setCurrentVideoIndex(videoIndex >= 0 ? videoIndex : 0);
         setIsVideoModalOpen(true);
-        document.body.style.overflow = 'hidden'; // Body scroll'u kapat
+        document.body.style.overflow = 'hidden';
     };
 
     const closeVideoModal = () => {
         setIsVideoModalOpen(false);
         setCurrentVideoUrl('');
         setCurrentVideoTitle('');
-        document.body.style.overflow = 'unset'; // Body scroll'u aç
+        setCurrentVideoIndex(0);
+        document.body.style.overflow = 'unset';
     };
 
-    // ESC tuşu ile popup'ı kapatma
+    // Modal'da video değiştirme
+    const changeVideoInModal = (direction: 'prev' | 'next') => {
+        const videoProjects = getVideoProjects();
+        if (videoProjects.length <= 1) return;
+
+        let newIndex = currentVideoIndex;
+        if (direction === 'prev') {
+            newIndex = currentVideoIndex > 0 ? currentVideoIndex - 1 : videoProjects.length - 1;
+        } else {
+            newIndex = currentVideoIndex < videoProjects.length - 1 ? currentVideoIndex + 1 : 0;
+        }
+
+        const newVideo = videoProjects[newIndex];
+        setCurrentVideoIndex(newIndex);
+        setCurrentVideoUrl(newVideo.youtubeUrl!);
+        setCurrentVideoTitle(newVideo.title);
+    };
+
+    // ESC, Left, Right tuş ile popup kontrolü
     React.useEffect(() => {
-        const handleEsc = (event: KeyboardEvent) => {
-            if (event.key === 'Escape') {
-                closeVideoModal();
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (!isVideoModalOpen) return;
+
+            const videoProjects = getVideoProjects();
+
+            switch (event.key) {
+                case 'Escape':
+                    closeVideoModal();
+                    break;
+                case 'ArrowLeft':
+                    if (videoProjects.length > 1) {
+                        changeVideoInModal('prev');
+                    }
+                    break;
+                case 'ArrowRight':
+                    if (videoProjects.length > 1) {
+                        changeVideoInModal('next');
+                    }
+                    break;
             }
         };
+
         if (isVideoModalOpen) {
-            document.addEventListener('keydown', handleEsc);
+            document.addEventListener('keydown', handleKeyDown);
         }
         return () => {
-            document.removeEventListener('keydown', handleEsc);
-            document.body.style.overflow = 'unset'; // Cleanup
+            document.removeEventListener('keydown', handleKeyDown);
+            document.body.style.overflow = 'unset';
         };
-    }, [isVideoModalOpen]);
+    }, [isVideoModalOpen, currentVideoIndex]);
 
     // Referans bulunamazsa ana sayfaya yönlendir
     if (!reference) {
@@ -1617,38 +1771,6 @@ const ReferenceDetailPage: React.FC = () => {
                                 </div>
                                 <p className="project-description">{project.description}</p>
 
-                                {project.youtubeUrl && (
-                                    <div className="project-youtube">
-                                        <div
-                                            className="youtube-thumbnail-container"
-                                            onClick={() => openVideoModal(project.youtubeUrl!, project.title)}
-                                        >
-                                            <img
-                                                src={getYouTubeThumbnail(project.youtubeUrl)}
-                                                alt={project.title}
-                                                className="youtube-thumbnail-image"
-                                            />
-
-                                        </div>
-                                    </div>
-                                )}
-
-                                {project.relatedToProject && (
-                                    <div className="project-related-video">
-                                        <button
-                                            className="related-video-button"
-                                            onClick={() => {
-                                                const mainProject = reference.projects.find(p => p.id === project.relatedToProject);
-                                                if (mainProject && mainProject.youtubeUrl) {
-                                                    openVideoModal(mainProject.youtubeUrl, mainProject.title);
-                                                }
-                                            }}
-                                        >
-                                            🎬 Ana Videoda Göster
-                                        </button>
-                                    </div>
-                                )}
-
                                 {project.catalogUrl && (
                                     <div className="project-catalog">
                                         <a
@@ -1677,6 +1799,59 @@ const ReferenceDetailPage: React.FC = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Video Works Section */}
+            {reference.projects.some(project => project.youtubeUrl || project.relatedToProject) && (
+                <div className="reference-videos">
+                    <div className="reference-videos-container">
+                        <h2>Çalışmalarımız</h2>
+                        <div className="videos-grid">
+                            {reference.projects
+                                .filter(project => project.youtubeUrl || project.relatedToProject)
+                                .map((project) => (
+                                    <div key={`video-${project.id}`} className="video-card">
+                                        <div className="video-header">
+                                            <h3>{project.title}</h3>
+                                            <span className="video-category">{project.category}</span>
+                                        </div>
+
+                                        {project.youtubeUrl ? (
+                                            <div className="video-thumbnail">
+                                                <div
+                                                    className="youtube-thumbnail-container"
+                                                    onClick={() => openVideoModal(project.youtubeUrl!, project.title)}
+                                                >
+                                                    <img
+                                                        src={getYouTubeThumbnail(project.youtubeUrl)}
+                                                        alt={project.title}
+                                                        className="youtube-thumbnail-image"
+                                                    />
+                                                    <div className="play-overlay">
+                                                        <div className="play-button">▶</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ) : project.relatedToProject && (
+                                            <div className="video-related">
+                                                <button
+                                                    className="related-video-button"
+                                                    onClick={() => {
+                                                        const mainProject = reference.projects.find(p => p.id === project.relatedToProject);
+                                                        if (mainProject && mainProject.youtubeUrl) {
+                                                            openVideoModal(mainProject.youtubeUrl, mainProject.title);
+                                                        }
+                                                    }}
+                                                >
+                                                    🎬 Ana Videoda Göster
+                                                </button>
+                                            </div>
+                                        )}
+                                    </div>
+                                ))}
+                        </div>
+                    </div>
+                </div>
+            )}
 
             {/* CTA Section */}
             <div className="reference-cta">
@@ -1727,6 +1902,7 @@ const ReferenceDetailPage: React.FC = () => {
                             boxShadow: '0 25px 50px rgba(0, 0, 0, 0.8)'
                         }}
                     >
+                        {/* Close Button */}
                         <button
                             className="video-modal-close"
                             onClick={closeVideoModal}
@@ -1754,6 +1930,67 @@ const ReferenceDetailPage: React.FC = () => {
                             </svg>
                         </button>
 
+                        {/* Navigation Arrows */}
+                        {getVideoProjects().length > 1 && (
+                            <>
+                                <button
+                                    className="video-modal-nav video-modal-prev"
+                                    onClick={() => changeVideoInModal('prev')}
+                                    style={{
+                                        position: 'absolute',
+                                        left: '20px',
+                                        top: '50%',
+                                        transform: 'translateY(-50%)',
+                                        width: '50px',
+                                        height: '50px',
+                                        backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                                        border: 'none',
+                                        borderRadius: '50%',
+                                        color: '#333',
+                                        cursor: 'pointer',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        fontSize: '24px',
+                                        fontWeight: 'bold',
+                                        zIndex: 10001,
+                                        transition: 'all 0.3s ease',
+                                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)'
+                                    }}
+                                >
+                                    ‹
+                                </button>
+                                <button
+                                    className="video-modal-nav video-modal-next"
+                                    onClick={() => changeVideoInModal('next')}
+                                    style={{
+                                        position: 'absolute',
+                                        right: '20px',
+                                        top: '50%',
+                                        transform: 'translateY(-50%)',
+                                        width: '50px',
+                                        height: '50px',
+                                        backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                                        border: 'none',
+                                        borderRadius: '50%',
+                                        color: '#333',
+                                        cursor: 'pointer',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        fontSize: '24px',
+                                        fontWeight: 'bold',
+                                        zIndex: 10001,
+                                        transition: 'all 0.3s ease',
+                                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)'
+                                    }}
+                                >
+                                    ›
+                                </button>
+                            </>
+                        )}
+
+                        {/* Video Header */}
                         <div className="video-modal-header" style={{ padding: '20px 20px 10px' }}>
                             <h3 className="video-modal-title" style={{
                                 color: 'white',
@@ -1763,19 +2000,30 @@ const ReferenceDetailPage: React.FC = () => {
                             }}>
                                 {currentVideoTitle}
                             </h3>
+                            {getVideoProjects().length > 1 && (
+                                <div style={{
+                                    color: 'rgba(255, 255, 255, 0.7)',
+                                    fontSize: '0.9rem',
+                                    marginTop: '5px'
+                                }}>
+                                    {currentVideoIndex + 1} / {getVideoProjects().length}
+                                </div>
+                            )}
                         </div>
 
+                        {/* Video Iframe */}
                         <div
                             className="video-modal-iframe-wrapper"
                             style={{
                                 position: 'relative',
                                 width: '100%',
                                 height: 0,
-                                paddingBottom: '56.25%', // 16:9 aspect ratio
+                                paddingBottom: '56.25%',
                                 backgroundColor: '#000'
                             }}
                         >
                             <iframe
+                                key={currentVideoUrl} // Force re-render on video change
                                 src={`${getYouTubeEmbedUrl(currentVideoUrl)}?autoplay=1&rel=0&showinfo=0`}
                                 title={currentVideoTitle}
                                 frameBorder="0"
@@ -1791,6 +2039,48 @@ const ReferenceDetailPage: React.FC = () => {
                                 }}
                             ></iframe>
                         </div>
+
+                        {/* Video Thumbnails/Indicators */}
+                        {getVideoProjects().length > 1 && (
+                            <div style={{
+                                padding: '20px',
+                                display: 'flex',
+                                gap: '10px',
+                                justifyContent: 'center',
+                                flexWrap: 'wrap'
+                            }}>
+                                {getVideoProjects().map((project, index) => (
+                                    <button
+                                        key={project.id}
+                                        onClick={() => {
+                                            setCurrentVideoIndex(index);
+                                            setCurrentVideoUrl(project.youtubeUrl!);
+                                            setCurrentVideoTitle(project.title);
+                                        }}
+                                        style={{
+                                            width: '80px',
+                                            height: '45px',
+                                            border: currentVideoIndex === index ? '2px solid #e74c3c' : '2px solid transparent',
+                                            borderRadius: '6px',
+                                            overflow: 'hidden',
+                                            cursor: 'pointer',
+                                            transition: 'all 0.3s ease',
+                                            opacity: currentVideoIndex === index ? 1 : 0.7
+                                        }}
+                                    >
+                                        <img
+                                            src={getYouTubeThumbnail(project.youtubeUrl!)}
+                                            alt={project.title}
+                                            style={{
+                                                width: '100%',
+                                                height: '100%',
+                                                objectFit: 'cover'
+                                            }}
+                                        />
+                                    </button>
+                                ))}
+                            </div>
+                        )}
                     </div>
                 </div>
             )}

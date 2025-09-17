@@ -2,12 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import '../styles/_comments.scss';
 
 // Şirket logolarını import et
-import ref1 from '../assets/images/asr-refs/ref-2.png';
-import ref2 from '../assets/images/asr-refs/ref-7.png';
-import ref3 from '../assets/images/asr-refs/ref-11.png';
-import ref4 from '../assets/images/asr-refs/ref-26.png';
-import ref5 from '../assets/images/asr-refs/ref-33.png';
-import ref6 from '../assets/images/asr-refs/ref-24.png';
+import ref1 from '../assets/images/asr-refs/ref-21.png'; // SER ANAOKULLARI
+import ref2 from '../assets/images/asr-refs/ref-17.png'; // HEY AKADEMİ
+import ref3 from '../assets/images/asr-refs/ref-38.png'; // İLİM YAYMA CEMİYETİ
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
 
@@ -15,50 +12,26 @@ import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 const testimonials = [
     {
         id: 1,
-        name: "Başak Traktör",
-        company: "Fabrika",
+        name: "SER ANAOKULLARI",
+        company: "Eğitim",
         companyLogo: ref1,
-        comment: "ASR Ajans ile çalışmak harika bir deneyimdi. Projemizi zamanında ve beklentilerimizi aşarak teslim ettiler. Profesyonel yaklaşımları ve yaratıcı çözümleri ile işimizi bir üst seviyeye taşıdılar.",
+        comment: "Video çekimi sürecinde oldukça profesyonel, güler yüzlü ve hızlı bir hizmet aldım. İsteklerimi dikkatle dinleyip en iyi şekilde yansıttılar. Teşekkürler.",
         rating: 5
     },
     {
         id: 2,
-        name: "ERFO",
-        company: "Metal Makina",
+        name: "HEY AKADEMİ",
+        company: "Eğitim",
         companyLogo: ref2,
-        comment: "Dijital pazarlama stratejimizi yeniden düzenlerken ASR Ajans'ın uzmanlığından çok faydalandık. ROI'mız %300 arttı ve marka bilinirliğimiz ciddi şekilde yükseldi.",
+        comment: "HEY AKADEMİ olarak Bilal bey ile iki farklı projede birlikte çalıştık. Güler yüzü, işini zamanında yapması ve ne istersek bizi kırmayıp yapması… Bundan sonraki projelerde de birlikte çalışacağız inşaAllah.",
         rating: 5
     },
     {
         id: 3,
-        name: "Platformder",
-        company: "Dernek",
+        name: "İLİM YAYMA CEMİYETİ",
+        company: "Eğitim",
         companyLogo: ref3,
-        comment: "Web sitesi tasarımından sosyal medya yönetimine kadar tüm dijital ihtiyaçlarımızı karşıladılar. Satışlarımız %250 arttı ve müşteri memnuniyeti en üst seviyede.",
-        rating: 5
-    },
-    {
-        id: 4,
-        name: "Remax",
-        company: "Emlak Ajansı",
-        companyLogo: ref4,
-        comment: "Moda sektöründeki deneyimleri ve trend takip yetenekleri sayesinde markamızı doğru kitleye ulaştırdılar. Sosyal medya takipçilerimiz 10 kat arttı.",
-        rating: 5
-    },
-    {
-        id: 5,
-        name: "YAFA İnşaat",
-        company: "Yapı Sektörü",
-        companyLogo: ref5,
-        comment: "Restoran zinciri olarak dijital dönüşümümüzde ASR Ajans bizim için vazgeçilmez oldu. Online sipariş sistemimiz ve dijital pazarlama stratejilerimiz mükemmel çalışıyor.",
-        rating: 5
-    },
-    {
-        id: 6,
-        name: "Aktepe Ambalaj",
-        company: "Ambalaj ve Paketleme",
-        companyLogo: ref6,
-        comment: "Sağlık sektöründeki hassasiyetleri anlayarak etik ve etkili pazarlama stratejileri geliştirdiler. Hasta memnuniyeti ve klinik doluluk oranlarımız ciddi şekilde arttı.",
+        comment: "ASR Ajans ile çalışmaktan çok memnunuz. Geçtiğimiz yaz okulumuzda 17 öğrencimiz varken, bu yıl hazırladıkları profesyonel tanıtım videoları sayesinde öğrenci sayımız 60'a ulaştı. Videolar hem kalite hem de etki açısından beklentilerimizi fazlasıyla karşıladı ve toplamda 200 binden fazla izlendi. Önümüzdeki süreçte Erkek Öğrenci Yurdumuz için de tanıtım filmi çalışmalarımızı yine ASR Ajans ile sürdüreceğiz.",
         rating: 5
     }
 ];

@@ -56,7 +56,7 @@ const FullPageHomeSlider: React.FC = () => {
   const [droneTransform, setDroneTransform] = useState({ rotateX: 0, rotateY: 0 });
 
   const autoplaySpeed = 7000; // 7 saniye
-  const videoAutoplaySpeed = 60000; // 1 dakika (60 saniye)
+  const videoAutoplaySpeed = 30000; // 1 dakika (60 saniye)
 
   const getCurrentSlideSpeed = () => {
     return slides[currentSlide]?.type === 'video' ? videoAutoplaySpeed : autoplaySpeed;

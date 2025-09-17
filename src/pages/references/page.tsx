@@ -64,6 +64,10 @@ const getCompanyName = (imagePath: string, index: number) => {
         'ref-33': 'YAFA İNŞAAT',
         'ref-34': 'MKC GROUP',
         'ref-35': 'SEMİZOĞLU TRAKTÖR BAYİSİ',
+        'ref-36': 'KARCHER SAKARYA',
+        'ref-37': 'AÇAN RULMAN - HIRDAVAT',
+        'ref-38': 'İLİM YAYMA CEMİYETİ',
+        'ref-39': 'TOZLU VAKFI - ADAPAZARI',
 
     };
 
@@ -112,6 +116,10 @@ const getCompanySlug = (imagePath: string) => {
         'ref-33': 'yafa',
         'ref-34': 'mkc',
         'ref-35': 'semizoglu-traktor',
+        'ref-36': 'karcher',
+        'ref-37': 'acan-rulman',
+        'ref-38': 'ilim-yayma',
+        'ref-39': 'tozlu',
 
     };
 

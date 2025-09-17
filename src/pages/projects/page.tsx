@@ -57,25 +57,25 @@ const allProjects: Project[] = [
         youtubeUrl: "https://www.youtube.com/watch?v=yuJlm9rvLpE"
     },
 
-    // DORA MİNİ
+    // DORE MİNİ
     {
-        id: "dora-mini-1",
-        title: "Dora Mini'nin Etkinlik Çekimleri",
-        description: "Çocukların sevimli karakteri Dora Mini ile yapılan eğlenceli etkinlik anlarının profesyonel video çekimleri",
+        id: "dore-mini-1",
+        title: "Dore Mini'nin Etkinlik Çekimleri",
+        description: "Çocukların sevimli karakteri Dore Mini ile yapılan eğlenceli etkinlik anlarının profesyonel video çekimleri",
         categories: ["Etkinlik Çekimleri", "Sosyal Medya Çekimleri"],
-        referenceCompany: "DORA MİNİ",
-        referenceSlug: "dora-mini",
+        referenceCompany: "DORE MİNİ",
+        referenceSlug: "dore-mimi-anaokulu",
         completionDate: "Ekim 2025",
         location: "İstanbul",
         youtubeUrl: "https://www.youtube.com/watch?v=oNGO_QoxtPM"
     },
     {
-        id: "dora-mini-2",
-        title: "Dora Mini Etkinlik Çekimleri - 2",
-        description: "Dora Mini karakteri ile düzenlenen özel etkinliklerin dinamik ve renkli video çekimleri",
+        id: "dore-mini-2",
+        title: "Dore Mini Etkinlik Çekimleri - 2",
+        description: "Dore Mini karakteri ile düzenlenen özel etkinliklerin dinamik ve renkli video çekimleri",
         categories: ["Etkinlik Çekimleri", "Sosyal Medya Çekimleri"],
-        referenceCompany: "DORA MİNİ",
-        referenceSlug: "dora-mini",
+        referenceCompany: "DORE MİNİ",
+        referenceSlug: "dore-mimi-anaokulu",
         completionDate: "Ekim 2025",
         location: "İstanbul",
         youtubeUrl: "https://www.youtube.com/watch?v=9T04ghayaSU"
@@ -92,6 +92,45 @@ const allProjects: Project[] = [
         completionDate: "Ekim 2025",
         location: "İstanbul",
         youtubeUrl: "https://www.youtube.com/watch?v=aeDtZsLW8LA"
+    },
+
+    // TOZLU CAMİİ
+    {
+        id: "ref-39",
+        title: "Tozlu Camii Tanıtım Filmi",
+        description: "Sakarya Adapazarı'ndaki Tozlu Camii için hazırlanan tanıtım filmi, drone, kamera ve gimbal kullanılarak profesyonel prodüksiyon teknikleriyle kayıt altına alındı.",
+        categories: ["Tanıtım Filmleri", "Drone Çekimleri", "Kültürel Projeler"],
+        referenceCompany: "Tozlu Camii",
+        referenceSlug: "tozlu",
+        completionDate: "2024",
+        location: "Sakarya / Adapazarı",
+        youtubeUrl: "https://www.youtube.com/watch?v=4D4RkVE24s8"
+    },
+
+    // ERSAĞ - Fatma Demet Sönmez Usta
+    {
+        id: "ref-12",
+        title: "Fatma Demet Sönmez Usta Tanıtım Filmi",
+        description: "Fatma Demet Sönmez Usta'nın kariyer basamaklarını, uzmanlık alanlarını ve danışanlarına sunduğu hizmetleri anlatan tanıtım filmi profesyonel prodüksiyon teknikleriyle hazırlandı.",
+        categories: ["Tanıtım Filmleri", "Drone Çekimleri", "Kişisel Marka"],
+        referenceCompany: "ERSAĞ",
+        referenceSlug: "ersag",
+        completionDate: "2024",
+        location: "İstanbul",
+        youtubeUrl: "https://www.youtube.com/watch?v=-67GffsQRcI"
+    },
+
+    // İLİM YAYMA CEMİYETİ
+    {
+        id: "ref-38",
+        title: "Sen Değersin Yaz Okulu Tanıtım Filmi",
+        description: "İlim Yayma Cemiyeti tarafından düzenlenen 'Sen Değersin Yaz Okulu' için hazırlanan tanıtım filmi. Green screen stüdyo çekimleri ve dinamik görsel efektlerle desteklenen 4K çözünürlükte modern prodüksiyon.",
+        categories: ["Tanıtım Filmleri", "Eğitim Kurumları", "Stüdyo Çekimleri"],
+        referenceCompany: "İlim Yayma Cemiyeti",
+        referenceSlug: "ilim-yayma",
+        completionDate: "2024",
+        location: "İstanbul",
+        youtubeUrl: "https://www.youtube.com/shorts/YlUSIvxmVgI"
     }
 ];
 
@@ -109,18 +148,42 @@ const allCategories = [
     "Ürün Fotoğrafçılığı",
     "360° Sanal Tur",
     "Grafik Tasarım",
-    "Kurumsal Video"
+    "Kurumsal Video",
+    "Kültürel Projeler",
+    "Kişisel Marka",
+    "Eğitim Kurumları",
+    "Stüdyo Çekimleri"
 ];
 
 // YouTube thumbnail URL'sini al
 const getYouTubeThumbnail = (url: string): string => {
-    const videoId = url.split('watch?v=')[1]?.split('&')[0];
+    let videoId = '';
+
+    // Normal YouTube video URL'si
+    if (url.includes('watch?v=')) {
+        videoId = url.split('watch?v=')[1]?.split('&')[0];
+    }
+    // YouTube Shorts URL'si
+    else if (url.includes('/shorts/')) {
+        videoId = url.split('/shorts/')[1]?.split('?')[0];
+    }
+
     return videoId ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg` : '';
 };
 
 // YouTube URL'sini embed URL'sine çevir
 const getYouTubeEmbedUrl = (url: string): string => {
-    const videoId = url.split('watch?v=')[1]?.split('&')[0];
+    let videoId = '';
+
+    // Normal YouTube video URL'si
+    if (url.includes('watch?v=')) {
+        videoId = url.split('watch?v=')[1]?.split('&')[0];
+    }
+    // YouTube Shorts URL'si
+    else if (url.includes('/shorts/')) {
+        videoId = url.split('/shorts/')[1]?.split('?')[0];
+    }
+
     return videoId ? `https://www.youtube.com/embed/${videoId}` : '';
 };
 

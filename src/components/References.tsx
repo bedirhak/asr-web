@@ -57,7 +57,8 @@ const getSlugFromImagePath = (imagePath: string): string => {
         'ref-32.png': 'birlik-vakfi',
         'ref-33.png': 'yafa',
         'ref-34.png': 'mkc',
-        'ref-35.png': 'semizoglu-traktor'
+        'ref-35.png': 'semizoglu-traktor',
+        'ref-39.png': 'tozlu'
     };
 
     // Dosya adını path'den çıkar
