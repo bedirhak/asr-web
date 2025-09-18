@@ -31,7 +31,7 @@ const testimonials = [
         name: "İLİM YAYMA CEMİYETİ",
         company: "Eğitim",
         companyLogo: ref3,
-        comment: "ASR Ajans ile çalışmaktan çok memnunuz. Geçtiğimiz yaz okulumuzda 17 öğrencimiz varken, bu yıl hazırladıkları profesyonel tanıtım videoları sayesinde öğrenci sayımız 60'a ulaştı. Videolar hem kalite hem de etki açısından beklentilerimizi fazlasıyla karşıladı ve toplamda 200 binden fazla izlendi. Önümüzdeki süreçte Erkek Öğrenci Yurdumuz için de tanıtım filmi çalışmalarımızı yine ASR Ajans ile sürdüreceğiz.",
+        comment: "ASR Ajans ile çalışmaktan çok memnunuz.Videolar hem kalite hem de etki açısından beklentilerimizi fazlasıyla karşıladı ve toplamda 200 binden fazla izlendi.Önümüzdeki süreçte Erkek Öğrenci Yurdumuz için de tanıtım filmi çalışmalarımızı yine ASR Ajans ile sürdüreceğiz.",
         rating: 5
     }
 ];

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { FaArrowLeft, FaPhone, FaWhatsapp, FaPlay, FaExternalLinkAlt, FaTimes } from 'react-icons/fa';
+import { FaArrowLeft, FaPhone, FaWhatsapp, FaExternalLinkAlt, FaTimes } from 'react-icons/fa';
 
 // YouTube thumbnail generator function
 const getYouTubeThumbnail = (url: string): string => {
@@ -375,26 +375,30 @@ const ServiceDetailPage: React.FC = () => {
                                 <p>{service.fullDescription}</p>
                             </section>
 
-                            <section className="features-section">
-                                <h2>Neler Sunuyoruz?</h2>
-                                <ul className="features-list">
-                                    {service.features.map((feature, index) => (
-                                        <li key={index}>{feature}</li>
-                                    ))}
-                                </ul>
-                            </section>
+                            <div className='services-details-container'>
 
-                            <section className="process-section">
-                                <h2>Çalışma Sürecimiz</h2>
-                                <div className="process-steps">
-                                    {service.process.map((step, index) => (
-                                        <div key={index} className="process-step">
-                                            <div className="step-number">{index + 1}</div>
-                                            <div className="step-content">{step}</div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </section>
+                                <section className="features-section">
+                                    <h2>Neler Sunuyoruz?</h2>
+                                    <ul className="features-list">
+                                        {service.features.map((feature, index) => (
+                                            <li key={index}>{feature}</li>
+                                        ))}
+                                    </ul>
+                                </section>
+
+                                <section className="process-section">
+                                    <h2>Çalışma Sürecimiz</h2>
+                                    <div className="process-steps">
+                                        {service.process.map((step, index) => (
+                                            <div key={index} className="process-step">
+                                                <div className="step-number">{index + 1}</div>
+                                                <div className="step-content">{step}</div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </section>
+                            </div>
+
                         </div>
 
                         {/* Sidebar */}
@@ -441,22 +445,31 @@ const ServiceDetailPage: React.FC = () => {
                                                     e.currentTarget.src = example.thumbnail || "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400&h=300&fit=crop";
                                                 }}
                                             />
-                                            <div className="play-overlay">
-                                                <FaPlay />
-                                                <span>Video İzle</span>
-                                            </div>
+                                            {example.type === 'video' && (
+                                                <div className="play-overlay">
+                                                    <div className="play-button">
+                                                        ▶
+                                                    </div>
+                                                    <span className="video-text">Video İzle</span>
+                                                </div>
+                                            )}
                                         </div>
                                         <div className="example-content">
                                             <h4>{example.title}</h4>
                                             <p>{example.description}</p>
                                             <div className="example-actions">
-                                                <button
-                                                    className="watch-btn"
-                                                    onClick={() => example.url && openVideoModal(example.url)}
-                                                    disabled={!example.url}
-                                                >
-                                                    <FaPlay /> İzle
-                                                </button>
+                                                {example.type === 'video' && (
+                                                    <button
+                                                        className="watch-btn"
+                                                        onClick={() => example.url && openVideoModal(example.url)}
+                                                        disabled={!example.url}
+                                                    >
+                                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                                            <path d="M8 5v14l11-7z" />
+                                                        </svg>
+                                                        İzle
+                                                    </button>
+                                                )}
                                                 <button className="info-btn">
                                                     <FaExternalLinkAlt /> Detay
                                                 </button>
@@ -495,28 +508,30 @@ const ServiceDetailPage: React.FC = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
 
             {/* Video Modal */}
-            {selectedVideo && (
-                <div className="video-modal-overlay" onClick={closeVideoModal}>
-                    <div className="video-modal-container" onClick={(e) => e.stopPropagation()}>
-                        <button className="video-modal-close" onClick={closeVideoModal}>
-                            <FaTimes />
-                        </button>
-                        <div className="video-iframe-wrapper">
-                            <iframe
-                                src={selectedVideo}
-                                title="Video Player"
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                            />
+            {
+                selectedVideo && (
+                    <div className="video-modal-overlay" onClick={closeVideoModal}>
+                        <div className="video-modal-container" onClick={(e) => e.stopPropagation()}>
+                            <button className="video-modal-close" onClick={closeVideoModal}>
+                                <FaTimes />
+                            </button>
+                            <div className="video-iframe-wrapper">
+                                <iframe
+                                    src={selectedVideo}
+                                    title="Video Player"
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                />
+                            </div>
                         </div>
                     </div>
-                </div>
-            )}
-        </div>
+                )
+            }
+        </div >
     );
 };
 

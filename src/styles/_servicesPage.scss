@@ -518,7 +518,7 @@
                 background: rgba(0, 0, 0, 0.8);
                 color: white;
                 padding: 16px 24px;
-                border-radius: 50px;
+                border-radius: 0;
                 display: flex;
                 align-items: center;
                 gap: 8px;
@@ -627,8 +627,8 @@
 
 // Sidebar Section - Yeni stilleri
 .sidebar-section {
-    padding: 40px 0;
-    background: white;
+    padding: 10px 0;
+    background: unset;
 
     .contact-card {
         background: linear-gradient(135deg, $main-theme 0%, lighten($main-theme, 10%) 100%);

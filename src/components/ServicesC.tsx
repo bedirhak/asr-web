@@ -3,8 +3,11 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import Container from "./Container";
 import { Link } from 'react-router-dom';
-import { FaVideo, FaCamera } from 'react-icons/fa';
-import { MdFlightTakeoff } from 'react-icons/md';
+
+// Import home icons
+import homeIcon1 from '../assets/images/homepage/homeIcon1.png';
+import homeIcon2 from '../assets/images/homepage/homeIcon2.png';
+import homeIcon3 from '../assets/images/homepage/homeIcon3.png';
 
 import { useInView } from './useInView';
 
@@ -30,7 +33,7 @@ const ServicesC: React.FC = () => {
                         className={`about-service-card slide-in-left${inView1 ? ' in-view' : ''}`}
                     >
                         <div className="service-icon">
-                            <FaVideo />
+                            <img src={homeIcon1} alt="Service 1" />
                         </div>
                         <h3>{t('about.page.service1.title')}</h3>
                         <p>{t('about.page.service1.description')}</p>
@@ -40,7 +43,7 @@ const ServicesC: React.FC = () => {
                         className={`about-service-card slide-in${inView2 ? ' in-view' : ''}`}
                     >
                         <div className="service-icon">
-                            <FaCamera />
+                            <img src={homeIcon3} alt="Service 2" />
                         </div>
                         <h3>{t('about.page.service2.title')}</h3>
                         <p>{t('about.page.service2.description')}</p>
@@ -50,7 +53,7 @@ const ServicesC: React.FC = () => {
                         className={`about-service-card slide-in-right${inView3 ? ' in-view' : ''}`}
                     >
                         <div className="service-icon">
-                            <MdFlightTakeoff />
+                            <img src={homeIcon2} alt="Service 3" />
                         </div>
                         <h3>{t('about.page.service3.title')}</h3>
                         <p>{t('about.page.service3.description')}</p>

@@ -9,7 +9,9 @@ import droneImage from "../assets/images/homepage/drone.webp";
 import VerticleText from '../components/VerticleText';
 
 // YouTube video URL - embed format with optimized parameters
-const slider3VideoUrl = "https://www.youtube.com/embed/_emteWELApM?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playlist=_emteWELApM&start=0&enablejsapi=1&origin=" + window.location.origin;
+const slider3VideoUrl = "https://www.youtube.com/embed/uBxBh3mZ_Ok?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playlist=uBxBh3mZ_Ok&start=0&enablejsapi=1&origin=" + window.location.origin;
+
+
 
 interface Slide {
   image?: string;

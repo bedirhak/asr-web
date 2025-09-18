@@ -59,9 +59,9 @@ const allProjects: Project[] = [
 
     // DORE MİNİ
     {
-        id: "dore-mini-1",
-        title: "Dore Mini'nin Etkinlik Çekimleri",
-        description: "Çocukların sevimli karakteri Dore Mini ile yapılan eğlenceli etkinlik anlarının profesyonel video çekimleri",
+        id: "dore-mimi-1",
+        title: "Dore Mimi'nin Etkinlik Çekimleri",
+        description: "Çocukların sevimli karakteri Dore Mimi ile yapılan eğlenceli etkinlik anlarının profesyonel video çekimleri",
         categories: ["Etkinlik Çekimleri", "Sosyal Medya Çekimleri"],
         referenceCompany: "DORE MİNİ",
         referenceSlug: "dore-mimi-anaokulu",
@@ -70,9 +70,9 @@ const allProjects: Project[] = [
         youtubeUrl: "https://www.youtube.com/watch?v=oNGO_QoxtPM"
     },
     {
-        id: "dore-mini-2",
-        title: "Dore Mini Etkinlik Çekimleri - 2",
-        description: "Dore Mini karakteri ile düzenlenen özel etkinliklerin dinamik ve renkli video çekimleri",
+        id: "dore-mimi-2",
+        title: "Dore Mimi Etkinlik Çekimleri - 2",
+        description: "Dore Mimi karakteri ile düzenlenen özel etkinliklerin dinamik ve renkli video çekimleri",
         categories: ["Etkinlik Çekimleri", "Sosyal Medya Çekimleri"],
         referenceCompany: "DORE MİNİ",
         referenceSlug: "dore-mimi-anaokulu",
@@ -99,7 +99,7 @@ const allProjects: Project[] = [
         id: "ref-39",
         title: "Tozlu Camii Tanıtım Filmi",
         description: "Sakarya Adapazarı'ndaki Tozlu Camii için hazırlanan tanıtım filmi, drone, kamera ve gimbal kullanılarak profesyonel prodüksiyon teknikleriyle kayıt altına alındı.",
-        categories: ["Tanıtım Filmleri", "Drone Çekimleri", "Kültürel Projeler"],
+        categories: ["Tanıtım Filmleri", "Drone Çekimleri"],
         referenceCompany: "Tozlu Camii",
         referenceSlug: "tozlu",
         completionDate: "2024",
@@ -125,7 +125,7 @@ const allProjects: Project[] = [
         id: "ref-38",
         title: "Sen Değersin Yaz Okulu Tanıtım Filmi",
         description: "İlim Yayma Cemiyeti tarafından düzenlenen 'Sen Değersin Yaz Okulu' için hazırlanan tanıtım filmi. Green screen stüdyo çekimleri ve dinamik görsel efektlerle desteklenen 4K çözünürlükte modern prodüksiyon.",
-        categories: ["Tanıtım Filmleri", "Eğitim Kurumları", "Stüdyo Çekimleri"],
+        categories: ["Tanıtım Filmleri", "Eğitim Kurumları"],
         referenceCompany: "İlim Yayma Cemiyeti",
         referenceSlug: "ilim-yayma",
         completionDate: "2024",
@@ -320,7 +320,6 @@ const ProjectsPage: React.FC = () => {
                 {isFilterOpen && (
                     <div className="categories-filter">
                         <div className="categories-container">
-                            <h3>Kategoriler</h3>
                             <div className="categories-grid">
                                 {allCategories.map(category => (
                                     <button
@@ -349,7 +348,7 @@ const ProjectsPage: React.FC = () => {
                             </button>
                         </div>
                     ) : (
-                        <div className="projects-grid">
+                        <div className="projects-grid" data-count={filteredProjects.length}>
                             {filteredProjects.map(project => (
                                 <div key={project.id} className="project-card">
                                     {/* Proje Kategorileri */}

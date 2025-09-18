@@ -194,22 +194,102 @@
     }
 
     .projects-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        display: flex;
+        flex-wrap: wrap;
         gap: 25px;
+        justify-content: center;
+        align-items: stretch;
+
+        // Base flex item settings
+        .project-card {
+            flex: 1 1 calc(25% - 19px); // 4 items per row, accounting for gap
+            min-width: 280px;
+            max-width: 350px;
+        }
+
+        // When there are fewer items, adjust flex behavior
+        &[data-count="1"] {
+            max-width: 400px;
+            margin: 0 auto;
+
+            .project-card {
+                flex: 1 1 100%;
+                max-width: 400px;
+            }
+        }
+
+        &[data-count="2"] {
+            max-width: 800px;
+            margin: 0 auto;
+
+            .project-card {
+                flex: 1 1 calc(50% - 12.5px);
+                max-width: 380px;
+            }
+        }
+
+        &[data-count="3"] {
+            max-width: 1200px;
+            margin: 0 auto;
+
+            .project-card {
+                flex: 1 1 calc(33.333% - 17px);
+                max-width: 370px;
+            }
+        }
 
         @media (max-width: 1400px) {
-            grid-template-columns: repeat(3, 1fr);
+            .project-card {
+                flex: 1 1 calc(33.333% - 17px); // 3 items per row
+                max-width: 380px;
+            }
+
+            &[data-count="1"] {
+                .project-card {
+                    flex: 1 1 100%;
+                    max-width: 400px;
+                }
+            }
+
+            &[data-count="2"] {
+                .project-card {
+                    flex: 1 1 calc(50% - 12.5px);
+                    max-width: 380px;
+                }
+            }
         }
 
         @media (max-width: 900px) {
-            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+
+            .project-card {
+                flex: 1 1 calc(50% - 10px); // 2 items per row
+                min-width: 250px;
+                max-width: 300px;
+            }
+
+            &[data-count="1"] {
+                max-width: 300px;
+
+                .project-card {
+                    flex: 1 1 100%;
+                    max-width: 300px;
+                }
+            }
         }
 
         @media (max-width: 600px) {
-            grid-template-columns: 1fr;
             gap: 20px;
+            max-width: 350px;
+            margin: 0 auto;
+
+            .project-card {
+                flex: 1 1 100%; // 1 item per row
+                min-width: 280px;
+                max-width: 350px;
+            }
         }
     }
 
